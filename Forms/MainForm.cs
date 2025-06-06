@@ -172,7 +172,7 @@ namespace project_addition_app.Forms
         {
             if (role != "Admin")
             {
-                if (e.TabPage == admin_panel)
+                if (e.TabPage == adminPanel)
                 {
                     e.Cancel = true;
                 }
@@ -281,9 +281,19 @@ namespace project_addition_app.Forms
         }
         private void update_table_num_Click(object sender, EventArgs e)
         {
-            m_table.MasaNumarasi = table_number_textBox1.Text;
-            context.SaveChanges();
-            ListTables();
+            bool durum = context.Tables.Any(t => t.MasaNumarasi == table_number_textBox1.Text && t.Id != m_table.Id);
+            if (durum)
+            {
+                MessageBox.Show("Bu masa numarası zaten var, lütfen başka bir masa numarası giriniz...");
+                return;
+            }
+            else
+            {
+                m_table.MasaNumarasi = table_number_textBox1.Text;
+                context.SaveChanges();
+                ListTables();
+
+            }
         }
 
         private void delete_table_Click(object sender, EventArgs e)
@@ -291,6 +301,7 @@ namespace project_addition_app.Forms
             context.Tables.Remove(m_table);
             context.SaveChanges();
             ListTables();
+            delete_table.Enabled = false;
         }
 
         private void users_dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -904,6 +915,12 @@ namespace project_addition_app.Forms
                 }
                 SelectedProductId = 0;
             }
+        }
+        // Sonra Tekrar Gel.
+        private void changePass_Click(object sender, EventArgs e)
+        {
+            PasswordChangerForm passwordChangerForm = new PasswordChangerForm(m_user);
+            passwordChangerForm.ShowDialog();
         }
     }
 }

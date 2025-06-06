@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.admin_panel = new System.Windows.Forms.TabPage();
+            this.adminPanel = new System.Windows.Forms.TabPage();
             this.upload_picture = new System.Windows.Forms.Button();
             this.pp_pictureBox1 = new System.Windows.Forms.PictureBox();
             this.fullname_textBox1 = new System.Windows.Forms.TextBox();
@@ -70,7 +70,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.exit_button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.payment = new System.Windows.Forms.TabPage();
+            this.paymentManagement = new System.Windows.Forms.TabPage();
             this.label19 = new System.Windows.Forms.Label();
             this.order_num_label = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -102,7 +102,8 @@
             this.categoriesDGV = new System.Windows.Forms.DataGridView();
             this.deleteProduct = new System.Windows.Forms.Button();
             this.deleteCategory = new System.Windows.Forms.Button();
-            this.admin_panel.SuspendLayout();
+            this.changePass = new System.Windows.Forms.Button();
+            this.adminPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pp_pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.users_dataGridView1)).BeginInit();
             this.tableManagement.SuspendLayout();
@@ -112,7 +113,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.profile_picBox)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.payment.SuspendLayout();
+            this.paymentManagement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.payments_dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.payment_dataGridView1)).BeginInit();
             this.orderManagement.SuspendLayout();
@@ -122,26 +123,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.categoriesDGV)).BeginInit();
             this.SuspendLayout();
             // 
-            // admin_panel
+            // adminPanel
             // 
-            this.admin_panel.BackColor = System.Drawing.Color.LightCoral;
-            this.admin_panel.Controls.Add(this.upload_picture);
-            this.admin_panel.Controls.Add(this.pp_pictureBox1);
-            this.admin_panel.Controls.Add(this.fullname_textBox1);
-            this.admin_panel.Controls.Add(this.user_textBox1);
-            this.admin_panel.Controls.Add(this.label10);
-            this.admin_panel.Controls.Add(this.delete_user);
-            this.admin_panel.Controls.Add(this.label9);
-            this.admin_panel.Controls.Add(this.role_comboBox1);
-            this.admin_panel.Controls.Add(this.update_user);
-            this.admin_panel.Controls.Add(this.user_label);
-            this.admin_panel.Controls.Add(this.users_dataGridView1);
-            this.admin_panel.Location = new System.Drawing.Point(4, 37);
-            this.admin_panel.Name = "admin_panel";
-            this.admin_panel.Padding = new System.Windows.Forms.Padding(3);
-            this.admin_panel.Size = new System.Drawing.Size(1912, 1039);
-            this.admin_panel.TabIndex = 3;
-            this.admin_panel.Text = "Admin Panel";
+            this.adminPanel.BackColor = System.Drawing.Color.LightCoral;
+            this.adminPanel.Controls.Add(this.upload_picture);
+            this.adminPanel.Controls.Add(this.pp_pictureBox1);
+            this.adminPanel.Controls.Add(this.fullname_textBox1);
+            this.adminPanel.Controls.Add(this.user_textBox1);
+            this.adminPanel.Controls.Add(this.label10);
+            this.adminPanel.Controls.Add(this.delete_user);
+            this.adminPanel.Controls.Add(this.label9);
+            this.adminPanel.Controls.Add(this.role_comboBox1);
+            this.adminPanel.Controls.Add(this.update_user);
+            this.adminPanel.Controls.Add(this.user_label);
+            this.adminPanel.Controls.Add(this.users_dataGridView1);
+            this.adminPanel.Location = new System.Drawing.Point(4, 37);
+            this.adminPanel.Name = "adminPanel";
+            this.adminPanel.Padding = new System.Windows.Forms.Padding(3);
+            this.adminPanel.Size = new System.Drawing.Size(1912, 1039);
+            this.adminPanel.TabIndex = 3;
+            this.adminPanel.Text = "Admin Paneli";
             // 
             // upload_picture
             // 
@@ -262,9 +263,9 @@
             // 
             // delete_table
             // 
-            this.delete_table.Location = new System.Drawing.Point(10, 202);
+            this.delete_table.Location = new System.Drawing.Point(131, 151);
             this.delete_table.Name = "delete_table";
-            this.delete_table.Size = new System.Drawing.Size(263, 46);
+            this.delete_table.Size = new System.Drawing.Size(142, 35);
             this.delete_table.TabIndex = 5;
             this.delete_table.Text = "Kaldır";
             this.delete_table.UseVisualStyleBackColor = true;
@@ -272,9 +273,9 @@
             // 
             // update_table_num
             // 
-            this.update_table_num.Location = new System.Drawing.Point(10, 150);
+            this.update_table_num.Location = new System.Drawing.Point(131, 110);
             this.update_table_num.Name = "update_table_num";
-            this.update_table_num.Size = new System.Drawing.Size(263, 46);
+            this.update_table_num.Size = new System.Drawing.Size(142, 35);
             this.update_table_num.TabIndex = 4;
             this.update_table_num.Text = "Düzenle";
             this.update_table_num.UseVisualStyleBackColor = true;
@@ -298,9 +299,9 @@
             // 
             // table_add_button
             // 
-            this.table_add_button.Location = new System.Drawing.Point(10, 98);
+            this.table_add_button.Location = new System.Drawing.Point(131, 69);
             this.table_add_button.Name = "table_add_button";
-            this.table_add_button.Size = new System.Drawing.Size(263, 46);
+            this.table_add_button.Size = new System.Drawing.Size(142, 35);
             this.table_add_button.TabIndex = 1;
             this.table_add_button.Text = "Ekle";
             this.table_add_button.UseVisualStyleBackColor = true;
@@ -352,7 +353,7 @@
             // 
             // pdf_button
             // 
-            this.pdf_button.Location = new System.Drawing.Point(978, 188);
+            this.pdf_button.Location = new System.Drawing.Point(1140, 188);
             this.pdf_button.Name = "pdf_button";
             this.pdf_button.Size = new System.Drawing.Size(99, 42);
             this.pdf_button.TabIndex = 39;
@@ -362,7 +363,7 @@
             // 
             // remove_filters
             // 
-            this.remove_filters.Location = new System.Drawing.Point(23, 495);
+            this.remove_filters.Location = new System.Drawing.Point(23, 463);
             this.remove_filters.Name = "remove_filters";
             this.remove_filters.Size = new System.Drawing.Size(251, 50);
             this.remove_filters.TabIndex = 38;
@@ -373,7 +374,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(20, 393);
+            this.label15.Location = new System.Drawing.Point(20, 357);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(67, 18);
             this.label15.TabIndex = 36;
@@ -382,7 +383,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(113, 393);
+            this.checkBox1.Location = new System.Drawing.Point(113, 361);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(15, 14);
             this.checkBox1.TabIndex = 35;
@@ -390,7 +391,7 @@
             // 
             // filter_button
             // 
-            this.filter_button.Location = new System.Drawing.Point(23, 430);
+            this.filter_button.Location = new System.Drawing.Point(23, 398);
             this.filter_button.Name = "filter_button";
             this.filter_button.Size = new System.Drawing.Size(251, 50);
             this.filter_button.TabIndex = 34;
@@ -401,7 +402,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(20, 338);
+            this.label14.Location = new System.Drawing.Point(20, 316);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(95, 18);
             this.label14.TabIndex = 33;
@@ -409,14 +410,14 @@
             // 
             // max_dateTimePicker2
             // 
-            this.max_dateTimePicker2.Location = new System.Drawing.Point(113, 355);
+            this.max_dateTimePicker2.Location = new System.Drawing.Point(312, 312);
             this.max_dateTimePicker2.Name = "max_dateTimePicker2";
             this.max_dateTimePicker2.Size = new System.Drawing.Size(161, 23);
             this.max_dateTimePicker2.TabIndex = 32;
             // 
             // min_dateTimePicker1
             // 
-            this.min_dateTimePicker1.Location = new System.Drawing.Point(113, 312);
+            this.min_dateTimePicker1.Location = new System.Drawing.Point(121, 312);
             this.min_dateTimePicker1.Name = "min_dateTimePicker1";
             this.min_dateTimePicker1.Size = new System.Drawing.Size(161, 23);
             this.min_dateTimePicker1.TabIndex = 31;
@@ -433,21 +434,21 @@
             // table_num_comboBox1
             // 
             this.table_num_comboBox1.FormattingEnabled = true;
-            this.table_num_comboBox1.Location = new System.Drawing.Point(113, 265);
+            this.table_num_comboBox1.Location = new System.Drawing.Point(121, 265);
             this.table_num_comboBox1.Name = "table_num_comboBox1";
             this.table_num_comboBox1.Size = new System.Drawing.Size(161, 26);
             this.table_num_comboBox1.TabIndex = 29;
             // 
             // max_textBox2
             // 
-            this.max_textBox2.Location = new System.Drawing.Point(113, 225);
+            this.max_textBox2.Location = new System.Drawing.Point(121, 225);
             this.max_textBox2.Name = "max_textBox2";
             this.max_textBox2.Size = new System.Drawing.Size(161, 23);
             this.max_textBox2.TabIndex = 28;
             // 
             // min_textBox1
             // 
-            this.min_textBox1.Location = new System.Drawing.Point(113, 185);
+            this.min_textBox1.Location = new System.Drawing.Point(121, 185);
             this.min_textBox1.Name = "min_textBox1";
             this.min_textBox1.Size = new System.Drawing.Size(161, 23);
             this.min_textBox1.TabIndex = 25;
@@ -478,7 +479,7 @@
             this.allOrders_dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.allOrders_dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.allOrders_dataGridView1.GridColor = System.Drawing.SystemColors.Info;
-            this.allOrders_dataGridView1.Location = new System.Drawing.Point(321, 184);
+            this.allOrders_dataGridView1.Location = new System.Drawing.Point(479, 185);
             this.allOrders_dataGridView1.Name = "allOrders_dataGridView1";
             this.allOrders_dataGridView1.ReadOnly = true;
             this.allOrders_dataGridView1.Size = new System.Drawing.Size(633, 720);
@@ -518,16 +519,17 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SkyBlue;
+            this.panel1.Controls.Add(this.changePass);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.exit_button1);
             this.panel1.Location = new System.Drawing.Point(4, 7);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1154, 155);
+            this.panel1.Size = new System.Drawing.Size(1900, 155);
             this.panel1.TabIndex = 37;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(666, 32);
+            this.button1.Location = new System.Drawing.Point(1442, 32);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(219, 75);
             this.button1.TabIndex = 7;
@@ -537,7 +539,7 @@
             // 
             // exit_button1
             // 
-            this.exit_button1.Location = new System.Drawing.Point(911, 32);
+            this.exit_button1.Location = new System.Drawing.Point(1671, 32);
             this.exit_button1.Name = "exit_button1";
             this.exit_button1.Size = new System.Drawing.Size(219, 75);
             this.exit_button1.TabIndex = 6;
@@ -551,8 +553,8 @@
             this.tabControl1.Controls.Add(this.orderManagement);
             this.tabControl1.Controls.Add(this.tableManagement);
             this.tabControl1.Controls.Add(this.productManagement);
-            this.tabControl1.Controls.Add(this.payment);
-            this.tabControl1.Controls.Add(this.admin_panel);
+            this.tabControl1.Controls.Add(this.paymentManagement);
+            this.tabControl1.Controls.Add(this.adminPanel);
             this.tabControl1.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tabControl1.Location = new System.Drawing.Point(1, -1);
             this.tabControl1.Name = "tabControl1";
@@ -562,26 +564,26 @@
             this.tabControl1.TabIndex = 3;
             this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
             // 
-            // payment
+            // paymentManagement
             // 
-            this.payment.BackColor = System.Drawing.Color.LightCoral;
-            this.payment.Controls.Add(this.label19);
-            this.payment.Controls.Add(this.order_num_label);
-            this.payment.Controls.Add(this.label18);
-            this.payment.Controls.Add(this.payments_dataGridView1);
-            this.payment.Controls.Add(this.description_textBox1);
-            this.payment.Controls.Add(this.label17);
-            this.payment.Controls.Add(this.label16);
-            this.payment.Controls.Add(this.payment_comboBox1);
-            this.payment.Controls.Add(this.pay_button);
-            this.payment.Controls.Add(this.total_label);
-            this.payment.Controls.Add(this.payment_dataGridView1);
-            this.payment.Location = new System.Drawing.Point(4, 37);
-            this.payment.Name = "payment";
-            this.payment.Padding = new System.Windows.Forms.Padding(3);
-            this.payment.Size = new System.Drawing.Size(1912, 1039);
-            this.payment.TabIndex = 4;
-            this.payment.Text = "Payment";
+            this.paymentManagement.BackColor = System.Drawing.Color.LightCoral;
+            this.paymentManagement.Controls.Add(this.label19);
+            this.paymentManagement.Controls.Add(this.order_num_label);
+            this.paymentManagement.Controls.Add(this.label18);
+            this.paymentManagement.Controls.Add(this.payments_dataGridView1);
+            this.paymentManagement.Controls.Add(this.description_textBox1);
+            this.paymentManagement.Controls.Add(this.label17);
+            this.paymentManagement.Controls.Add(this.label16);
+            this.paymentManagement.Controls.Add(this.payment_comboBox1);
+            this.paymentManagement.Controls.Add(this.pay_button);
+            this.paymentManagement.Controls.Add(this.total_label);
+            this.paymentManagement.Controls.Add(this.payment_dataGridView1);
+            this.paymentManagement.Location = new System.Drawing.Point(4, 37);
+            this.paymentManagement.Name = "paymentManagement";
+            this.paymentManagement.Padding = new System.Windows.Forms.Padding(3);
+            this.paymentManagement.Size = new System.Drawing.Size(1912, 1039);
+            this.paymentManagement.TabIndex = 4;
+            this.paymentManagement.Text = "Ödeme Yöneticisi";
             // 
             // label19
             // 
@@ -905,6 +907,16 @@
             this.deleteCategory.UseVisualStyleBackColor = true;
             this.deleteCategory.Click += new System.EventHandler(this.deleteCategory_Click);
             // 
+            // changePass
+            // 
+            this.changePass.Location = new System.Drawing.Point(1203, 32);
+            this.changePass.Name = "changePass";
+            this.changePass.Size = new System.Drawing.Size(219, 75);
+            this.changePass.TabIndex = 8;
+            this.changePass.Text = "Şifre Değiştir";
+            this.changePass.UseVisualStyleBackColor = true;
+            this.changePass.Click += new System.EventHandler(this.changePass_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -912,12 +924,15 @@
             this.BackColor = System.Drawing.Color.LightCoral;
             this.ClientSize = new System.Drawing.Size(1425, 849);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Resize += new System.EventHandler(this.MainForm_Resize);
-            this.admin_panel.ResumeLayout(false);
-            this.admin_panel.PerformLayout();
+            this.adminPanel.ResumeLayout(false);
+            this.adminPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pp_pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.users_dataGridView1)).EndInit();
             this.tableManagement.ResumeLayout(false);
@@ -929,8 +944,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.profile_picBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
-            this.payment.ResumeLayout(false);
-            this.payment.PerformLayout();
+            this.paymentManagement.ResumeLayout(false);
+            this.paymentManagement.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.payments_dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.payment_dataGridView1)).EndInit();
             this.orderManagement.ResumeLayout(false);
@@ -945,7 +960,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabPage admin_panel;
+        private System.Windows.Forms.TabPage adminPanel;
         private System.Windows.Forms.TextBox fullname_textBox1;
         private System.Windows.Forms.TextBox user_textBox1;
         private System.Windows.Forms.Label label10;
@@ -985,7 +1000,7 @@
         private System.Windows.Forms.DataGridView allOrders_dataGridView1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button remove_filters;
-        private System.Windows.Forms.TabPage payment;
+        private System.Windows.Forms.TabPage paymentManagement;
         private System.Windows.Forms.DataGridView payment_dataGridView1;
         private System.Windows.Forms.Label order_num_label;
         private System.Windows.Forms.Label total_label;
@@ -1019,5 +1034,6 @@
         private System.Windows.Forms.Button saveProduct;
         private System.Windows.Forms.Button deleteProduct;
         private System.Windows.Forms.Button deleteCategory;
+        private System.Windows.Forms.Button changePass;
     }
 }
