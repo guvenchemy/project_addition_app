@@ -20,6 +20,7 @@ namespace project_addition_app.Forms
         public OrderForm(Table table, Order order = null)
         {
             InitializeComponent();
+
             m_table = table;
             if (order == null)
             {
@@ -42,36 +43,70 @@ namespace project_addition_app.Forms
         {
             LoadProducts();
             LoadData();
-            ResizeButtons();
+            if (tabControl1.TabPages.Count > 0)
+            {
+                tabControl1.TabPages.RemoveAt(0); // İlk TabPage'i kaldır
+            }
+            foreach (TabPage tab in tabControl1.TabPages)
+            {
+                var panel = tab.Controls.OfType<FlowLayoutPanel>().FirstOrDefault();
+                if (panel != null)
+                {
+                    ResizeButtons(panel); // Varsayılan olarak 4 buton yan yana
+                }
+            }
         }
 
         public void LoadProducts()
         {
-            flowLayoutPanel1.Controls.Clear();
-            var products = context.Products.ToList();
-            foreach (var product in products) 
+            //953; 623 6;12
+            foreach (var category in context.Categories.ToList())
             {
-                Button btn = new Button();
-                btn.Text = product.UrunAdi;
-                btn.Tag = product;
-                btn.Click += (s, e) => 
-                {
-                    OrderDetail detail = new OrderDetail();
-                    detail.ProductId = product.Id;
-                    detail.OrderId = m_order.Id;
-                    detail.BirimFiyat = product.Fiyat;
-                    detail.ToplamFiyat = product.Fiyat;
-                    detail.UrunAdi = product.UrunAdi;
-                    detail.Adet = 1;
-                    context.OrderDetails.Add(detail);
-                    var orderInContext = context.Orders.First(x => x.Id == m_order.Id);
-                    orderInContext.ToplamTutar += detail.ToplamFiyat;
-                    context.SaveChanges();
-                    LoadData();
-                    ResizeButtons();
+                // Yeni bir TabPage oluştur
+                TabPage tabPage = new TabPage(category.KategoriAdi);
 
+                // Her TabPage için bir FlowLayoutPanel oluştur
+                FlowLayoutPanel panel = new FlowLayoutPanel
+                {
+                    Dock = DockStyle.Fill,
+                    AutoScroll = true
                 };
-                flowLayoutPanel1.Controls.Add(btn);
+                // TabPage içine FlowLayoutPanel ekle
+                tabPage.Controls.Add(panel);
+
+                // TabPage'i TabControl'e ekle
+                tabControl1.TabPages.Add(tabPage);
+
+                // İlgili kategorideki ürünleri getir
+                var products = context.Products
+                                      .Where(p => p.CategoryId == category.Id)
+                                      .ToList();
+                //var products = context.Products.ToList();
+
+                foreach (var product in products)
+                {
+                    Button btn = new Button();
+                    btn.Text = product.UrunAdi;
+                    btn.Tag = product;
+                    btn.Click += (s, e) =>
+                    {
+                        OrderDetail detail = new OrderDetail();
+                        detail.ProductId = product.Id;
+                        detail.OrderId = m_order.Id;
+                        detail.BirimFiyat = product.Fiyat;
+                        detail.ToplamFiyat = product.Fiyat;
+                        detail.UrunAdi = product.UrunAdi;
+                        detail.Adet = 1;
+                        context.OrderDetails.Add(detail);
+                        var orderInContext = context.Orders.First(x => x.Id == m_order.Id);
+                        orderInContext.ToplamTutar += detail.ToplamFiyat;
+                        context.SaveChanges();
+                        LoadData();
+                        ResizeButtons(panel);
+
+                    };
+                    panel.Controls.Add(btn);
+                }
             }
         }
 
@@ -83,9 +118,17 @@ namespace project_addition_app.Forms
         }
         private void OrderForm_Resize(object sender, EventArgs e)
         {
-            ResizeButtons();
+            foreach (TabPage tab in tabControl1.TabPages)
+            {
+                var panel = tab.Controls.OfType<FlowLayoutPanel>().FirstOrDefault();
+                if (panel != null)
+                {
+                    ResizeButtons(panel); // Varsayılan olarak 4 buton yan yana
+                }
+            }
+
         }
-        public void ResizeButtons()
+        public void ResizeButtons(FlowLayoutPanel flowLayoutPanel1)
         {
             int butonSayisiYanYana = 4; // Varsayılan olarak yan yana kaç buton olsun istiyorsan
             int padding = 10;
@@ -114,7 +157,14 @@ namespace project_addition_app.Forms
                     context.OrderDetails.Remove(detail);
                     context.SaveChanges();
                     LoadData();
-                    ResizeButtons();
+                    foreach (TabPage tab in tabControl1.TabPages)
+                    {
+                        var panel = tab.Controls.OfType<FlowLayoutPanel>().FirstOrDefault();
+                        if (panel != null)
+                        {
+                            ResizeButtons(panel); // Varsayılan olarak 4 buton yan yana
+                        }
+                    }
                 }
             
             }

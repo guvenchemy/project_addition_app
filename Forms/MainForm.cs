@@ -868,7 +868,10 @@ namespace project_addition_app.Forms
                         var orderId = ordersDGW.Rows[e.RowIndex].Cells["Sipariş_Numarası"].Value;
                         var order = context.Orders.Find(orderId);
                         var details = context.OrderDetails.Where(od => od.OrderId == (int)orderId);
-                        foreach(var detail in details)
+                        var table = context.Tables.Find(order.TableId);
+                        order.Durum = false;
+                        table.Durum = false;
+                        foreach (var detail in details)
                         {
                             context.OrderDetails.Remove(detail);
                         }

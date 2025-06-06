@@ -28,20 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.order_detailsDGV = new System.Windows.Forms.DataGridView();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             ((System.ComponentModel.ISupportInitialize)(this.order_detailsDGV)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 26);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(950, 1000);
-            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // label1
             // 
@@ -76,14 +72,41 @@
             this.Delete.Text = "Sil";
             this.Delete.UseColumnTextForButtonValue = true;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.flowLayoutPanel2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 35);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(945, 584);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "İçecekler";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(950, 1000);
+            this.flowLayoutPanel2.TabIndex = 0;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(6, 12);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(953, 623);
+            this.tabControl1.TabIndex = 4;
+            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1049, 647);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.order_detailsDGV);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "OrderForm";
@@ -92,16 +115,19 @@
             this.Load += new System.EventHandler(this.OrderForm_Load);
             this.Resize += new System.EventHandler(this.OrderForm_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.order_detailsDGV)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView order_detailsDGV;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.TabControl tabControl1;
     }
 }

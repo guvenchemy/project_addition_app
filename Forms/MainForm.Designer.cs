@@ -145,10 +145,10 @@
             this.admin_panel.Controls.Add(this.update_user);
             this.admin_panel.Controls.Add(this.user_label);
             this.admin_panel.Controls.Add(this.users_dataGridView1);
-            this.admin_panel.Location = new System.Drawing.Point(4, 27);
+            this.admin_panel.Location = new System.Drawing.Point(4, 37);
             this.admin_panel.Name = "admin_panel";
             this.admin_panel.Padding = new System.Windows.Forms.Padding(3);
-            this.admin_panel.Size = new System.Drawing.Size(1912, 1049);
+            this.admin_panel.Size = new System.Drawing.Size(1912, 1039);
             this.admin_panel.TabIndex = 3;
             this.admin_panel.Text = "Admin Panel";
             // 
@@ -262,10 +262,10 @@
             this.table_manager.Controls.Add(this.label8);
             this.table_manager.Controls.Add(this.table_add_button);
             this.table_manager.Controls.Add(this.tables_dataGridView1);
-            this.table_manager.Location = new System.Drawing.Point(4, 27);
+            this.table_manager.Location = new System.Drawing.Point(4, 37);
             this.table_manager.Name = "table_manager";
             this.table_manager.Padding = new System.Windows.Forms.Padding(3);
-            this.table_manager.Size = new System.Drawing.Size(1912, 1049);
+            this.table_manager.Size = new System.Drawing.Size(1912, 1039);
             this.table_manager.TabIndex = 2;
             this.table_manager.Text = "Table Managemement";
             // 
@@ -356,10 +356,10 @@
             this.order_page.Controls.Add(this.add_order);
             this.order_page.Controls.Add(this.label6);
             this.order_page.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.order_page.Location = new System.Drawing.Point(4, 27);
+            this.order_page.Location = new System.Drawing.Point(4, 37);
             this.order_page.Name = "order_page";
             this.order_page.Padding = new System.Windows.Forms.Padding(3);
-            this.order_page.Size = new System.Drawing.Size(1912, 1049);
+            this.order_page.Size = new System.Drawing.Size(1912, 1039);
             this.order_page.TabIndex = 1;
             this.order_page.Text = "Orders";
             // 
@@ -610,10 +610,10 @@
             this.welcome_page.Controls.Add(this.welcome_label);
             this.welcome_page.Controls.Add(this.panel1);
             this.welcome_page.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.welcome_page.Location = new System.Drawing.Point(4, 27);
+            this.welcome_page.Location = new System.Drawing.Point(4, 37);
             this.welcome_page.Name = "welcome_page";
             this.welcome_page.Padding = new System.Windows.Forms.Padding(3);
-            this.welcome_page.Size = new System.Drawing.Size(1912, 1049);
+            this.welcome_page.Size = new System.Drawing.Size(1912, 1039);
             this.welcome_page.TabIndex = 0;
             this.welcome_page.Text = "Home";
             // 
@@ -817,12 +817,13 @@
             this.tabControl1.Controls.Add(this.welcome_page);
             this.tabControl1.Controls.Add(this.order_page);
             this.tabControl1.Controls.Add(this.table_manager);
-            this.tabControl1.Controls.Add(this.admin_panel);
             this.tabControl1.Controls.Add(this.payment);
             this.tabControl1.Controls.Add(this.orderManagement);
+            this.tabControl1.Controls.Add(this.admin_panel);
             this.tabControl1.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tabControl1.Location = new System.Drawing.Point(1, -1);
             this.tabControl1.Name = "tabControl1";
+            this.tabControl1.Padding = new System.Drawing.Point(8, 8);
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1920, 1080);
             this.tabControl1.TabIndex = 3;
@@ -842,10 +843,10 @@
             this.payment.Controls.Add(this.pay_button);
             this.payment.Controls.Add(this.total_label);
             this.payment.Controls.Add(this.payment_dataGridView1);
-            this.payment.Location = new System.Drawing.Point(4, 27);
+            this.payment.Location = new System.Drawing.Point(4, 37);
             this.payment.Name = "payment";
             this.payment.Padding = new System.Windows.Forms.Padding(3);
-            this.payment.Size = new System.Drawing.Size(1912, 1049);
+            this.payment.Size = new System.Drawing.Size(1912, 1039);
             this.payment.TabIndex = 4;
             this.payment.Text = "Payment";
             // 
@@ -967,10 +968,10 @@
             this.orderManagement.Controls.Add(this.button2);
             this.orderManagement.Controls.Add(this.ordersDGW);
             this.orderManagement.Controls.Add(this.flowLayoutPanel1);
-            this.orderManagement.Location = new System.Drawing.Point(4, 27);
+            this.orderManagement.Location = new System.Drawing.Point(4, 37);
             this.orderManagement.Name = "orderManagement";
             this.orderManagement.Padding = new System.Windows.Forms.Padding(3);
-            this.orderManagement.Size = new System.Drawing.Size(1912, 1049);
+            this.orderManagement.Size = new System.Drawing.Size(1912, 1039);
             this.orderManagement.TabIndex = 5;
             this.orderManagement.Text = "Sipariş Yöneticisi";
             // 
