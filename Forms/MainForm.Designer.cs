@@ -103,6 +103,8 @@
             this.deleteProduct = new System.Windows.Forms.Button();
             this.deleteCategory = new System.Windows.Forms.Button();
             this.changePass = new System.Windows.Forms.Button();
+            this.statistics = new System.Windows.Forms.TabPage();
+            this.stockManagement = new System.Windows.Forms.TabPage();
             this.adminPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pp_pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.users_dataGridView1)).BeginInit();
@@ -554,6 +556,8 @@
             this.tabControl1.Controls.Add(this.tableManagement);
             this.tabControl1.Controls.Add(this.productManagement);
             this.tabControl1.Controls.Add(this.paymentManagement);
+            this.tabControl1.Controls.Add(this.stockManagement);
+            this.tabControl1.Controls.Add(this.statistics);
             this.tabControl1.Controls.Add(this.adminPanel);
             this.tabControl1.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tabControl1.Location = new System.Drawing.Point(1, -1);
@@ -917,6 +921,24 @@
             this.changePass.UseVisualStyleBackColor = true;
             this.changePass.Click += new System.EventHandler(this.changePass_Click);
             // 
+            // statistics
+            // 
+            this.statistics.BackColor = System.Drawing.Color.LightCoral;
+            this.statistics.Location = new System.Drawing.Point(4, 37);
+            this.statistics.Name = "statistics";
+            this.statistics.Size = new System.Drawing.Size(1912, 1039);
+            this.statistics.TabIndex = 7;
+            this.statistics.Text = "İstatistikler";
+            // 
+            // stockManagement
+            // 
+            this.stockManagement.BackColor = System.Drawing.Color.LightCoral;
+            this.stockManagement.Location = new System.Drawing.Point(4, 37);
+            this.stockManagement.Name = "stockManagement";
+            this.stockManagement.Size = new System.Drawing.Size(1912, 1039);
+            this.stockManagement.TabIndex = 8;
+            this.stockManagement.Text = "Stok Yöneticisi";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1035,5 +1057,7 @@
         private System.Windows.Forms.Button deleteProduct;
         private System.Windows.Forms.Button deleteCategory;
         private System.Windows.Forms.Button changePass;
+        private System.Windows.Forms.TabPage statistics;
+        private System.Windows.Forms.TabPage stockManagement;
     }
 }
