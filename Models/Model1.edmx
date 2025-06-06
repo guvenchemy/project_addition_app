@@ -171,6 +171,22 @@ warning 6002: The table/view 'AdisyonDB.dbo.Payment_V' does not have a primary k
           <Property Name="OrderId" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'AdisyonDB.dbo.ProductsCategories' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ProductsCategories">
+          <Key>
+            <PropertyRef Name="UrunAdi" />
+            <PropertyRef Name="Fiyat" />
+            <PropertyRef Name="KategoriAdi" />
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="UrunAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Fiyat" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="KategoriAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'AdisyonDB.dbo.SiparisDetaylari_V' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SiparisDetaylari_V">
           <Key>
@@ -446,6 +462,15 @@ warning 6002: The table/view 'AdisyonDB.dbo.Users_V' does not have a primary key
     [Payment_V].[Aciklama] AS [Aciklama], 
     [Payment_V].[OrderId] AS [OrderId]
     FROM [dbo].[Payment_V] AS [Payment_V]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ProductsCategories" EntityType="Self.ProductsCategories" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ProductsCategories].[UrunAdi] AS [UrunAdi], 
+    [ProductsCategories].[Fiyat] AS [Fiyat], 
+    [ProductsCategories].[KategoriAdi] AS [KategoriAdi], 
+    [ProductsCategories].[Id] AS [Id], 
+    [ProductsCategories].[CategoryId] AS [CategoryId]
+    FROM [dbo].[ProductsCategories] AS [ProductsCategories]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="SiparisDetaylari_V" EntityType="Self.SiparisDetaylari_V" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -943,6 +968,7 @@ warning 6002: The table/view 'AdisyonDB.dbo.Users_V' does not have a primary key
           <EntitySet Name="Payment_V" EntityType="AdisyonDBModel.Payment_V" />
           <EntitySet Name="AktifSiparisler_VV" EntityType="AdisyonDBModel.AktifSiparisler_VV" />
           <EntitySet Name="SiparisDetaylari_VV" EntityType="AdisyonDBModel.SiparisDetaylari_VV" />
+          <EntitySet Name="ProductsCategories" EntityType="AdisyonDBModel.ProductsCategory" />
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -1014,6 +1040,20 @@ warning 6002: The table/view 'AdisyonDB.dbo.Users_V' does not have a primary key
           <Property Name="ToplamFiyat" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
           <Property Name="SiparisDetayiId" Type="Int32" Nullable="false" />
           <Property Name="MasaNumarasi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ProductsCategory">
+          <Key>
+            <PropertyRef Name="UrunAdi" />
+            <PropertyRef Name="Fiyat" />
+            <PropertyRef Name="KategoriAdi" />
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="UrunAdi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fiyat" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="KategoriAdi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1261,6 +1301,17 @@ warning 6002: The table/view 'AdisyonDB.dbo.Users_V' does not have a primary key
                 <ScalarProperty Name="Adet" ColumnName="Adet" />
                 <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
                 <ScalarProperty Name="Sipariş_Numarası" ColumnName="Sipariş Numarası" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductsCategories">
+            <EntityTypeMapping TypeName="AdisyonDBModel.ProductsCategory">
+              <MappingFragment StoreEntitySet="ProductsCategories">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="KategoriAdi" ColumnName="KategoriAdi" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

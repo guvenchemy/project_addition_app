@@ -40,37 +40,13 @@
             this.update_user = new System.Windows.Forms.Button();
             this.user_label = new System.Windows.Forms.Label();
             this.users_dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.table_manager = new System.Windows.Forms.TabPage();
+            this.tableManagement = new System.Windows.Forms.TabPage();
             this.delete_table = new System.Windows.Forms.Button();
             this.update_table_num = new System.Windows.Forms.Button();
             this.table_number_textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.table_add_button = new System.Windows.Forms.Button();
             this.tables_dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.order_page = new System.Windows.Forms.TabPage();
-            this.update_Product = new System.Windows.Forms.Button();
-            this.order_detail_dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.orders_dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.count_textBox2 = new System.Windows.Forms.TextBox();
-            this.count_textBox1 = new System.Windows.Forms.TextBox();
-            this.add_product_button2 = new System.Windows.Forms.Button();
-            this.product_comboBox1 = new System.Windows.Forms.ComboBox();
-            this.category_comboBox2 = new System.Windows.Forms.ComboBox();
-            this.tables_comboBox3 = new System.Windows.Forms.ComboBox();
-            this.update_order_button = new System.Windows.Forms.Button();
-            this.count_label = new System.Windows.Forms.Label();
-            this.add_product = new System.Windows.Forms.Button();
-            this.products_comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.category_comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tables_comboBox1 = new System.Windows.Forms.ComboBox();
-            this.add_order = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.welcome_page = new System.Windows.Forms.TabPage();
             this.pdf_button = new System.Windows.Forms.Button();
             this.remove_filters = new System.Windows.Forms.Button();
@@ -109,16 +85,28 @@
             this.orderManagement = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.ordersDGW = new System.Windows.Forms.DataGridView();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.productManagement = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.productPRICE = new System.Windows.Forms.TextBox();
+            this.productNAME = new System.Windows.Forms.TextBox();
+            this.catergoryCMB = new System.Windows.Forms.ComboBox();
+            this.categoryNAME = new System.Windows.Forms.TextBox();
+            this.productsDGV = new System.Windows.Forms.DataGridView();
+            this.saveProduct = new System.Windows.Forms.Button();
+            this.saveCategory = new System.Windows.Forms.Button();
+            this.categoriesDGV = new System.Windows.Forms.DataGridView();
+            this.deleteProduct = new System.Windows.Forms.Button();
+            this.deleteCategory = new System.Windows.Forms.Button();
             this.admin_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pp_pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.users_dataGridView1)).BeginInit();
-            this.table_manager.SuspendLayout();
+            this.tableManagement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tables_dataGridView1)).BeginInit();
-            this.order_page.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.order_detail_dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orders_dataGridView1)).BeginInit();
             this.welcome_page.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.allOrders_dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profile_picBox)).BeginInit();
@@ -129,6 +117,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.payment_dataGridView1)).BeginInit();
             this.orderManagement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDGW)).BeginInit();
+            this.productManagement.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // admin_panel
@@ -253,21 +244,21 @@
             this.users_dataGridView1.TabIndex = 0;
             this.users_dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.users_dataGridView1_CellContentClick);
             // 
-            // table_manager
+            // tableManagement
             // 
-            this.table_manager.BackColor = System.Drawing.Color.LightCoral;
-            this.table_manager.Controls.Add(this.delete_table);
-            this.table_manager.Controls.Add(this.update_table_num);
-            this.table_manager.Controls.Add(this.table_number_textBox1);
-            this.table_manager.Controls.Add(this.label8);
-            this.table_manager.Controls.Add(this.table_add_button);
-            this.table_manager.Controls.Add(this.tables_dataGridView1);
-            this.table_manager.Location = new System.Drawing.Point(4, 37);
-            this.table_manager.Name = "table_manager";
-            this.table_manager.Padding = new System.Windows.Forms.Padding(3);
-            this.table_manager.Size = new System.Drawing.Size(1912, 1039);
-            this.table_manager.TabIndex = 2;
-            this.table_manager.Text = "Table Managemement";
+            this.tableManagement.BackColor = System.Drawing.Color.LightCoral;
+            this.tableManagement.Controls.Add(this.delete_table);
+            this.tableManagement.Controls.Add(this.update_table_num);
+            this.tableManagement.Controls.Add(this.table_number_textBox1);
+            this.tableManagement.Controls.Add(this.label8);
+            this.tableManagement.Controls.Add(this.table_add_button);
+            this.tableManagement.Controls.Add(this.tables_dataGridView1);
+            this.tableManagement.Location = new System.Drawing.Point(4, 37);
+            this.tableManagement.Name = "tableManagement";
+            this.tableManagement.Padding = new System.Windows.Forms.Padding(3);
+            this.tableManagement.Size = new System.Drawing.Size(1912, 1039);
+            this.tableManagement.TabIndex = 2;
+            this.tableManagement.Text = "Masa Yöneticisi";
             // 
             // delete_table
             // 
@@ -328,264 +319,6 @@
             this.tables_dataGridView1.Size = new System.Drawing.Size(391, 1000);
             this.tables_dataGridView1.TabIndex = 0;
             this.tables_dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tables_dataGridView1_CellContentClick);
-            // 
-            // order_page
-            // 
-            this.order_page.BackColor = System.Drawing.Color.LightCoral;
-            this.order_page.Controls.Add(this.update_Product);
-            this.order_page.Controls.Add(this.order_detail_dataGridView1);
-            this.order_page.Controls.Add(this.orders_dataGridView1);
-            this.order_page.Controls.Add(this.label4);
-            this.order_page.Controls.Add(this.label5);
-            this.order_page.Controls.Add(this.label7);
-            this.order_page.Controls.Add(this.count_textBox2);
-            this.order_page.Controls.Add(this.count_textBox1);
-            this.order_page.Controls.Add(this.add_product_button2);
-            this.order_page.Controls.Add(this.product_comboBox1);
-            this.order_page.Controls.Add(this.category_comboBox2);
-            this.order_page.Controls.Add(this.tables_comboBox3);
-            this.order_page.Controls.Add(this.update_order_button);
-            this.order_page.Controls.Add(this.count_label);
-            this.order_page.Controls.Add(this.add_product);
-            this.order_page.Controls.Add(this.products_comboBox1);
-            this.order_page.Controls.Add(this.label3);
-            this.order_page.Controls.Add(this.category_comboBox1);
-            this.order_page.Controls.Add(this.label2);
-            this.order_page.Controls.Add(this.label1);
-            this.order_page.Controls.Add(this.tables_comboBox1);
-            this.order_page.Controls.Add(this.add_order);
-            this.order_page.Controls.Add(this.label6);
-            this.order_page.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.order_page.Location = new System.Drawing.Point(4, 37);
-            this.order_page.Name = "order_page";
-            this.order_page.Padding = new System.Windows.Forms.Padding(3);
-            this.order_page.Size = new System.Drawing.Size(1912, 1039);
-            this.order_page.TabIndex = 1;
-            this.order_page.Text = "Orders";
-            // 
-            // update_Product
-            // 
-            this.update_Product.Location = new System.Drawing.Point(444, 206);
-            this.update_Product.Name = "update_Product";
-            this.update_Product.Size = new System.Drawing.Size(143, 60);
-            this.update_Product.TabIndex = 22;
-            this.update_Product.Text = "Ürünü Düzenle";
-            this.update_Product.UseVisualStyleBackColor = true;
-            this.update_Product.Click += new System.EventHandler(this.update_Product_Click);
-            // 
-            // order_detail_dataGridView1
-            // 
-            this.order_detail_dataGridView1.AllowUserToAddRows = false;
-            this.order_detail_dataGridView1.AllowUserToDeleteRows = false;
-            this.order_detail_dataGridView1.BackgroundColor = System.Drawing.Color.LightCoral;
-            this.order_detail_dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.order_detail_dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.order_detail_dataGridView1.Location = new System.Drawing.Point(7, 282);
-            this.order_detail_dataGridView1.Name = "order_detail_dataGridView1";
-            this.order_detail_dataGridView1.ReadOnly = true;
-            this.order_detail_dataGridView1.Size = new System.Drawing.Size(580, 323);
-            this.order_detail_dataGridView1.TabIndex = 21;
-            this.order_detail_dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.order_detail_dataGridView1_CellContentClick);
-            // 
-            // orders_dataGridView1
-            // 
-            this.orders_dataGridView1.AllowUserToAddRows = false;
-            this.orders_dataGridView1.AllowUserToDeleteRows = false;
-            this.orders_dataGridView1.BackgroundColor = System.Drawing.Color.LightCoral;
-            this.orders_dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.orders_dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.orders_dataGridView1.Location = new System.Drawing.Point(605, 7);
-            this.orders_dataGridView1.Name = "orders_dataGridView1";
-            this.orders_dataGridView1.ReadOnly = true;
-            this.orders_dataGridView1.Size = new System.Drawing.Size(572, 598);
-            this.orders_dataGridView1.TabIndex = 20;
-            this.orders_dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.orders_dataGridView1_CellContentClick);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(300, 174);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 26);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Adet:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(300, 145);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 26);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Ürün:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(300, 72);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 26);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Masa: ";
-            // 
-            // count_textBox2
-            // 
-            this.count_textBox2.Location = new System.Drawing.Point(393, 179);
-            this.count_textBox2.Name = "count_textBox2";
-            this.count_textBox2.Size = new System.Drawing.Size(194, 23);
-            this.count_textBox2.TabIndex = 15;
-            // 
-            // count_textBox1
-            // 
-            this.count_textBox1.Location = new System.Drawing.Point(100, 179);
-            this.count_textBox1.Name = "count_textBox1";
-            this.count_textBox1.Size = new System.Drawing.Size(194, 23);
-            this.count_textBox1.TabIndex = 9;
-            // 
-            // add_product_button2
-            // 
-            this.add_product_button2.Location = new System.Drawing.Point(300, 206);
-            this.add_product_button2.Name = "add_product_button2";
-            this.add_product_button2.Size = new System.Drawing.Size(143, 60);
-            this.add_product_button2.TabIndex = 14;
-            this.add_product_button2.Text = "Ürün Ekle";
-            this.add_product_button2.UseVisualStyleBackColor = true;
-            this.add_product_button2.Click += new System.EventHandler(this.add_product_button2_Click);
-            // 
-            // product_comboBox1
-            // 
-            this.product_comboBox1.FormattingEnabled = true;
-            this.product_comboBox1.Location = new System.Drawing.Point(393, 142);
-            this.product_comboBox1.Name = "product_comboBox1";
-            this.product_comboBox1.Size = new System.Drawing.Size(194, 26);
-            this.product_comboBox1.TabIndex = 13;
-            // 
-            // category_comboBox2
-            // 
-            this.category_comboBox2.FormattingEnabled = true;
-            this.category_comboBox2.Location = new System.Drawing.Point(393, 109);
-            this.category_comboBox2.Name = "category_comboBox2";
-            this.category_comboBox2.Size = new System.Drawing.Size(194, 26);
-            this.category_comboBox2.TabIndex = 12;
-            this.category_comboBox2.SelectedIndexChanged += new System.EventHandler(this.category_comboBox2_SelectedIndexChanged);
-            // 
-            // tables_comboBox3
-            // 
-            this.tables_comboBox3.FormattingEnabled = true;
-            this.tables_comboBox3.Location = new System.Drawing.Point(393, 72);
-            this.tables_comboBox3.Name = "tables_comboBox3";
-            this.tables_comboBox3.Size = new System.Drawing.Size(194, 26);
-            this.tables_comboBox3.TabIndex = 11;
-            this.tables_comboBox3.SelectedIndexChanged += new System.EventHandler(this.tables_comboBox3_SelectedIndexChanged);
-            // 
-            // update_order_button
-            // 
-            this.update_order_button.Location = new System.Drawing.Point(300, 6);
-            this.update_order_button.Name = "update_order_button";
-            this.update_order_button.Size = new System.Drawing.Size(287, 60);
-            this.update_order_button.TabIndex = 10;
-            this.update_order_button.Text = "Sipariş Güncelle";
-            this.update_order_button.UseVisualStyleBackColor = true;
-            this.update_order_button.Click += new System.EventHandler(this.update_order_button_Click);
-            // 
-            // count_label
-            // 
-            this.count_label.AutoSize = true;
-            this.count_label.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.count_label.Location = new System.Drawing.Point(2, 174);
-            this.count_label.Name = "count_label";
-            this.count_label.Size = new System.Drawing.Size(65, 26);
-            this.count_label.TabIndex = 8;
-            this.count_label.Text = "Adet:";
-            // 
-            // add_product
-            // 
-            this.add_product.Location = new System.Drawing.Point(7, 206);
-            this.add_product.Name = "add_product";
-            this.add_product.Size = new System.Drawing.Size(287, 60);
-            this.add_product.TabIndex = 7;
-            this.add_product.Text = "Ürün Ekle";
-            this.add_product.UseVisualStyleBackColor = true;
-            this.add_product.Click += new System.EventHandler(this.add_product_Click);
-            // 
-            // products_comboBox1
-            // 
-            this.products_comboBox1.FormattingEnabled = true;
-            this.products_comboBox1.Location = new System.Drawing.Point(100, 142);
-            this.products_comboBox1.Name = "products_comboBox1";
-            this.products_comboBox1.Size = new System.Drawing.Size(194, 26);
-            this.products_comboBox1.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(2, 145);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 26);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Ürün:";
-            // 
-            // category_comboBox1
-            // 
-            this.category_comboBox1.FormattingEnabled = true;
-            this.category_comboBox1.Location = new System.Drawing.Point(100, 109);
-            this.category_comboBox1.Name = "category_comboBox1";
-            this.category_comboBox1.Size = new System.Drawing.Size(194, 26);
-            this.category_comboBox1.TabIndex = 4;
-            this.category_comboBox1.SelectedIndexChanged += new System.EventHandler(this.category_comboBox1_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(2, 109);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 26);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Kategori: ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(2, 72);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 26);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Masa: ";
-            // 
-            // tables_comboBox1
-            // 
-            this.tables_comboBox1.FormattingEnabled = true;
-            this.tables_comboBox1.Location = new System.Drawing.Point(100, 72);
-            this.tables_comboBox1.Name = "tables_comboBox1";
-            this.tables_comboBox1.Size = new System.Drawing.Size(194, 26);
-            this.tables_comboBox1.TabIndex = 1;
-            this.tables_comboBox1.SelectedIndexChanged += new System.EventHandler(this.tables_comboBox1_SelectedIndexChanged);
-            // 
-            // add_order
-            // 
-            this.add_order.Location = new System.Drawing.Point(7, 6);
-            this.add_order.Name = "add_order";
-            this.add_order.Size = new System.Drawing.Size(287, 60);
-            this.add_order.TabIndex = 0;
-            this.add_order.Text = "Sipariş Oluştur";
-            this.add_order.UseVisualStyleBackColor = true;
-            this.add_order.Click += new System.EventHandler(this.add_order_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(300, 109);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(107, 26);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Kategori: ";
             // 
             // welcome_page
             // 
@@ -815,10 +548,10 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.welcome_page);
-            this.tabControl1.Controls.Add(this.order_page);
-            this.tabControl1.Controls.Add(this.table_manager);
-            this.tabControl1.Controls.Add(this.payment);
             this.tabControl1.Controls.Add(this.orderManagement);
+            this.tabControl1.Controls.Add(this.tableManagement);
+            this.tabControl1.Controls.Add(this.productManagement);
+            this.tabControl1.Controls.Add(this.payment);
             this.tabControl1.Controls.Add(this.admin_panel);
             this.tabControl1.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tabControl1.Location = new System.Drawing.Point(1, -1);
@@ -1001,6 +734,14 @@
             this.ordersDGW.TabIndex = 1;
             this.ordersDGW.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ordersDGW_CellContentClick);
             // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Sil";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Sil";
+            this.Delete.UseColumnTextForButtonValue = true;
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
@@ -1009,13 +750,160 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(827, 1000);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // Delete
+            // productManagement
             // 
-            this.Delete.HeaderText = "Sil";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Sil";
-            this.Delete.UseColumnTextForButtonValue = true;
+            this.productManagement.BackColor = System.Drawing.Color.LightCoral;
+            this.productManagement.Controls.Add(this.deleteCategory);
+            this.productManagement.Controls.Add(this.deleteProduct);
+            this.productManagement.Controls.Add(this.categoriesDGV);
+            this.productManagement.Controls.Add(this.saveCategory);
+            this.productManagement.Controls.Add(this.saveProduct);
+            this.productManagement.Controls.Add(this.productsDGV);
+            this.productManagement.Controls.Add(this.categoryNAME);
+            this.productManagement.Controls.Add(this.catergoryCMB);
+            this.productManagement.Controls.Add(this.productNAME);
+            this.productManagement.Controls.Add(this.productPRICE);
+            this.productManagement.Controls.Add(this.label4);
+            this.productManagement.Controls.Add(this.label3);
+            this.productManagement.Controls.Add(this.label2);
+            this.productManagement.Controls.Add(this.label1);
+            this.productManagement.Location = new System.Drawing.Point(4, 37);
+            this.productManagement.Name = "productManagement";
+            this.productManagement.Size = new System.Drawing.Size(1912, 1039);
+            this.productManagement.TabIndex = 6;
+            this.productManagement.Text = "Ürün Yöneticisi";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Kategori:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(21, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 18);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Ürün Adı:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(21, 98);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 18);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Fiyatı:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(726, 28);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 18);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Kategori Adı:";
+            // 
+            // productPRICE
+            // 
+            this.productPRICE.Location = new System.Drawing.Point(95, 95);
+            this.productPRICE.Name = "productPRICE";
+            this.productPRICE.Size = new System.Drawing.Size(180, 23);
+            this.productPRICE.TabIndex = 4;
+            // 
+            // productNAME
+            // 
+            this.productNAME.Location = new System.Drawing.Point(95, 64);
+            this.productNAME.Name = "productNAME";
+            this.productNAME.Size = new System.Drawing.Size(180, 23);
+            this.productNAME.TabIndex = 5;
+            // 
+            // catergoryCMB
+            // 
+            this.catergoryCMB.FormattingEnabled = true;
+            this.catergoryCMB.Location = new System.Drawing.Point(95, 27);
+            this.catergoryCMB.Name = "catergoryCMB";
+            this.catergoryCMB.Size = new System.Drawing.Size(180, 26);
+            this.catergoryCMB.TabIndex = 6;
+            this.catergoryCMB.SelectedIndexChanged += new System.EventHandler(this.catergoryCMB_SelectedIndexChanged);
+            // 
+            // categoryNAME
+            // 
+            this.categoryNAME.Location = new System.Drawing.Point(827, 25);
+            this.categoryNAME.Name = "categoryNAME";
+            this.categoryNAME.Size = new System.Drawing.Size(180, 23);
+            this.categoryNAME.TabIndex = 7;
+            // 
+            // productsDGV
+            // 
+            this.productsDGV.AllowUserToAddRows = false;
+            this.productsDGV.AllowUserToDeleteRows = false;
+            this.productsDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.productsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productsDGV.Location = new System.Drawing.Point(323, 25);
+            this.productsDGV.Name = "productsDGV";
+            this.productsDGV.ReadOnly = true;
+            this.productsDGV.Size = new System.Drawing.Size(397, 1000);
+            this.productsDGV.TabIndex = 8;
+            this.productsDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productsDGV_CellContentClick);
+            // 
+            // saveProduct
+            // 
+            this.saveProduct.Location = new System.Drawing.Point(92, 131);
+            this.saveProduct.Name = "saveProduct";
+            this.saveProduct.Size = new System.Drawing.Size(183, 28);
+            this.saveProduct.TabIndex = 9;
+            this.saveProduct.Text = "Kaydet";
+            this.saveProduct.UseVisualStyleBackColor = true;
+            this.saveProduct.Click += new System.EventHandler(this.saveProduct_Click);
+            // 
+            // saveCategory
+            // 
+            this.saveCategory.Location = new System.Drawing.Point(827, 62);
+            this.saveCategory.Name = "saveCategory";
+            this.saveCategory.Size = new System.Drawing.Size(180, 28);
+            this.saveCategory.TabIndex = 10;
+            this.saveCategory.Text = "Kaydet";
+            this.saveCategory.UseVisualStyleBackColor = true;
+            this.saveCategory.Click += new System.EventHandler(this.saveCategory_Click);
+            // 
+            // categoriesDGV
+            // 
+            this.categoriesDGV.AllowUserToAddRows = false;
+            this.categoriesDGV.AllowUserToDeleteRows = false;
+            this.categoriesDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.categoriesDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.categoriesDGV.Location = new System.Drawing.Point(1018, 25);
+            this.categoriesDGV.Name = "categoriesDGV";
+            this.categoriesDGV.ReadOnly = true;
+            this.categoriesDGV.Size = new System.Drawing.Size(397, 1000);
+            this.categoriesDGV.TabIndex = 11;
+            this.categoriesDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.categoriesDGV_CellContentClick);
+            // 
+            // deleteProduct
+            // 
+            this.deleteProduct.Location = new System.Drawing.Point(92, 165);
+            this.deleteProduct.Name = "deleteProduct";
+            this.deleteProduct.Size = new System.Drawing.Size(183, 28);
+            this.deleteProduct.TabIndex = 12;
+            this.deleteProduct.Text = "Sil";
+            this.deleteProduct.UseVisualStyleBackColor = true;
+            this.deleteProduct.Click += new System.EventHandler(this.deleteProduct_Click);
+            // 
+            // deleteCategory
+            // 
+            this.deleteCategory.Location = new System.Drawing.Point(827, 95);
+            this.deleteCategory.Name = "deleteCategory";
+            this.deleteCategory.Size = new System.Drawing.Size(180, 28);
+            this.deleteCategory.TabIndex = 13;
+            this.deleteCategory.Text = "Sil";
+            this.deleteCategory.UseVisualStyleBackColor = true;
+            this.deleteCategory.Click += new System.EventHandler(this.deleteCategory_Click);
             // 
             // MainForm
             // 
@@ -1032,13 +920,9 @@
             this.admin_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pp_pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.users_dataGridView1)).EndInit();
-            this.table_manager.ResumeLayout(false);
-            this.table_manager.PerformLayout();
+            this.tableManagement.ResumeLayout(false);
+            this.tableManagement.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tables_dataGridView1)).EndInit();
-            this.order_page.ResumeLayout(false);
-            this.order_page.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.order_detail_dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orders_dataGridView1)).EndInit();
             this.welcome_page.ResumeLayout(false);
             this.welcome_page.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.allOrders_dataGridView1)).EndInit();
@@ -1051,6 +935,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.payment_dataGridView1)).EndInit();
             this.orderManagement.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ordersDGW)).EndInit();
+            this.productManagement.ResumeLayout(false);
+            this.productManagement.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesDGV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1067,37 +955,13 @@
         private System.Windows.Forms.Button update_user;
         private System.Windows.Forms.Label user_label;
         private System.Windows.Forms.DataGridView users_dataGridView1;
-        private System.Windows.Forms.TabPage table_manager;
+        private System.Windows.Forms.TabPage tableManagement;
         private System.Windows.Forms.Button delete_table;
         private System.Windows.Forms.Button update_table_num;
         private System.Windows.Forms.TextBox table_number_textBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button table_add_button;
         private System.Windows.Forms.DataGridView tables_dataGridView1;
-        private System.Windows.Forms.TabPage order_page;
-        private System.Windows.Forms.Button update_Product;
-        private System.Windows.Forms.DataGridView order_detail_dataGridView1;
-        private System.Windows.Forms.DataGridView orders_dataGridView1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox count_textBox2;
-        private System.Windows.Forms.TextBox count_textBox1;
-        private System.Windows.Forms.Button add_product_button2;
-        private System.Windows.Forms.ComboBox product_comboBox1;
-        private System.Windows.Forms.ComboBox category_comboBox2;
-        private System.Windows.Forms.ComboBox tables_comboBox3;
-        private System.Windows.Forms.Button update_order_button;
-        private System.Windows.Forms.Label count_label;
-        private System.Windows.Forms.Button add_product;
-        private System.Windows.Forms.ComboBox products_comboBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox category_comboBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox tables_comboBox1;
-        private System.Windows.Forms.Button add_order;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TabPage welcome_page;
         private System.Windows.Forms.Button exit_button1;
         private System.Windows.Forms.Label role_label;
@@ -1140,5 +1004,20 @@
         private System.Windows.Forms.DataGridView ordersDGW;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.TabPage productManagement;
+        private System.Windows.Forms.TextBox categoryNAME;
+        private System.Windows.Forms.ComboBox catergoryCMB;
+        private System.Windows.Forms.TextBox productNAME;
+        private System.Windows.Forms.TextBox productPRICE;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView productsDGV;
+        private System.Windows.Forms.DataGridView categoriesDGV;
+        private System.Windows.Forms.Button saveCategory;
+        private System.Windows.Forms.Button saveProduct;
+        private System.Windows.Forms.Button deleteProduct;
+        private System.Windows.Forms.Button deleteCategory;
     }
 }

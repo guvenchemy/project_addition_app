@@ -25,6 +25,8 @@ namespace project_addition_app.Forms
         Order m_order_ = null;
         Table m_table = null;
         OrderDetail m_order_detail = null;
+        int SelectedProductId = 0;
+        int SelectedCategoryId = 0;
         string ProfilePicName;
         string role;
         List<Table> tables0;
@@ -46,7 +48,7 @@ namespace project_addition_app.Forms
             table_num_comboBox1.DisplayMember = "MasaNumarasi";
             table_num_comboBox1.ValueMember = "Id";
             var payment_types = context.PaymentTypes.ToList();
-            payment_types.Insert(0, new PaymentType {Id= 0, OdemeTuru = "Seçiniz" });
+            payment_types.Insert(0, new PaymentType { Id = 0, OdemeTuru = "Seçiniz" });
             payment_comboBox1.DataSource = payment_types;
             payment_comboBox1.DisplayMember = "OdemeTuru";
             payment_comboBox1.ValueMember = "Id";
@@ -55,17 +57,13 @@ namespace project_addition_app.Forms
 
             var categories = context.Categories.ToList();
             categories.Insert(0, new Category { Id = 0, KategoriAdi = "Seçiniz" });
-            category_comboBox1.DataSource = categories;
-            category_comboBox1.ValueMember = "Id";
-            category_comboBox1.DisplayMember = "KategoriAdi";
-            update_Product.Enabled = false;
+
             welcome_label.Text = "Hoşgeldiniz " + m_user.AdSoyad;
             role = context.Roles.Find(m_user.RoleId).RolAdi.ToString();
             role_label.Text = role;
-            profile_picBox.Image = System.Drawing.Image.FromFile(@"images\"+m_user.ProfilePicName);
-            add_product.Enabled = false;
-            add_product_button2.Enabled = false;
-            if(m_table == null)
+            profile_picBox.Image = System.Drawing.Image.FromFile(@"images\" + m_user.ProfilePicName);
+
+            if (m_table == null)
             {
                 delete_table.Enabled = false;
                 update_table_num.Enabled = false;
@@ -79,19 +77,12 @@ namespace project_addition_app.Forms
             role_comboBox1.ValueMember = "Id";
             role_comboBox1.DisplayMember = "RolAdi";
             role_comboBox1.Text = "Seçiniz";
-            tables_comboBox1.DataSource = tables;
-            tables_comboBox1.ValueMember = "Id";
-            tables_comboBox1.DisplayMember = "MasaNumarasi";
-            var tables_ = context.Tables.ToList();
-            tables_.Insert(0, new Table { Id = 0, MasaNumarasi = "Seçiniz" });
-            tables_comboBox3.DataSource = tables_;
-            tables_comboBox3.ValueMember = "Id";
-            tables_comboBox3.DisplayMember = "MasaNumarasi";
+
         }
         public void Listele()
         {
-            var list  = context.AktifSiparisler_VV.OrderByDescending(x => x.Sipariş_Numarası).ToList();
-            orders_dataGridView1.DataSource = list;
+            var list = context.AktifSiparisler_VV.OrderByDescending(x => x.Sipariş_Numarası).ToList();
+
             ordersDGW.DataSource = list;
         }
         public void ListAllOrders()
@@ -107,200 +98,17 @@ namespace project_addition_app.Forms
             payment_dataGridView1.DataSource = context.AktifSiparisler_VV.ToList();
 
         }
-        private void add_order_Click(object sender, EventArgs e)
-        {
-            m_table = context.Tables.FirstOrDefault(x => x.Id == (int)tables_comboBox1.SelectedValue);
-            
-            if (m_table.Durum == true)
-            {
-                MessageBox.Show("Bu masa zaten dolu. Lütfen başka bir masa seçin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else 
-            { 
-                Order siparis = new Order();
-                siparis.TableId = (int)tables_comboBox1.SelectedValue;
-                siparis.Tarih = DateTime.Now;
-                siparis.ToplamTutar = 0;
-                siparis.Durum = true;
-                m_table.Durum = true;
-                m_order = siparis;
-                context.Orders.Add(siparis);
-                ListDetail(m_order);
-                context.SaveChanges();
-            }
-            add_product.Enabled = true;
-            Listele();
-            ListPayments();
-        }
 
-        private void add_product_Click(object sender, EventArgs e)
-        {
-            OrderDetail siparis_detay = new OrderDetail();
-            Product selectedProduct = context.Products.FirstOrDefault(x => x.Id == (int)products_comboBox1.SelectedValue);
-            siparis_detay.OrderId = m_order.Id;
-            siparis_detay.ProductId = selectedProduct.Id;
-            siparis_detay.Adet = int.Parse(count_textBox1.Text);
-            siparis_detay.BirimFiyat = selectedProduct.Fiyat;
-            siparis_detay.ToplamFiyat = siparis_detay.BirimFiyat * siparis_detay.Adet;
-            siparis_detay.UrunAdi = selectedProduct.UrunAdi;
-            m_order.ToplamTutar += siparis_detay.ToplamFiyat;
-            context.OrderDetails.Add(siparis_detay);
-            context.SaveChanges();
-            Listele();
-            ListDetail(m_order);
-            ListPayments();
 
-        }
-      
-        private void category_comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-            try
-            {
-               
-                if (!int.TryParse(category_comboBox1.SelectedValue?.ToString(), out int categoryId) || categoryId == 0)
-                {
-                    return;
-                }
-                else
-                {
-                    var products = context.Products.Where(x => x.CategoryId == (int)category_comboBox1.SelectedValue).ToList();
-                    products.Insert(0, new Product { Id = 0, UrunAdi = "Seçiniz" });
-                    products_comboBox1.DataSource = products;
-                    products_comboBox1.ValueMember = "Id";
-                    products_comboBox1.DisplayMember = "UrunAdi";
-                }
-               
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-        }
 
-        private void tables_comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!int.TryParse(tables_comboBox1.SelectedValue?.ToString(), out int tableId) || tableId == 0)
-                {
-                    return;
-                }
-                else 
-                {
-                    m_table = context.Tables.FirstOrDefault(x => x.Id == (int)tables_comboBox1.SelectedValue);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (m_table.Durum == true)
-            {
-                MessageBox.Show("Bu masa zaten dolu. Lütfen başka bir masa seçin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-        }
-
-        public void ListDetail(Order order)
-        {
-            var order_details = context.SiparisDetaylari_V.Where(x => x.Sipariş_Numarası == order.Id).ToList();
-            order_detail_dataGridView1.DataSource = order_details;
-        }
-
-        private void update_order_button_Click(object sender, EventArgs e)
-        {
-            ListDetail(m_order_);
-            add_product_button2.Enabled = true;
-            category_comboBox2.DataSource = context.Categories.ToList();
-            category_comboBox2.ValueMember = "Id";
-            category_comboBox2.DisplayMember = "KategoriAdi";
-            //product_comboBox1.DataSource = context.Products.Where(x => x.CategoryId == (int)category_comboBox2.SelectedValue).ToList();
-
-        }
-
-        private void add_product_button2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                OrderDetail siparis_detay = new OrderDetail();
-                Product selectedProduct = context.Products.FirstOrDefault(x => x.Id == (int)product_comboBox1.SelectedValue);
-                siparis_detay.OrderId = m_order_.Id;
-                siparis_detay.ProductId = selectedProduct.Id;
-                siparis_detay.Adet = int.Parse(count_textBox2.Text);
-                siparis_detay.BirimFiyat = selectedProduct.Fiyat;
-                siparis_detay.ToplamFiyat = siparis_detay.BirimFiyat * siparis_detay.Adet;
-                siparis_detay.UrunAdi = selectedProduct.UrunAdi;
-                m_order_.ToplamTutar += siparis_detay.ToplamFiyat;
-                context.OrderDetails.Add(siparis_detay);
-                context.SaveChanges();
-
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Hata: " + ex);
-            }
-            Listele();
-            ListDetail(m_order_);
-            ListPayments();
-        }
-
-        private void tables_comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(!int.TryParse(tables_comboBox3.SelectedValue?.ToString(), out int tableId) || tableId == 0)
-            {
-                return;
-            }
-            else
-            {
-                m_table = context.Tables.FirstOrDefault(x => x.Id == (int)(tables_comboBox3.SelectedValue));
-            }
-
-            if (m_table.Durum == true)
-            {
-                m_order_ = context.Orders.Where(x => x.Table.Durum == true).FirstOrDefault(x => x.TableId == m_table.Id);
-                ListDetail(m_order_);
-
-            }
-            else
-            {
-                MessageBox.Show("Bu masa boş, düzenleyebilmek için lütfen masa adına sipariş açınız...");
-                return;
-            }
-            
-        }
-
-        private void order_detail_dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int rowIndex = e.RowIndex;
-
-            if(rowIndex >= 0)
-            {
-                var cellValue = order_detail_dataGridView1.Rows[rowIndex].Cells["Sipariş_Numarası"].Value;
-                //MessageBox.Show("deger:" + cellValue); // for debugguing
-                update_Product.Enabled = true;
-                var order_details = context.OrderDetails.Where(x => x.OrderId == (int)cellValue);
-                var rowValue = order_detail_dataGridView1.Rows[rowIndex].Cells["SiparisDetayiId"].Value;
-                m_order_detail = context.OrderDetails.Find(rowValue);
-                var product = m_order_detail.Product;
-                var category = product.Category;
-                FillCategoryList(category_comboBox2, product.Category.KategoriAdi);
-                FillProductList(product_comboBox1, product.UrunAdi);
-                count_textBox2.Text = m_order_detail.Adet.ToString();
-            }
-        }
         public void FillTablesList(dynamic control, string TableNum = "")
         {
             var table_list = context.Tables.ToList();
-            table_list.Insert(0, new Table { Id = 0, MasaNumarasi = "Seçiniz"});
+            table_list.Insert(0, new Table { Id = 0, MasaNumarasi = "Seçiniz" });
             control.DataSource = table_list;
             control.DisplayMember = "MasaNumarasi";
             control.ValueMember = "Id";
-            if(TableNum == "")
+            if (TableNum == "")
             {
                 control.Text = "Seçiniz";
 
@@ -349,7 +157,7 @@ namespace project_addition_app.Forms
             control.DataSource = rolesList;
             control.DisplayMember = "RolAdi";
             control.ValueMember = "Id";
-            if(RoleName == "")
+            if (RoleName == "")
             {
                 control.text = "Seçiniz";
             }
@@ -359,82 +167,65 @@ namespace project_addition_app.Forms
             }
         }
 
-        private void update_Product_Click(object sender, EventArgs e)
-        {
-            var product = context.Products.Find(product_comboBox1.SelectedValue);
-            m_order_detail.UrunAdi = product.UrunAdi;
-            m_order_detail.Adet = int.Parse(count_textBox2.Text);
-            m_order_detail.BirimFiyat = product.Fiyat;
-            m_order_.ToplamTutar -= m_order_detail.ToplamFiyat;
-            m_order_detail.ToplamFiyat = product.Fiyat * int.Parse(count_textBox2.Text);
-            m_order_detail.ProductId = product.Id;
-            context.SaveChanges();
-            m_order_.ToplamTutar += m_order_detail.ToplamFiyat;
-            context.SaveChanges();
-            ListDetail(m_order_);
-            Listele();
-            ListPayments();
-        }
-
-
-        private void category_comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!int.TryParse(category_comboBox2.SelectedValue?.ToString(), out int categoryId) || categoryId == 0)
-                {
-                    return;
-                }
-                else
-                {
-                    var products = context.Products.Where(x => x.CategoryId == (int)category_comboBox2.SelectedValue).ToList();
-                    products.Insert(0, new Product { Id = 0, UrunAdi = "Seçiniz" });
-                    product_comboBox1.DataSource = products;
-                    product_comboBox1.ValueMember = "Id";
-                    product_comboBox1.DisplayMember = "UrunAdi";
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-        }
 
         private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
         {
-            if( role != "Admin")
+            if (role != "Admin")
             {
-                if (e.TabPage == admin_panel) 
+                if (e.TabPage == admin_panel)
                 {
                     e.Cancel = true;
                 }
             }
-            if(e.TabPage == table_manager)
+            if (e.TabPage == tableManagement)
             {
                 ListTables();
             }
-            if(e.TabPage == welcome_page)
+            if (e.TabPage == welcome_page)
             {
-                
+
                 ListAllOrders();
             }
-}
-
-        private void orders_dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int rowIndex = e.RowIndex;
-
-            if (rowIndex >= 0)
+            if (e.TabPage == productManagement)
             {
-                var orderId = orders_dataGridView1.Rows[rowIndex].Cells["Sipariş_Numarası"].Value;
-
-                //MessageBox.Show("Deger:" + orderId); // for debugging
-                m_order_ = context.Orders.Find(orderId);
-                FillTablesList(tables_comboBox3,m_order_.Table.MasaNumarasi.ToString());
-                ListDetail(m_order_);
+                FillCategoryCMB(catergoryCMB);
+                LoadProductData();
             }
+        }
+        void FillCategoryCMB(ComboBox control, string CategoryName = "")
+        {
+            var categories = context.Categories.ToList();
+            categories.Insert(0, new Category { Id = 0, KategoriAdi = "Seçiniz" });
+            control.DataSource = categories;
+            control.DisplayMember = "KategoriAdi";
+            control.ValueMember = "Id";
+            if (CategoryName == "")
+            {
+                control.Text = "Seçiniz";
+            }
+            else
+            {
+                control.SelectedIndex = control.FindStringExact(CategoryName);
+            }
+        }
+        public void LoadProductData(int categoryId = 0)
+        {
+            List<ProductsCategory> products;
+            List<Category> categories = context.Categories.ToList();
+            categoriesDGV.DataSource = categories;
+            categoriesDGV.Columns["Products"].Visible = false;
+            if (categoryId != 0)
+            {
+                products = context.ProductsCategories.Where(p => p.CategoryId == categoryId).ToList();
+                
+            }
+            else
+            {
+                products = context.ProductsCategories.ToList();
+            }
+            productsDGV.DataSource = products;
+            productsDGV.Columns["Id"].Visible = false;
+            productsDGV.Columns["CategoryId"].Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -444,7 +235,7 @@ namespace project_addition_app.Forms
                 MasaNumarasi = table_number_textBox1.Text,
                 Durum = false,
             };
-            if(context.Tables.Any(t => t.MasaNumarasi == new_table.MasaNumarasi))
+            if (context.Tables.Any(t => t.MasaNumarasi == new_table.MasaNumarasi))
             {
                 MessageBox.Show("Bu masa zaten var, lütfen başka bir masa numarası giriniz...");
             }
@@ -462,7 +253,7 @@ namespace project_addition_app.Forms
             var tables = context.Tables.ToList();
             tables_dataGridView1.DataSource = tables;
             tables_dataGridView1.Columns["Id"].Visible = false;
-            tables_dataGridView1.Columns["Orders"].Visible = false;            
+            tables_dataGridView1.Columns["Orders"].Visible = false;
         }
 
         private void tables_dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -475,18 +266,18 @@ namespace project_addition_app.Forms
                 //MessageBox.Show("Deger" + table_id); // for debugging
                 m_table = context.Tables.Find(table_id);
                 table_number_textBox1.Text = m_table.MasaNumarasi.ToString();
-                if(m_table != null)
+                if (m_table != null)
                 {
                     delete_table.Enabled = true;
                     update_table_num.Enabled = true;
-                }    
+                }
             }
 
         }
         void ListRoles()
         {
             users_dataGridView1.DataSource = context.Users_V.ToList();
-            users_dataGridView1.Columns["Id"].Visible=false;
+            users_dataGridView1.Columns["Id"].Visible = false;
         }
         private void update_table_num_Click(object sender, EventArgs e)
         {
@@ -517,13 +308,14 @@ namespace project_addition_app.Forms
                 ProfilePicName = m_user_to_change.ProfilePicName;
                 pp_pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                 FillRolesList(role_comboBox1, m_user_to_change.Role.RolAdi);
-               
+
             }
         }
 
         private void update_user_Click(object sender, EventArgs e)
         {
-            if (context.Users.Any(u => u.KullaniciAdi == user_textBox1.Text && m_user_to_change.KullaniciAdi != user_textBox1.Text)) {
+            if (context.Users.Any(u => u.KullaniciAdi == user_textBox1.Text && m_user_to_change.KullaniciAdi != user_textBox1.Text))
+            {
                 MessageBox.Show("Bu kullanıcı adı zaten kullanılmakta!");
             }
             else
@@ -535,13 +327,13 @@ namespace project_addition_app.Forms
                 {
                     m_user_to_change.ProfilePicName = ProfilePicName;
                 }
-                if(m_user_to_change.Id == m_user.Id)
+                if (m_user_to_change.Id == m_user.Id)
                 {
                     m_user = m_user_to_change;
                     profile_picBox.Image = System.Drawing.Image.FromFile(@"images\" + m_user.ProfilePicName);
                 }
                 context.SaveChanges();
-                ListRoles();   
+                ListRoles();
             }
         }
 
@@ -552,7 +344,7 @@ namespace project_addition_app.Forms
 
         private void Exit()
         {
-            var result = MessageBox.Show("Çıkmak istediğinizden emin misiniz?","Çıkış",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            var result = MessageBox.Show("Çıkmak istediğinizden emin misiniz?", "Çıkış", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
@@ -562,7 +354,7 @@ namespace project_addition_app.Forms
 
         private void delete_user_Click(object sender, EventArgs e)
         {
-            if(m_user_to_change == m_user)
+            if (m_user_to_change == m_user)
             {
                 context.Users.Remove(m_user_to_change);
                 Exit();
@@ -663,7 +455,7 @@ namespace project_addition_app.Forms
             {
                 var order_id = payment_dataGridView1.Rows[rowIndex].Cells["Sipariş_Numarası"].Value;
                 m_order = context.Orders.Find(order_id);
-                
+
                 total_label.Text = m_order.ToplamTutar.ToString();
                 order_num_label.Text = m_order.Id.ToString();
                 total_label.Visible = true;
@@ -694,7 +486,7 @@ namespace project_addition_app.Forms
                 payment_dataGridView1.DataSource = context.AktifSiparisler_VV.ToList();
 
             }
-            else if( m_order == null)
+            else if (m_order == null)
             {
                 MessageBox.Show("Lütfen sipariş seçip tekrar deneyiniz...");
                 return;
@@ -790,7 +582,7 @@ namespace project_addition_app.Forms
             // Bilgilendirme ve PDF dosyasını açma
             MessageBox.Show("PDF başarıyla oluşturuldu! Dosya konumu: " + outputPath);
             Process.Start(new ProcessStartInfo(outputPath) { UseShellExecute = true });
-           
+
         }
         //ORDER MANAGEMENT//
 
@@ -798,12 +590,13 @@ namespace project_addition_app.Forms
         {
             flowLayoutPanel1.Controls.Clear();
             var tables = context.Tables.ToList();
-            foreach (var table in tables) {
+            foreach (var table in tables)
+            {
                 Button btn = new Button();
                 btn.Text = table.MasaNumarasi;
                 btn.Tag = table;
                 btn.Enabled = table.Durum ? false : true;
-                btn.Click += (s, e) => 
+                btn.Click += (s, e) =>
                 {
                     if (btn.Tag != null)
                     {
@@ -828,7 +621,7 @@ namespace project_addition_app.Forms
             ResizeButtons();
         }
 
-        public void ResizeButtons() 
+        public void ResizeButtons()
         {
             int butonSayisiYanYana = 3; // Varsayılan olarak yan yana kaç buton olsun istiyorsan
             int padding = 12;
@@ -859,7 +652,7 @@ namespace project_addition_app.Forms
 
         private void ordersDGW_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) 
+            if (e.RowIndex >= 0)
             {
                 if (e.ColumnIndex == 0)
                 {
@@ -884,7 +677,7 @@ namespace project_addition_app.Forms
                         LoadTables();
                         ResizeButtons();
                     }
-                    catch (Exception ex) 
+                    catch (Exception ex)
                     {
                         MessageBox.Show("Hata: " + ex);
                     }
@@ -896,6 +689,220 @@ namespace project_addition_app.Forms
                     OrderForm of = new OrderForm(m_order.Table, m_order);
                     of.ShowDialog();
                 }
+            }
+        }
+
+        private void catergoryCMB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (catergoryCMB.SelectedIndex != 0)
+            {
+                var catId = (int)catergoryCMB.SelectedValue;
+                LoadProductData(catId);
+            }
+            else
+            {
+                LoadProductData();
+            }
+        }
+
+        private void saveProduct_Click(object sender, EventArgs e)
+        {
+            if (productNAME.Text == string.Empty || productPRICE.Text == string.Empty || catergoryCMB.Text == "Seçiniz")
+            {
+                MessageBox.Show("Lütfen tüm alanları doldurunuz!");
+                return;
+            }
+            else
+            {
+                bool durum = context.Products.Any(p => p.UrunAdi.ToLower() == productNAME.Text.ToLower());
+                if (SelectedProductId == 0)
+                {
+
+                    if (!durum)
+                    {
+                        Product product = new Product();
+                        product.UrunAdi = productNAME.Text;
+                        if (!decimal.TryParse(productPRICE.Text, out decimal price))
+                        {
+                            MessageBox.Show("Geçerli bir fiyat giriniz!");
+                            return;
+                        }
+                        else
+                        {
+                            product.Fiyat = decimal.Parse(productPRICE.Text);
+
+                        }
+                        product.CategoryId = (int)catergoryCMB.SelectedValue;
+
+                        context.Products.Add(product);
+                        context.SaveChanges();
+                        MessageBox.Show("Ürün başarıyla eklendi.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bu ürün zaten mevcut, lütfen başka bir ürün adı giriniz.");
+                        return;
+                    }
+
+                }
+                else
+                {
+                    if (!durum)
+                    {
+                        var product = context.Products.Find(SelectedProductId);
+                        product.UrunAdi = productNAME.Text;
+                        if (!decimal.TryParse(productPRICE.Text, out decimal price))
+                        {
+                            MessageBox.Show("Geçerli bir fiyat giriniz!");
+                            return;
+                        }
+                        else
+                        {
+                            product.Fiyat = decimal.Parse(productPRICE.Text);
+
+                        }
+                        product.CategoryId = (int)catergoryCMB.SelectedValue;
+                        context.SaveChanges();
+                        MessageBox.Show("Ürün başarıyla güncellendi.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bu ürün zaten mevcut, lütfen başka bir ürün adı giriniz.");
+                        return;
+                    }
+                }
+                var catId = (int)catergoryCMB.SelectedValue;
+                LoadProductData(catId);
+                SelectedProductId = 0;
+            }
+        }
+
+        private void productsDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                SelectedProductId = Convert.ToInt32(productsDGV.Rows[e.RowIndex].Cells["Id"].Value);
+                var product = context.Products.Find(SelectedProductId);
+                catergoryCMB.SelectedValue = product.CategoryId;
+                productNAME.Text = product.UrunAdi;
+                productPRICE.Text = product.Fiyat.ToString();
+
+            }
+        }
+
+        private void saveCategory_Click(object sender, EventArgs e)
+        {
+            if (categoryNAME.Text == string.Empty)
+            {
+                MessageBox.Show("Lütfen kategori adını giriniz!");
+                return;
+            }
+            else
+            {
+                bool durum = context.Categories.Any(c => c.KategoriAdi.ToLower() == categoryNAME.Text.ToLower());
+                if (SelectedCategoryId == 0)
+                {
+                    if (!durum)
+                    {
+                        Category category = new Category();
+                        category.KategoriAdi = categoryNAME.Text;
+                        context.Categories.Add(category);
+                        context.SaveChanges();
+                        MessageBox.Show("Kategori başarıyla eklendi.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bu kategori zaten mevcut, lütfen başka bir kategori adı giriniz.");
+                        return;
+                    }
+                }
+                else
+                {
+                    if (!durum)
+                    {
+                        var category = context.Categories.Find(SelectedCategoryId);
+                        category.KategoriAdi = categoryNAME.Text;
+                        context.SaveChanges();
+                        MessageBox.Show("Kategori başarıyla güncellendi.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bu kategori zaten mevcut, lütfen başka bir kategori adı giriniz.");
+                        return;
+                    }
+                }
+                FillCategoryCMB(catergoryCMB);
+                LoadProductData();
+                SelectedCategoryId = 0;
+            }
+        }
+
+        private void categoriesDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                SelectedCategoryId = Convert.ToInt32(categoriesDGV.Rows[e.RowIndex].Cells["Id"].Value);
+                var category = context.Categories.Find(SelectedCategoryId);
+                categoryNAME.Text = category.KategoriAdi;
+            }
+        }
+
+        private void deleteCategory_Click(object sender, EventArgs e)
+        {
+            if(SelectedCategoryId == 0)
+            {
+                MessageBox.Show("Lütfen silmek istediğiniz kategoriyi seçiniz.");
+                return;
+            }
+            else
+            {
+                var category = context.Categories.Find(SelectedCategoryId);
+                if (category != null)
+                {
+                    var products = context.Products.Where(p => p.CategoryId == SelectedCategoryId).ToList();
+                    foreach (var product in products)
+                    {
+                        context.Products.Remove(product);
+                    }
+                    context.Categories.Remove(category);
+                    context.SaveChanges();
+                    MessageBox.Show("Kategori başarıyla silindi.");
+                    FillCategoryCMB(catergoryCMB);
+                    LoadProductData();
+                }
+                else
+                {
+                    MessageBox.Show("Kategori bulunamadı.");
+                    return;
+                }
+                SelectedCategoryId = 0;
+            }
+        }
+
+        private void deleteProduct_Click(object sender, EventArgs e)
+        {
+            if(SelectedProductId == 0)
+            {
+                MessageBox.Show("Lütfen silmek istediğiniz ürünü seçiniz.");
+                return;
+            }
+            else
+            {
+                var product = context.Products.Find(SelectedProductId);
+                if (product != null)
+                {
+                    context.Products.Remove(product);
+                    context.SaveChanges();
+                    MessageBox.Show("Ürün başarıyla silindi.");
+                    var catId = (int)catergoryCMB.SelectedValue;
+                    LoadProductData(catId);
+                }
+                else
+                {
+                    MessageBox.Show("Ürün bulunamadı.");
+                    return;
+                }
+                SelectedProductId = 0;
             }
         }
     }

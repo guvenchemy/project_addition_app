@@ -47,6 +47,7 @@ namespace project_addition_app.Models
         public virtual DbSet<Payment_V> Payment_V { get; set; }
         public virtual DbSet<AktifSiparisler_VV> AktifSiparisler_VV { get; set; }
         public virtual DbSet<SiparisDetaylari_VV> SiparisDetaylari_VV { get; set; }
+        public virtual DbSet<ProductsCategory> ProductsCategories { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

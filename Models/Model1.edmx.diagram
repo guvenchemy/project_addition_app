@@ -35,6 +35,7 @@
         <EntityTypeShape EntityType="AdisyonDBModel.Payment_V" Width="2.375" PointX="7.25" PointY="0.625" />
         <EntityTypeShape EntityType="AdisyonDBModel.AktifSiparisler_VV" Width="1.5" PointX="10.375" PointY="11.75" />
         <EntityTypeShape EntityType="AdisyonDBModel.SiparisDetaylari_VV" Width="1.5" PointX="5.375" PointY="12.75" />
+        <EntityTypeShape EntityType="AdisyonDBModel.ProductsCategory" Width="1.5" PointX="7.375" PointY="12.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
