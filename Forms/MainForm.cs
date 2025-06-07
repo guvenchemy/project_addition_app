@@ -27,6 +27,8 @@ namespace project_addition_app.Forms
         OrderDetail m_order_detail = null;
         int SelectedProductId = 0;
         int SelectedCategoryId = 0;
+        int SelectedStockId = 0;
+        int SelectedStockMovementId = 0;    
         string ProfilePicName;
         string role;
         List<Table> tables0;
@@ -191,6 +193,16 @@ namespace project_addition_app.Forms
                 FillCategoryCMB(catergoryCMB);
                 LoadProductData();
             }
+            if(e.TabPage == stockManagement)
+            {
+                FillCategoryCMB(categoryCMB1);
+                FillCategoryCMB(categoryCMB2);
+                LoadStockMovData();
+            }
+            if(e.TabPage == statistics)
+            {
+                MessageBox.Show("İstatistikler henüz eklenmedi.");
+            }
         }
         void FillCategoryCMB(ComboBox control, string CategoryName = "")
         {
@@ -206,6 +218,22 @@ namespace project_addition_app.Forms
             else
             {
                 control.SelectedIndex = control.FindStringExact(CategoryName);
+            }
+        }
+        void FillProductCMB(ComboBox control, string ProductName = "")
+        {
+            var products = context.Products.ToList();
+            products.Insert(0, new Product { Id = 0, UrunAdi = "Seçiniz" });
+            control.DataSource = products;
+            control.DisplayMember = "UrunAdi";
+            control.ValueMember = "Id";
+            if (ProductName == "")
+            {
+                control.Text = "Seçiniz";
+            }
+            else
+            {
+                control.SelectedIndex = control.FindStringExact(ProductName);
             }
         }
         public void LoadProductData(int categoryId = 0)
@@ -227,7 +255,67 @@ namespace project_addition_app.Forms
             productsDGV.Columns["Id"].Visible = false;
             productsDGV.Columns["CategoryId"].Visible = false;
         }
+        public void LoadStockData(int categoryId = 0)
+        {
+            List<Stocks_V> stocks;
+            if(categoryId != 0)
+            {
+                stocks = context.Stocks_V.Where(s => s.CategoryId == categoryId).ToList();
+            }
+            else
+            {
+                stocks = context.Stocks_V.ToList();
+            }
+            stocksDGV.DataSource = stocks;
+            stocksDGV.Columns["Id"].Visible = false;
+            stocksDGV.Columns["CategoryId"].Visible = false;
+            stocksDGV.Columns["ProductId"].Visible = false;
+        }
+        public void LoadStockMovData()
+        {
+            stockMovDGV.DataSource = context.StockMovements_V.ToList();
+            stockMovDGV.Columns["Id"].Visible = false;
+            stockMovDGV.Columns["ProductId"].Visible = false;
+            stockMovDGV.Columns["StockId"].Visible = false;
+        }
+        public void LoadStockMovData(string productName = "")
+        {
+            var stockMovs = context.StockMovements_V.ToList();
+            if(productName != "")
+            {
+                stockMovs = stockMovs.Where(s => s.UrunAdi == productName).ToList();
+            }
+            
+            stockMovDGV.DataSource = stockMovs;
+            stockMovDGV.Columns["Id"].Visible = false;
+            stockMovDGV.Columns["ProductId"].Visible = false;
+            stockMovDGV.Columns["StockId"].Visible = false;
+        }
+        public void LoadStockMovData(bool box1,bool box2)
+        {
+            if ((box1 == true && box2 == true) || (box1 == false && box2 == false))
+            {
+                LoadStockMovData();
+                return;
+            }
+            else
+            {
+                var stockMovs = context.StockMovements_V.ToList();
+                if (box1 == true)
+                {
+                    stockMovs = stockMovs.Where(s => s.HareketTuru == box1).ToList();
+                }
+                else
+                {
+                    stockMovs = stockMovs.Where(s => s.HareketTuru == box2).ToList();
+                }
+                stockMovDGV.DataSource = stockMovs;
+                stockMovDGV.Columns["Id"].Visible = false;
+                stockMovDGV.Columns["ProductId"].Visible = false;
+                stockMovDGV.Columns["StockId"].Visible = false;
 
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             Table new_table = new Table()
@@ -921,6 +1009,267 @@ namespace project_addition_app.Forms
         {
             PasswordChangerForm passwordChangerForm = new PasswordChangerForm(m_user);
             passwordChangerForm.ShowDialog();
+        }
+
+        private void categoryCMB1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (categoryCMB1.SelectedIndex != 0)
+            {
+                var catId = (int)categoryCMB1.SelectedValue;
+                LoadStockData(catId);
+                var products = context.Products.Where(p => p.CategoryId == catId).ToList();
+                products.Insert(0, new Product { Id = 0, UrunAdi = "Seçiniz" });
+                productCMB.DataSource = products;
+                productCMB.DisplayMember = "UrunAdi";
+                productCMB.ValueMember = "Id";
+            }
+            else
+            {
+                LoadStockData();
+            }
+        }
+
+        private void saveStock_Click(object sender, EventArgs e)
+        {
+            if (SelectedStockId == 0)
+            {
+                if (categoryCMB1.Text == "Seçiniz" || productCMB.Text == string.Empty || productCMB.Text == "Seçiniz" || unitType.Text == string.Empty)
+                {
+                    MessageBox.Show("Lütfen tüm alanları doldurunuz!");
+                    return;
+                }
+                else
+                {
+                    bool durum = context.Stocks.Any(s => s.ProductId == (int)productCMB.SelectedValue);
+                    if (durum)
+                    {
+                        MessageBox.Show("Bu ürün envanter kaydı zaten mevcut, lütfen başka bir ürün giriniz.");
+                        return;
+                    }
+                    else
+                    {
+                        Stock stock = new Stock();
+                        stock.Miktar = 0;
+                        stock.Birim = unitType.Text;
+                        stock.MinSeviye = 0;
+                        stock.ProductId = (int)productCMB.SelectedValue;
+                        stock.SonGuncellemeTarihi = DateTime.Now;
+
+                        context.Stocks.Add(stock);
+                        context.SaveChanges();
+                        MessageBox.Show("Kayıt başarıyla yapıldı.");
+                    }
+                    LoadStockData();
+                }
+            }
+            else
+            {
+                if (categoryCMB1.Text == "Seçiniz" || productCMB.Text == string.Empty || productCMB.Text == "Seçiniz" || unitType.Text == string.Empty)
+                {
+                    MessageBox.Show("Lütfen tüm alanları doldurunuz!");
+                    return;
+                }
+                else
+                {
+                    var stock = context.Stocks.Find(SelectedStockId);
+                    stock.ProductId = (int)productCMB.SelectedValue;
+                    stock.Birim = unitType.Text;
+                    stock.SonGuncellemeTarihi = DateTime.Now;
+                    context.SaveChanges();
+                    LoadStockData();
+                    MessageBox.Show("Kayıt güncelleme başarıyla yapıldı.");
+                    SelectedStockId = 0;
+                }
+            }
+        }
+
+        private void stocksDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >= 0)
+            {
+                try
+                {
+                    categoryCMB1.SelectedValue = stocksDGV.Rows[e.RowIndex].Cells["CategoryId"].Value;
+                    productCMB.SelectedValue = stocksDGV.Rows[e.RowIndex].Cells["ProductId"].Value;
+                    unitType.Text = stocksDGV.Rows[e.RowIndex].Cells["Birim"].Value.ToString();
+                    SelectedStockId = (int)stocksDGV.Rows[e.RowIndex].Cells["Id"].Value;
+                }
+                catch(Exception ex)
+                {
+                    return;
+                }
+            }
+        }
+
+        private void categoryCMB2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            if(categoryCMB2.SelectedIndex != 0)
+            {
+
+                var catId = (int)categoryCMB2.SelectedValue;
+                var products = context.Products.Where(p => p.CategoryId == catId).ToList();
+                products.Insert(0, new Product { Id = 0, UrunAdi = "Seçiniz" });
+                productCMB1.DataSource = products;
+                productCMB1.DisplayMember = "UrunAdi";
+                productCMB1.ValueMember = "Id";
+            }
+           
+        }
+
+        private void productCMB1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (productCMB1.SelectedIndex == 0)
+            {
+                LoadStockMovData();
+                return;
+            }
+            var product = context.Products.Find((int)productCMB1.SelectedValue);
+            LoadStockMovData(product.UrunAdi);
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadStockMovData(checkBox2.Checked,checkBox3.Checked);
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadStockMovData(checkBox2.Checked, checkBox3.Checked);
+        }
+
+        private void saveStockMov_Click(object sender, EventArgs e)
+        {
+            if (SelectedStockMovementId == 0)
+            {
+                if (productCMB1.Text == "Seçiniz")
+                {
+                    MessageBox.Show("Lütfen ürün seçiniz.");
+                    return;
+                }
+                else
+                {
+                    var product = context.Products.Find((int)productCMB1.SelectedValue);
+                    var stockState = context.Stocks.Any(s => s.ProductId == product.Id);
+                    if (stockState == true)
+                    {
+                        var stock = context.Stocks.FirstOrDefault(s => s.ProductId == product.Id);
+                        StockMovement stockMovement = new StockMovement();
+                        stockMovement.StockId = stock.Id;
+                        bool giris_cikis = true;
+                        if (checkBox2.Checked == true && checkBox3.Checked == true)
+                        {
+                            MessageBox.Show("Lütfen sadece giriş ya da çıkış seçiniz.");
+                            return;
+                        }
+                        else if (checkBox2.Checked == true)
+                        {
+                            giris_cikis = true; // Giriş
+                            stockMovement.HareketTuru = giris_cikis;
+                        }
+                        else if (checkBox3.Checked == true)
+                        {
+                            giris_cikis = false; // Çıkış
+                            stockMovement.HareketTuru = giris_cikis;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Lütfen hareket türünü seçiniz.");
+                            return;
+                        }
+                        if (!int.TryParse(prCount.Text, out int miktar))
+                        {
+                            MessageBox.Show("Lütfen geçerli bir miktar giriniz.");
+                            return;
+                        }
+                        else
+                        {
+                            stockMovement.Miktar = miktar;
+                        }
+                        stockMovement.Tarih = DateTime.Now;
+                        stockMovement.Aciklama = description.Text;
+                        context.StockMovements.Add(stockMovement);
+                        if (giris_cikis == true)
+                        {
+                            stock.Miktar += miktar;
+                        }
+                        else
+                        {
+                            if (stock.Miktar < miktar)
+                            {
+                                MessageBox.Show("Envanterde yeterli miktar bulunmamaktadır.");
+                                return;
+                            }
+                            stock.Miktar -= miktar;
+                        }
+                        context.SaveChanges();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bu ürün için envanter kaydı bulunmamaktadır. Lütfen önce envanter kaydı oluşturunuz.");
+                        return;
+                    }
+
+                }
+            }
+            else
+            {
+                var stockMovement = context.StockMovements.Find(SelectedStockMovementId);
+                var stock = context.Stocks.Find(stockMovement.StockId);
+                if (productCMB1.Text == "Seçiniz")
+                {
+                    MessageBox.Show("Lütfen ürün seçiniz.");
+                    return;
+                }
+                else
+                {
+                    if (!int.TryParse(prCount.Text, out int miktar))
+                    {
+                        MessageBox.Show("Lütfen geçerli bir miktar giriniz.");
+                        return;
+                    }
+                    else
+                    {
+                        int fark = miktar - stockMovement.Miktar;
+                        stockMovement.Miktar = miktar;
+                        stockMovement.Aciklama = description.Text;
+                        stockMovement.Tarih = DateTime.Now;
+                        stock.Miktar += fark; // Güncellenen miktarı ekle ya da çıkar
+                        context.SaveChanges();
+                        LoadStockMovData(productCMB1.Text);
+                        LoadStockData();
+                        SelectedStockMovementId = 0;
+                    }
+                }
+            }
+            LoadStockMovData();
+            LoadStockData();
+        }
+
+        private void stockMovDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >= 0)
+            {
+                SelectedStockMovementId = Convert.ToInt32(stockMovDGV.Rows[e.RowIndex].Cells["Id"].Value);
+                // Güncelleme işlemi
+                var stockMovement = context.StockMovements.Find(SelectedStockMovementId);
+                productCMB1.SelectedValue = stockMovement.Stock.ProductId;
+                categoryCMB2.SelectedValue = stockMovement.Stock.Product.CategoryId;
+                description.Text = stockMovement.Aciklama;
+                prCount.Text = stockMovement.Miktar.ToString();
+                var stock = context.Stocks.Find(stockMovement.StockId);
+                bool giris_cikis = stockMovement.HareketTuru;
+                if (giris_cikis == true)
+                {
+                    checkBox2.Checked = true; // Giriş
+                    checkBox3.Checked = false; // Çıkış
+                }
+                else
+                {
+                    checkBox2.Checked = false; // Giriş
+                    checkBox3.Checked = true; // Çıkış
+                }
+            }
         }
     }
 }

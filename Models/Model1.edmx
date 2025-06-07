@@ -257,6 +257,51 @@ warning 6002: The table/view 'AdisyonDB.dbo.SiparisListesi_V' does not have a pr
           <Property Name="Durum" Type="bit" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'AdisyonDB.dbo.StockMovements_V' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="StockMovements_V">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="StockId" />
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="UrunAdi" />
+            <PropertyRef Name="HareketTuru" />
+            <PropertyRef Name="Miktar" />
+            <PropertyRef Name="Birim" />
+            <PropertyRef Name="Tarih" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="StockId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="UrunAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="HareketTuru" Type="bit" Nullable="false" />
+          <Property Name="Miktar" Type="int" Nullable="false" />
+          <Property Name="Birim" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tarih" Type="datetime" Nullable="false" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'AdisyonDB.dbo.Stocks_V' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Stocks_V">
+          <Key>
+            <PropertyRef Name="UrunAdi" />
+            <PropertyRef Name="KategoriAdi" />
+            <PropertyRef Name="GüncelMiktar" />
+            <PropertyRef Name="Birim" />
+            <PropertyRef Name="SonGuncellemeTarihi" />
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="UrunAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="KategoriAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="GüncelMiktar" Type="int" Nullable="false" />
+          <Property Name="Birim" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SonGuncellemeTarihi" Type="datetime" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'AdisyonDB.dbo.Users_V' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Users_V">
           <Key>
@@ -510,6 +555,31 @@ warning 6002: The table/view 'AdisyonDB.dbo.Users_V' does not have a primary key
     [SiparisListesi_V].[Hesap Toplam Tutar] AS [Hesap Toplam Tutar], 
     [SiparisListesi_V].[Durum] AS [Durum]
     FROM [dbo].[SiparisListesi_V] AS [SiparisListesi_V]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="StockMovements_V" EntityType="Self.StockMovements_V" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [StockMovements_V].[Id] AS [Id], 
+    [StockMovements_V].[StockId] AS [StockId], 
+    [StockMovements_V].[ProductId] AS [ProductId], 
+    [StockMovements_V].[UrunAdi] AS [UrunAdi], 
+    [StockMovements_V].[HareketTuru] AS [HareketTuru], 
+    [StockMovements_V].[Miktar] AS [Miktar], 
+    [StockMovements_V].[Birim] AS [Birim], 
+    [StockMovements_V].[Tarih] AS [Tarih], 
+    [StockMovements_V].[Aciklama] AS [Aciklama]
+    FROM [dbo].[StockMovements_V] AS [StockMovements_V]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Stocks_V" EntityType="Self.Stocks_V" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Stocks_V].[UrunAdi] AS [UrunAdi], 
+    [Stocks_V].[KategoriAdi] AS [KategoriAdi], 
+    [Stocks_V].[GüncelMiktar] AS [GüncelMiktar], 
+    [Stocks_V].[Birim] AS [Birim], 
+    [Stocks_V].[SonGuncellemeTarihi] AS [SonGuncellemeTarihi], 
+    [Stocks_V].[Id] AS [Id], 
+    [Stocks_V].[ProductId] AS [ProductId], 
+    [Stocks_V].[CategoryId] AS [CategoryId]
+    FROM [dbo].[Stocks_V] AS [Stocks_V]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="Users_V" EntityType="Self.Users_V" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -969,6 +1039,8 @@ warning 6002: The table/view 'AdisyonDB.dbo.Users_V' does not have a primary key
           <EntitySet Name="AktifSiparisler_VV" EntityType="AdisyonDBModel.AktifSiparisler_VV" />
           <EntitySet Name="SiparisDetaylari_VV" EntityType="AdisyonDBModel.SiparisDetaylari_VV" />
           <EntitySet Name="ProductsCategories" EntityType="AdisyonDBModel.ProductsCategory" />
+          <EntitySet Name="StockMovements_V" EntityType="AdisyonDBModel.StockMovements_V" />
+          <EntitySet Name="Stocks_V" EntityType="AdisyonDBModel.Stocks_V" />
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -1053,6 +1125,47 @@ warning 6002: The table/view 'AdisyonDB.dbo.Users_V' does not have a primary key
           <Property Name="Fiyat" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
           <Property Name="KategoriAdi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StockMovements_V">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="StockId" />
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="UrunAdi" />
+            <PropertyRef Name="HareketTuru" />
+            <PropertyRef Name="Miktar" />
+            <PropertyRef Name="Birim" />
+            <PropertyRef Name="Tarih" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="StockId" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="UrunAdi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HareketTuru" Type="Boolean" Nullable="false" />
+          <Property Name="Miktar" Type="Int32" Nullable="false" />
+          <Property Name="Birim" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Aciklama" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Stocks_V">
+          <Key>
+            <PropertyRef Name="UrunAdi" />
+            <PropertyRef Name="KategoriAdi" />
+            <PropertyRef Name="GüncelMiktar" />
+            <PropertyRef Name="Birim" />
+            <PropertyRef Name="SonGuncellemeTarihi" />
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="UrunAdi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KategoriAdi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GüncelMiktar" Type="Int32" Nullable="false" />
+          <Property Name="Birim" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SonGuncellemeTarihi" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
           <Property Name="CategoryId" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
@@ -1311,6 +1424,35 @@ warning 6002: The table/view 'AdisyonDB.dbo.Users_V' does not have a primary key
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="KategoriAdi" ColumnName="KategoriAdi" />
                 <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StockMovements_V">
+            <EntityTypeMapping TypeName="AdisyonDBModel.StockMovements_V">
+              <MappingFragment StoreEntitySet="StockMovements_V">
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Birim" ColumnName="Birim" />
+                <ScalarProperty Name="Miktar" ColumnName="Miktar" />
+                <ScalarProperty Name="HareketTuru" ColumnName="HareketTuru" />
+                <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="StockId" ColumnName="StockId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stocks_V">
+            <EntityTypeMapping TypeName="AdisyonDBModel.Stocks_V">
+              <MappingFragment StoreEntitySet="Stocks_V">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SonGuncellemeTarihi" ColumnName="SonGuncellemeTarihi" />
+                <ScalarProperty Name="Birim" ColumnName="Birim" />
+                <ScalarProperty Name="GüncelMiktar" ColumnName="GüncelMiktar" />
+                <ScalarProperty Name="KategoriAdi" ColumnName="KategoriAdi" />
                 <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
               </MappingFragment>
             </EntityTypeMapping>
