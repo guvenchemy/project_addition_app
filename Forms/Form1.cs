@@ -17,7 +17,7 @@ namespace project_addition_app
     public partial class Form1 : Form
     {
         AdisyonDBEntities context = new AdisyonDBEntities();
-        string ProfilePicName = string.Empty;
+        string ProfilePicName = "default.png";
         public Form1()
         {
             InitializeComponent();
