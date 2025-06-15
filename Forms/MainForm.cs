@@ -399,7 +399,7 @@ namespace project_addition_app.Forms
             if (rowIndex >= 0)
             {
                 var user_id = users_dataGridView1.Rows[rowIndex].Cells["Id"].Value;
-                MessageBox.Show("Deger" + user_id); // for debugging
+                //MessageBox.Show("Deger" + user_id); // for debugging
                 m_user_to_change = context.Users.Find(user_id);
                 user_textBox1.Text = m_user_to_change.KullaniciAdi.ToString();
                 fullname_textBox1.Text = m_user_to_change.AdSoyad.ToString();

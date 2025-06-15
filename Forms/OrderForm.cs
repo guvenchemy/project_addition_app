@@ -69,7 +69,8 @@ namespace project_addition_app.Forms
                 FlowLayoutPanel panel = new FlowLayoutPanel
                 {
                     Dock = DockStyle.Fill,
-                    AutoScroll = true
+                    AutoScroll = true,
+                    BackColor = Color.SaddleBrown,
                 };
                 // TabPage içine FlowLayoutPanel ekle
                 tabPage.Controls.Add(panel);
@@ -88,6 +89,8 @@ namespace project_addition_app.Forms
                     Button btn = new Button();
                     btn.Text = product.UrunAdi;
                     btn.Tag = product;
+                    btn.BackColor = Color.FromArgb(0xFF, 0x4B, 0x36, 0x21);
+                    btn.ForeColor = Color.Gold;
                     btn.Click += (s, e) =>
                     {
                         OrderDetail detail = new OrderDetail();
@@ -142,6 +145,8 @@ namespace project_addition_app.Forms
                 {
                     btn.Width = butonGenislik;
                     btn.Height = (int)(butonGenislik * 0.8); // Yüksekliği orantılı istersen
+                    btn.BackColor = Color.FromArgb(0xFF, 0x4B, 0x36, 0x21);
+                    btn.ForeColor = Color.Gold;
                 }
             }
         }

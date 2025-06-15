@@ -58,19 +58,27 @@
             // 
             // name_textBox1
             // 
+            this.name_textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            this.name_textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.name_textBox1.ForeColor = System.Drawing.Color.Gold;
             resources.ApplyResources(this.name_textBox1, "name_textBox1");
             this.name_textBox1.Name = "name_textBox1";
             // 
             // password_textBox2
             // 
+            this.password_textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            this.password_textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.password_textBox2.ForeColor = System.Drawing.Color.Gold;
             resources.ApplyResources(this.password_textBox2, "password_textBox2");
             this.password_textBox2.Name = "password_textBox2";
             // 
             // girisYap_button
             // 
+            this.girisYap_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
             resources.ApplyResources(this.girisYap_button, "girisYap_button");
+            this.girisYap_button.ForeColor = System.Drawing.Color.Gold;
             this.girisYap_button.Name = "girisYap_button";
-            this.girisYap_button.UseVisualStyleBackColor = true;
+            this.girisYap_button.UseVisualStyleBackColor = false;
             this.girisYap_button.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
@@ -85,7 +93,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightCoral;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.resimYukle_button);
             resources.ApplyResources(this.panel1, "panel1");
@@ -93,44 +101,59 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.LavenderBlush;
+            this.pictureBox1.BackColor = System.Drawing.Color.SaddleBrown;
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
             // resimYukle_button
             // 
+            this.resimYukle_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
             resources.ApplyResources(this.resimYukle_button, "resimYukle_button");
+            this.resimYukle_button.ForeColor = System.Drawing.Color.Gold;
             this.resimYukle_button.Name = "resimYukle_button";
-            this.resimYukle_button.UseVisualStyleBackColor = true;
+            this.resimYukle_button.UseVisualStyleBackColor = false;
             this.resimYukle_button.Click += new System.EventHandler(this.resimYukle_button_Click);
             // 
             // name_textBox4
             // 
+            this.name_textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            this.name_textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.name_textBox4.ForeColor = System.Drawing.Color.Gold;
             resources.ApplyResources(this.name_textBox4, "name_textBox4");
             this.name_textBox4.Name = "name_textBox4";
             // 
             // nickname_textBox3
             // 
+            this.nickname_textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            this.nickname_textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nickname_textBox3.ForeColor = System.Drawing.Color.Gold;
             resources.ApplyResources(this.nickname_textBox3, "nickname_textBox3");
             this.nickname_textBox3.Name = "nickname_textBox3";
             // 
             // kayitOl_button
             // 
+            this.kayitOl_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
             resources.ApplyResources(this.kayitOl_button, "kayitOl_button");
+            this.kayitOl_button.ForeColor = System.Drawing.Color.Gold;
             this.kayitOl_button.Name = "kayitOl_button";
-            this.kayitOl_button.UseVisualStyleBackColor = true;
+            this.kayitOl_button.UseVisualStyleBackColor = false;
             this.kayitOl_button.Click += new System.EventHandler(this.kayitOl_button_Click);
             // 
             // password_textBox5
             // 
+            this.password_textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            this.password_textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.password_textBox5.ForeColor = System.Drawing.Color.Gold;
             resources.ApplyResources(this.password_textBox5, "password_textBox5");
             this.password_textBox5.Name = "password_textBox5";
             // 
             // role_comboBox1
             // 
-            this.role_comboBox1.FormattingEnabled = true;
+            this.role_comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
             resources.ApplyResources(this.role_comboBox1, "role_comboBox1");
+            this.role_comboBox1.ForeColor = System.Drawing.Color.Gold;
+            this.role_comboBox1.FormattingEnabled = true;
             this.role_comboBox1.Name = "role_comboBox1";
             // 
             // label6
@@ -172,9 +195,11 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
             resources.ApplyResources(this.button1, "button1");
+            this.button1.ForeColor = System.Drawing.Color.Gold;
             this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // panel3
@@ -196,10 +221,10 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightCoral;
+            this.BackColor = System.Drawing.Color.SaddleBrown;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
-            this.ForeColor = System.Drawing.Color.Black;
+            this.ForeColor = System.Drawing.Color.Gold;
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);

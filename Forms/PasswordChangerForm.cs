@@ -20,5 +20,25 @@ namespace project_addition_app.Forms
             InitializeComponent();
             m_user = user;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (SecurityHelper.CheckPasswordHash(old_pass.Text, m_user.SifreHash)) 
+            {
+                m_user.SifreHash = SecurityHelper.HashPassword(new_pass.Text);
+                context.SaveChanges();
+                MessageBox.Show("Şifreniz Başarıyla Değiştirildi!");
+            
+            }
+            else
+            {
+                MessageBox.Show("Güncel şifrenizi yanlış girdiniz!");
+            }
+        }
+
+        private void PasswordChangerForm_Load(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.SaddleBrown;
+        }
     }
 }
