@@ -50,6 +50,7 @@ namespace project_addition_app.Models
         public virtual DbSet<ProductsCategory> ProductsCategories { get; set; }
         public virtual DbSet<StockMovements_V> StockMovements_V { get; set; }
         public virtual DbSet<Stocks_V> Stocks_V { get; set; }
+        public virtual DbSet<PermissionLevel> PermissionLevels { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

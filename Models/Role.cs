@@ -18,6 +18,7 @@ namespace project_addition_app.Models
         public Role()
         {
             this.Users = new HashSet<User>();
+            this.PermissionLevels = new HashSet<PermissionLevel>();
         }
     
         public int Id { get; set; }
@@ -25,5 +26,7 @@ namespace project_addition_app.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<User> Users { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PermissionLevel> PermissionLevels { get; set; }
     }
 }

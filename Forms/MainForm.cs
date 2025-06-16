@@ -28,7 +28,7 @@ namespace project_addition_app.Forms
         int SelectedProductId = 0;
         int SelectedCategoryId = 0;
         int SelectedStockId = 0;
-        int SelectedStockMovementId = 0;    
+        int SelectedStockMovementId = 0;
         string ProfilePicName;
         string role;
         List<Table> tables0;
@@ -40,6 +40,7 @@ namespace project_addition_app.Forms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            LoadPermissions();
             LoadTables();
             ResizeButtons();
             ListAllOrders();
@@ -75,10 +76,17 @@ namespace project_addition_app.Forms
             order_num_label.Visible = false;
             var tables = context.Tables.ToList();
             tables.Insert(0, new Table { Id = 0, MasaNumarasi = "Seçiniz" });
+
             role_comboBox1.DataSource = context.Roles.ToList();
             role_comboBox1.ValueMember = "Id";
             role_comboBox1.DisplayMember = "RolAdi";
             role_comboBox1.Text = "Seçiniz";
+
+            var roles = context.Roles.ToList();
+            roles.Insert(0, new Role { Id = 0, RolAdi = "Seçiniz" });
+            role_comboBox2.DataSource = roles;
+            role_comboBox2.DisplayMember = "RolAdi";
+            role_comboBox2.ValueMember = "Id";
 
         }
         public void Listele()
@@ -193,15 +201,70 @@ namespace project_addition_app.Forms
                 FillCategoryCMB(catergoryCMB);
                 LoadProductData();
             }
-            if(e.TabPage == stockManagement)
+            if (e.TabPage == stockManagement)
             {
                 FillCategoryCMB(categoryCMB1);
                 FillCategoryCMB(categoryCMB2);
                 LoadStockMovData();
             }
-            if(e.TabPage == statistics)
+            if (e.TabPage == statistics)
             {
                 MessageBox.Show("İstatistikler henüz eklenmedi.");
+            }
+        }
+        void LoadPermissions()
+        {
+            if (role_comboBox2.SelectedIndex != 0)
+            {
+                var permissions = context.PermissionLevels.FirstOrDefault(p => p.RoleId == m_user.RoleId);
+                if (permissions.canOrder)
+                {
+                    orderManagement.Enabled = true;
+                }
+                else
+                {
+                    orderManagement.Enabled = false;
+                }
+                if (permissions.canTable)
+                {
+                    tableManagement.Enabled = true;
+                }
+                else
+                {
+                    tableManagement.Enabled = false;
+                }
+                if (permissions.canProduct)
+                {
+                    productManagement.Enabled = true;
+                }
+                else
+                {
+                    productManagement.Enabled = false;
+                }
+                if (permissions.canPayment)
+                {
+                    paymentManagement.Enabled = true;
+                }
+                else
+                {
+                    paymentManagement.Enabled = false;
+                }
+                if (permissions.canStock)
+                {
+                    stockManagement.Enabled = true;
+                }
+                else
+                {
+                    stockManagement.Enabled = false;
+                }
+                if (permissions.canStatistic)
+                {
+                    statistics.Enabled = true;
+                }
+                else
+                {
+                    statistics.Enabled = false;
+                }
             }
         }
         void FillCategoryCMB(ComboBox control, string CategoryName = "")
@@ -245,7 +308,7 @@ namespace project_addition_app.Forms
             if (categoryId != 0)
             {
                 products = context.ProductsCategories.Where(p => p.CategoryId == categoryId).ToList();
-                
+
             }
             else
             {
@@ -258,7 +321,7 @@ namespace project_addition_app.Forms
         public void LoadStockData(int categoryId = 0)
         {
             List<Stocks_V> stocks;
-            if(categoryId != 0)
+            if (categoryId != 0)
             {
                 stocks = context.Stocks_V.Where(s => s.CategoryId == categoryId).ToList();
             }
@@ -281,17 +344,17 @@ namespace project_addition_app.Forms
         public void LoadStockMovData(string productName = "")
         {
             var stockMovs = context.StockMovements_V.ToList();
-            if(productName != "")
+            if (productName != "")
             {
                 stockMovs = stockMovs.Where(s => s.UrunAdi == productName).ToList();
             }
-            
+
             stockMovDGV.DataSource = stockMovs;
             stockMovDGV.Columns["Id"].Visible = false;
             stockMovDGV.Columns["ProductId"].Visible = false;
             stockMovDGV.Columns["StockId"].Visible = false;
         }
-        public void LoadStockMovData(bool box1,bool box2)
+        public void LoadStockMovData(bool box1, bool box2)
         {
             if ((box1 == true && box2 == true) || (box1 == false && box2 == false))
             {
@@ -948,7 +1011,7 @@ namespace project_addition_app.Forms
 
         private void deleteCategory_Click(object sender, EventArgs e)
         {
-            if(SelectedCategoryId == 0)
+            if (SelectedCategoryId == 0)
             {
                 MessageBox.Show("Lütfen silmek istediğiniz kategoriyi seçiniz.");
                 return;
@@ -980,7 +1043,7 @@ namespace project_addition_app.Forms
 
         private void deleteProduct_Click(object sender, EventArgs e)
         {
-            if(SelectedProductId == 0)
+            if (SelectedProductId == 0)
             {
                 MessageBox.Show("Lütfen silmek istediğiniz ürünü seçiniz.");
                 return;
@@ -1085,7 +1148,7 @@ namespace project_addition_app.Forms
 
         private void stocksDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
                 try
                 {
@@ -1094,7 +1157,7 @@ namespace project_addition_app.Forms
                     unitType.Text = stocksDGV.Rows[e.RowIndex].Cells["Birim"].Value.ToString();
                     SelectedStockId = (int)stocksDGV.Rows[e.RowIndex].Cells["Id"].Value;
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     return;
                 }
@@ -1103,8 +1166,8 @@ namespace project_addition_app.Forms
 
         private void categoryCMB2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            if(categoryCMB2.SelectedIndex != 0)
+
+            if (categoryCMB2.SelectedIndex != 0)
             {
 
                 var catId = (int)categoryCMB2.SelectedValue;
@@ -1114,7 +1177,7 @@ namespace project_addition_app.Forms
                 productCMB1.DisplayMember = "UrunAdi";
                 productCMB1.ValueMember = "Id";
             }
-           
+
         }
 
         private void productCMB1_SelectedIndexChanged(object sender, EventArgs e)
@@ -1130,7 +1193,7 @@ namespace project_addition_app.Forms
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            LoadStockMovData(checkBox2.Checked,checkBox3.Checked);
+            LoadStockMovData(checkBox2.Checked, checkBox3.Checked);
         }
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
@@ -1248,7 +1311,7 @@ namespace project_addition_app.Forms
 
         private void stockMovDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
                 SelectedStockMovementId = Convert.ToInt32(stockMovDGV.Rows[e.RowIndex].Cells["Id"].Value);
                 // Güncelleme işlemi
@@ -1270,6 +1333,256 @@ namespace project_addition_app.Forms
                     checkBox3.Checked = true; // Çıkış
                 }
             }
+        }
+
+        private void add_role_Click(object sender, EventArgs e)
+        {
+            if (new_role.Text == string.Empty)
+            {
+                MessageBox.Show("Lütfen rol adını giriniz.");
+                return;
+            }
+            else if (context.Roles.Any(r => r.RolAdi.ToLower() == new_role.Text.ToLower()))
+            {
+                MessageBox.Show("Bu rol zaten mevcut, lütfen başka bir rol adı giriniz.");
+                return;
+            }
+            else
+            {
+                Role role = new Role();
+                role.RolAdi = new_role.Text;
+                context.Roles.Add(role);
+
+                var  permissions = new PermissionLevel();
+                permissions.RoleId = role.Id;
+                
+
+                if (order.Checked)
+                {
+                    permissions.canOrder = true;
+                }
+                else
+                {
+                    permissions.canOrder = false;
+                }
+                if (table.Checked)
+                {
+                    permissions.canTable = true;
+                }
+                else
+                {
+                    permissions.canTable = false;
+                }
+                if (product.Checked)
+                {
+                    permissions.canProduct = true;
+                }
+                else
+                {
+                    permissions.canProduct = false;
+                }
+                if (payment.Checked)
+                {
+                    permissions.canPayment = true;
+                }
+                else
+                {
+                    permissions.canPayment = false;
+                }
+                if (stocks.Checked)
+                {
+                    permissions.canStock = true;
+                }
+                else
+                {
+                    permissions.canStock = false;
+                }
+                if (statistic.Checked)
+                {
+                    permissions.canStatistic = true;
+                }
+                else
+                {
+                    permissions.canStatistic = false;
+                }
+                if (admin.Checked)
+                {
+                    permissions.canUser = true;
+                }
+                else
+                {
+                    permissions.canUser = false;
+                }
+                context.SaveChanges();
+
+                FillRolesList(role_comboBox1);
+                FillRolesList(role_comboBox2,role.RolAdi);
+
+            }
+        }
+
+        private void delete_role_Click(object sender, EventArgs e)
+        {
+            var role = context.Roles.FirstOrDefault(r => r.RolAdi.ToLower() == role_comboBox1.Text.ToLower());
+            if (role.RolAdi == "Admin")
+            {
+                MessageBox.Show("Admin rolü silinemez.");
+            }
+            else
+            {
+                if (role != null)
+                {
+                    context.Roles.Remove(role);
+                    context.SaveChanges();
+                    MessageBox.Show("Rol başarıyla silindi.");
+                    ListRoles();
+                    FillRolesList(role_comboBox1);
+                    FillRolesList(role_comboBox2);
+                }
+                else
+                {
+                    MessageBox.Show("Rol bulunamadı.");
+                }
+            }
+        }
+
+        private void role_comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(role_comboBox2.SelectedIndex != 0)
+            {
+
+                var role = context.Roles.FirstOrDefault(r => r.Id == (int)role_comboBox2.SelectedValue);
+                var permissions = context.PermissionLevels.FirstOrDefault(p => p.RoleId == role.Id);
+
+                if (permissions.canOrder)
+                {
+                    order.Checked = true;
+                }
+                else
+                {
+                    order.Checked = false;
+                }
+                if (permissions.canTable)
+                {
+                    table.Checked = true;
+                }
+                else
+                {
+                    table.Checked = false;
+                }
+                if (permissions.canProduct)
+                {
+                    product.Checked = true;
+                }
+                else
+                {
+                    product.Checked = false;
+                }
+                if (permissions.canPayment)
+                {
+                    payment.Checked = true;
+                }
+                else
+                {
+                    payment.Checked = false;
+                }
+                if (permissions.canStock)
+                {
+                    stocks.Checked = true;
+                }
+                else
+                {
+                    stocks.Checked = false;
+                }
+                if (permissions.canStatistic)
+                {
+                    statistic.Checked = true;
+                }
+                else
+                {
+                    statistic.Checked = false;
+                }
+                if (permissions.canUser)
+                {
+                    admin.Checked = true;
+                }
+                else
+                {
+                    admin.Checked = false;
+                }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (role_comboBox2.SelectedIndex != 0)
+            {
+                var role = context.Roles.FirstOrDefault(r => r.Id == (int)role_comboBox2.SelectedValue);
+                var permissions = context.PermissionLevels.FirstOrDefault(p => p.RoleId == role.Id);
+                if(permissions == null)
+                {
+                    permissions = new PermissionLevel();
+                }
+
+                if (order.Checked)
+                {
+                    permissions.canOrder = true;
+                }
+                else
+                {
+                    permissions.canOrder = false;
+                }
+                if (table.Checked)
+                {
+                    permissions.canTable = true;
+                }
+                else
+                {
+                    permissions.canTable = false;
+                }
+                if (product.Checked)
+                {
+                    permissions.canProduct = true;
+                }
+                else
+                {
+                    permissions.canProduct = false;
+                }
+                if (payment.Checked)
+                {
+                    permissions.canPayment = true;
+                }
+                else
+                {
+                    permissions.canPayment = false;
+                }
+                if (stocks.Checked)
+                {
+                    permissions.canStock = true;
+                }
+                else
+                {
+                    permissions.canStock = false;
+                }
+                if (statistic.Checked)
+                {
+                    permissions.canStatistic = true;
+                }
+                else
+                {
+                    permissions.canStatistic = false;
+                }
+                if (admin.Checked)
+                {
+                    permissions.canUser = true;
+                }
+                else
+                {
+                    permissions.canUser = false;
+                }
+                context.SaveChanges();
+            }
+            LoadPermissions();
         }
     }
 }

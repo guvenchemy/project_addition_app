@@ -38,6 +38,8 @@
         <EntityTypeShape EntityType="AdisyonDBModel.ProductsCategory" Width="1.5" PointX="7.375" PointY="12.75" />
         <EntityTypeShape EntityType="AdisyonDBModel.StockMovements_V" Width="1.5" PointX="12.375" PointY="11.75" />
         <EntityTypeShape EntityType="AdisyonDBModel.Stocks_V" Width="1.5" PointX="9.375" PointY="14.75" />
+        <EntityTypeShape EntityType="AdisyonDBModel.PermissionLevel" Width="1.5" PointX="3" PointY="19" />
+        <AssociationConnector Association="AdisyonDBModel.FK_PermissionLevel_Roles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

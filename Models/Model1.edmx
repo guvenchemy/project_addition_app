@@ -53,6 +53,20 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OdemeTuru" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="PermissionLevel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="canOrder" Type="bit" Nullable="false" />
+          <Property Name="canUser" Type="bit" Nullable="false" />
+          <Property Name="canTable" Type="bit" Nullable="false" />
+          <Property Name="canStock" Type="bit" Nullable="false" />
+          <Property Name="canPayment" Type="bit" Nullable="false" />
+          <Property Name="canProduct" Type="bit" Nullable="false" />
+          <Property Name="canStatistic" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="Products">
           <Key>
             <PropertyRef Name="Id" />
@@ -387,6 +401,18 @@ warning 6002: The table/view 'AdisyonDB.dbo.Users_V' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_PermissionLevel_Roles">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="PermissionLevel" Type="Self.PermissionLevel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermissionLevel">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Products_Categories">
           <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
           <End Role="Products" Type="Self.Products" Multiplicity="*" />
@@ -472,6 +498,7 @@ warning 6002: The table/view 'AdisyonDB.dbo.Users_V' does not have a primary key
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Payments" EntityType="Self.Payments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PaymentTypes" EntityType="Self.PaymentTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PermissionLevel" EntityType="Self.PermissionLevel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StockMovements" EntityType="Self.StockMovements" Schema="dbo" store:Type="Tables" />
@@ -613,6 +640,10 @@ warning 6002: The table/view 'AdisyonDB.dbo.Users_V' does not have a primary key
             <End Role="Users" EntitySet="Users" />
             <End Role="Payments" EntitySet="Payments" />
           </AssociationSet>
+          <AssociationSet Name="FK_PermissionLevel_Roles" Association="Self.FK_PermissionLevel_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="PermissionLevel" EntitySet="PermissionLevel" />
+          </AssociationSet>
           <AssociationSet Name="FK_Products_Categories" Association="Self.FK_Products_Categories">
             <End Role="Categories" EntitySet="Categories" />
             <End Role="Products" EntitySet="Products" />
@@ -711,6 +742,7 @@ warning 6002: The table/view 'AdisyonDB.dbo.Users_V' does not have a primary key
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="RolAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Users" Relationship="Self.FK_Users_Roles1" FromRole="Roles" ToRole="Users" />
+          <NavigationProperty Name="PermissionLevels" Relationship="AdisyonDBModel.FK_PermissionLevel_Roles" FromRole="Role" ToRole="PermissionLevel" />
         </EntityType>
         <EntityType Name="StockMovement">
           <Key>
@@ -1041,6 +1073,11 @@ warning 6002: The table/view 'AdisyonDB.dbo.Users_V' does not have a primary key
           <EntitySet Name="ProductsCategories" EntityType="AdisyonDBModel.ProductsCategory" />
           <EntitySet Name="StockMovements_V" EntityType="AdisyonDBModel.StockMovements_V" />
           <EntitySet Name="Stocks_V" EntityType="AdisyonDBModel.Stocks_V" />
+          <EntitySet Name="PermissionLevels" EntityType="AdisyonDBModel.PermissionLevel" />
+          <AssociationSet Name="FK_PermissionLevel_Roles" Association="AdisyonDBModel.FK_PermissionLevel_Roles">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="PermissionLevel" EntitySet="PermissionLevels" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -1168,6 +1205,33 @@ warning 6002: The table/view 'AdisyonDB.dbo.Users_V' does not have a primary key
           <Property Name="ProductId" Type="Int32" Nullable="false" />
           <Property Name="CategoryId" Type="Int32" Nullable="false" />
         </EntityType>
+        <EntityType Name="PermissionLevel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="canOrder" Type="Boolean" Nullable="false" />
+          <Property Name="canUser" Type="Boolean" Nullable="false" />
+          <Property Name="canTable" Type="Boolean" Nullable="false" />
+          <Property Name="canStock" Type="Boolean" Nullable="false" />
+          <Property Name="canPayment" Type="Boolean" Nullable="false" />
+          <Property Name="canProduct" Type="Boolean" Nullable="false" />
+          <Property Name="canStatistic" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Role" Relationship="AdisyonDBModel.FK_PermissionLevel_Roles" FromRole="PermissionLevel" ToRole="Role" />
+        </EntityType>
+        <Association Name="FK_PermissionLevel_Roles">
+          <End Type="AdisyonDBModel.Role" Role="Role" Multiplicity="1" />
+          <End Type="AdisyonDBModel.PermissionLevel" Role="PermissionLevel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermissionLevel">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1454,6 +1518,21 @@ warning 6002: The table/view 'AdisyonDB.dbo.Users_V' does not have a primary key
                 <ScalarProperty Name="GüncelMiktar" ColumnName="GüncelMiktar" />
                 <ScalarProperty Name="KategoriAdi" ColumnName="KategoriAdi" />
                 <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PermissionLevels">
+            <EntityTypeMapping TypeName="AdisyonDBModel.PermissionLevel">
+              <MappingFragment StoreEntitySet="PermissionLevel">
+                <ScalarProperty Name="canStatistic" ColumnName="canStatistic" />
+                <ScalarProperty Name="canProduct" ColumnName="canProduct" />
+                <ScalarProperty Name="canPayment" ColumnName="canPayment" />
+                <ScalarProperty Name="canStock" ColumnName="canStock" />
+                <ScalarProperty Name="canTable" ColumnName="canTable" />
+                <ScalarProperty Name="canUser" ColumnName="canUser" />
+                <ScalarProperty Name="canOrder" ColumnName="canOrder" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
