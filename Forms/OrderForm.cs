@@ -109,6 +109,7 @@ namespace project_addition_app.Forms
                         stm.StockId = stock.Id;
                         context.StockMovements.Add(stm);
                         stock.Miktar -= stm.Miktar;
+                        stock.SonGuncellemeTarihi = DateTime.Now;
                         context.OrderDetails.Add(detail);
                         var orderInContext = context.Orders.First(x => x.Id == m_order.Id);
                         orderInContext.ToplamTutar += detail.ToplamFiyat;
@@ -177,6 +178,7 @@ namespace project_addition_app.Forms
                     stm.Tarih = DateTime.Now;
                     stm.Aciklama = $"Sipariş {m_order.Id} için {detail.UrunAdi} silindi.";
                     stock.Miktar += detail.Adet;
+                    stock.SonGuncellemeTarihi = DateTime.Now;
                     context.StockMovements.Add(stm);
                     context.OrderDetails.Remove(detail);
                     context.SaveChanges();
