@@ -93,6 +93,7 @@ namespace project_addition_app.Forms
                     btn.ForeColor = Color.Gold;
                     btn.Click += (s, e) =>
                     {
+                        StockMovement stm  = new StockMovement();
                         OrderDetail detail = new OrderDetail();
                         detail.ProductId = product.Id;
                         detail.OrderId = m_order.Id;
@@ -100,6 +101,14 @@ namespace project_addition_app.Forms
                         detail.ToplamFiyat = product.Fiyat;
                         detail.UrunAdi = product.UrunAdi;
                         detail.Adet = 1;
+                        stm.Aciklama = $"Sipariş {m_order.Id} için {product.UrunAdi} eklendi.";
+                        stm.HareketTuru = false;
+                        stm.Miktar = 1;
+                        stm.Tarih = DateTime.Now;
+                        var stock = context.Stocks.FirstOrDefault(x => x.ProductId == product.Id);
+                        stm.StockId = stock.Id;
+                        context.StockMovements.Add(stm);
+                        stock.Miktar -= stm.Miktar;
                         context.OrderDetails.Add(detail);
                         var orderInContext = context.Orders.First(x => x.Id == m_order.Id);
                         orderInContext.ToplamTutar += detail.ToplamFiyat;
@@ -159,6 +168,16 @@ namespace project_addition_app.Forms
                     var detail = context.OrderDetails.Find(rowId);
                     var orderInContext = context.Orders.First(x => x.Id == m_order.Id);
                     orderInContext.ToplamTutar -= detail.ToplamFiyat;
+                    var product = context.Products.FirstOrDefault(x => x.Id == detail.ProductId);
+                    var stock = context.Stocks.FirstOrDefault(x => x.ProductId == product.Id);
+                    StockMovement stm = new StockMovement();
+                    stm.Miktar = detail.Adet;
+                    stm.StockId = stock.Id;
+                    stm.HareketTuru = true; // Stok geri alındı
+                    stm.Tarih = DateTime.Now;
+                    stm.Aciklama = $"Sipariş {m_order.Id} için {detail.UrunAdi} silindi.";
+                    stock.Miktar += detail.Adet;
+                    context.StockMovements.Add(stm);
                     context.OrderDetails.Remove(detail);
                     context.SaveChanges();
                     LoadData();
