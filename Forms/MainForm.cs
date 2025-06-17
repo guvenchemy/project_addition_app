@@ -1438,7 +1438,6 @@ namespace project_addition_app.Forms
                 }
             }
         }
-
         private void role_comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(role_comboBox2.SelectedIndex != 0)
@@ -1456,10 +1455,9 @@ namespace project_addition_app.Forms
                     statistic.Checked = permissions.canStatistic;
                     admin.Checked = permissions.canUser;
                 }
-                
+
             }
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             if (role_comboBox2.SelectedIndex != 0)
@@ -1498,7 +1496,6 @@ namespace project_addition_app.Forms
                 {
                     MessageBox.Show("Hata: " + ex);
                 }
-
                 MessageBox.Show($"{role.RolAdi} için yetkiler başarıyla güncellendi.");
             }
         }
