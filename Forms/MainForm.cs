@@ -40,11 +40,12 @@ namespace project_addition_app.Forms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            LoadPermissions();
             LoadTables();
             ResizeButtons();
             ListAllOrders();
             ListRoles();
+            //FillRolesList(role_comboBox1);
+            //FillRolesList(role_comboBox2);
             tables0 = context.Tables.ToList();
             tables0.Insert(0, new Table { Id = 0, MasaNumarasi = "Seçiniz" });
             table_num_comboBox1.DataSource = tables0;
@@ -164,12 +165,13 @@ namespace project_addition_app.Forms
         public void FillRolesList(dynamic control, string RoleName = "")
         {
             var rolesList = context.Roles.ToList();
+            rolesList.Insert(0, new Role { Id = 0, RolAdi = "Seçiniz" });
             control.DataSource = rolesList;
             control.DisplayMember = "RolAdi";
             control.ValueMember = "Id";
             if (RoleName == "")
             {
-                control.text = "Seçiniz";
+                control.SelectedIndex = 0;
             }
             else
             {
@@ -180,12 +182,60 @@ namespace project_addition_app.Forms
 
         private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
         {
-            if (role != "Admin")
+            var permissions = context.PermissionLevels.FirstOrDefault(p => p.RoleId == m_user.RoleId);
+            if (!(permissions.canUser))
             {
                 if (e.TabPage == adminPanel)
                 {
                     e.Cancel = true;
                 }
+            }
+            if (!(permissions.canTable))
+            {
+                if (e.TabPage == tableManagement)
+                {
+                    e.Cancel = true;
+                }
+            }
+            if (!(permissions.canProduct))
+            {
+                if (e.TabPage == productManagement)
+                {
+                    e.Cancel = true;
+                }
+            }
+            if (!(permissions.canOrder))
+            {
+                if (e.TabPage == orderManagement)
+                {
+                    e.Cancel = true;
+                }
+            }
+            if (!(permissions.canPayment))
+            {
+                if (e.TabPage == paymentManagement)
+                {
+                    e.Cancel = true;
+                }
+            }
+            if (!(permissions.canStock))
+            {
+                if (e.TabPage == stockManagement)
+                {
+                    e.Cancel = true;
+                }
+            }
+            if (!(permissions.canStatistic))
+            {
+                if (e.TabPage == statistics)
+                {
+                    e.Cancel = true;
+                }
+            }
+            if(e.TabPage == adminPanel)
+            {
+                //FillRolesList(role_comboBox1);
+                //FillRolesList(role_comboBox2);
             }
             if (e.TabPage == tableManagement)
             {
@@ -212,61 +262,7 @@ namespace project_addition_app.Forms
                 MessageBox.Show("İstatistikler henüz eklenmedi.");
             }
         }
-        void LoadPermissions()
-        {
-            if (role_comboBox2.SelectedIndex != 0)
-            {
-                var permissions = context.PermissionLevels.FirstOrDefault(p => p.RoleId == m_user.RoleId);
-                if (permissions.canOrder)
-                {
-                    orderManagement.Enabled = true;
-                }
-                else
-                {
-                    orderManagement.Enabled = false;
-                }
-                if (permissions.canTable)
-                {
-                    tableManagement.Enabled = true;
-                }
-                else
-                {
-                    tableManagement.Enabled = false;
-                }
-                if (permissions.canProduct)
-                {
-                    productManagement.Enabled = true;
-                }
-                else
-                {
-                    productManagement.Enabled = false;
-                }
-                if (permissions.canPayment)
-                {
-                    paymentManagement.Enabled = true;
-                }
-                else
-                {
-                    paymentManagement.Enabled = false;
-                }
-                if (permissions.canStock)
-                {
-                    stockManagement.Enabled = true;
-                }
-                else
-                {
-                    stockManagement.Enabled = false;
-                }
-                if (permissions.canStatistic)
-                {
-                    statistics.Enabled = true;
-                }
-                else
-                {
-                    statistics.Enabled = false;
-                }
-            }
-        }
+        
         void FillCategoryCMB(ComboBox control, string CategoryName = "")
         {
             var categories = context.Categories.ToList();
@@ -1352,96 +1348,93 @@ namespace project_addition_app.Forms
                 Role role = new Role();
                 role.RolAdi = new_role.Text;
                 context.Roles.Add(role);
+                context.SaveChanges();
 
                 var  permissions = new PermissionLevel();
                 permissions.RoleId = role.Id;
-                
 
-                if (order.Checked)
-                {
-                    permissions.canOrder = true;
-                }
-                else
-                {
-                    permissions.canOrder = false;
-                }
-                if (table.Checked)
-                {
-                    permissions.canTable = true;
-                }
-                else
-                {
-                    permissions.canTable = false;
-                }
-                if (product.Checked)
-                {
-                    permissions.canProduct = true;
-                }
-                else
-                {
-                    permissions.canProduct = false;
-                }
-                if (payment.Checked)
-                {
-                    permissions.canPayment = true;
-                }
-                else
-                {
-                    permissions.canPayment = false;
-                }
-                if (stocks.Checked)
-                {
-                    permissions.canStock = true;
-                }
-                else
-                {
-                    permissions.canStock = false;
-                }
-                if (statistic.Checked)
-                {
-                    permissions.canStatistic = true;
-                }
-                else
-                {
-                    permissions.canStatistic = false;
-                }
-                if (admin.Checked)
-                {
-                    permissions.canUser = true;
-                }
-                else
-                {
-                    permissions.canUser = false;
-                }
+                permissions.canOrder = order.Checked;
+                permissions.canTable = table.Checked;
+                permissions.canProduct = product.Checked;
+                permissions.canPayment = payment.Checked;
+                permissions.canStock = stocks.Checked;
+                permissions.canStatistic = statistic.Checked;
+                permissions.canUser = admin.Checked;
+                context.PermissionLevels.Add(permissions);
                 context.SaveChanges();
-
                 FillRolesList(role_comboBox1);
-                FillRolesList(role_comboBox2,role.RolAdi);
+                FillRolesList(role_comboBox2);
+                MessageBox.Show("Rol başarıyla eklendi.");
 
             }
         }
 
         private void delete_role_Click(object sender, EventArgs e)
         {
-            var role = context.Roles.FirstOrDefault(r => r.RolAdi.ToLower() == role_comboBox1.Text.ToLower());
+            Role role;
+            if(role_comboBox2.SelectedIndex == 0)
+            {
+                MessageBox.Show("Lütfen silmek istediğiniz rolü seçiniz.");
+                return;
+            }
+            else
+            {
+                role = context.Roles.FirstOrDefault(r => r.Id == (int)role_comboBox2.SelectedValue);
+
+            }
             if (role.RolAdi == "Admin")
             {
                 MessageBox.Show("Admin rolü silinemez.");
             }
             else
             {
+                try
+                {
+
                 if (role != null)
                 {
-                    context.Roles.Remove(role);
-                    context.SaveChanges();
-                    MessageBox.Show("Rol başarıyla silindi.");
-                    ListRoles();
-                    FillRolesList(role_comboBox1);
-                    FillRolesList(role_comboBox2);
+                    if(role.RolAdi == m_user.Role.RolAdi)
+                        {
+                            MessageBox.Show("Bu rolü silmek için önce başka bir rol seçmelisiniz.");
+                            return;
+                        }
+                        else
+                        {
+                            bool isPermmission = context.PermissionLevels.Any(p => p.RoleId == role.Id);
+                            bool hasUsers = context.Users.Any(u => u.RoleId == role.Id);
+                            if (!isPermmission)
+                            {
+                                MessageBox.Show("Bu rol için herhangi bir yetki tanımlanmamış.");
+                            }
+                            else
+                            {
+                                var permission = context.PermissionLevels.FirstOrDefault(p => p.RoleId == role.Id);
+                                context.PermissionLevels.Remove(permission);
+                            }
+                            if (hasUsers)
+                            {
+                                var users = context.Users.Where(u => u.RoleId == role.Id).ToList();
+                                foreach (var user in users)
+                                {
+                                    user.RoleId = 1; // Admin rolüne atama yapılıyor
+                                }
+                            }
+                            context.Roles.Remove(role);
+                            context.SaveChanges();
+                            MessageBox.Show("Rol başarıyla silindi. Bu role sahip kişiler Admin rolüne aktarıldı lütfen düzenlemeyi unutmayınız...");
+                            ListRoles();
+                            FillRolesList(role_comboBox1);
+                            FillRolesList(role_comboBox2);
+                        }
                 }
                 else
                 {
                     MessageBox.Show("Rol bulunamadı.");
+                }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Hata: " + ex);
                 }
             }
         }
@@ -1453,63 +1446,17 @@ namespace project_addition_app.Forms
 
                 var role = context.Roles.FirstOrDefault(r => r.Id == (int)role_comboBox2.SelectedValue);
                 var permissions = context.PermissionLevels.FirstOrDefault(p => p.RoleId == role.Id);
-
-                if (permissions.canOrder)
+                if(permissions != null)
                 {
-                    order.Checked = true;
+                    order.Checked = permissions.canOrder;
+                    table.Checked = permissions.canTable;
+                    product.Checked = permissions.canProduct;
+                    payment.Checked = permissions.canPayment;
+                    stocks.Checked = permissions.canStock;
+                    statistic.Checked = permissions.canStatistic;
+                    admin.Checked = permissions.canUser;
                 }
-                else
-                {
-                    order.Checked = false;
-                }
-                if (permissions.canTable)
-                {
-                    table.Checked = true;
-                }
-                else
-                {
-                    table.Checked = false;
-                }
-                if (permissions.canProduct)
-                {
-                    product.Checked = true;
-                }
-                else
-                {
-                    product.Checked = false;
-                }
-                if (permissions.canPayment)
-                {
-                    payment.Checked = true;
-                }
-                else
-                {
-                    payment.Checked = false;
-                }
-                if (permissions.canStock)
-                {
-                    stocks.Checked = true;
-                }
-                else
-                {
-                    stocks.Checked = false;
-                }
-                if (permissions.canStatistic)
-                {
-                    statistic.Checked = true;
-                }
-                else
-                {
-                    statistic.Checked = false;
-                }
-                if (permissions.canUser)
-                {
-                    admin.Checked = true;
-                }
-                else
-                {
-                    admin.Checked = false;
-                }
+                
             }
         }
 
@@ -1518,71 +1465,42 @@ namespace project_addition_app.Forms
             if (role_comboBox2.SelectedIndex != 0)
             {
                 var role = context.Roles.FirstOrDefault(r => r.Id == (int)role_comboBox2.SelectedValue);
-                var permissions = context.PermissionLevels.FirstOrDefault(p => p.RoleId == role.Id);
-                if(permissions == null)
+                try
                 {
-                    permissions = new PermissionLevel();
+
+                    PermissionLevel permissions;
+                    var isPermissions = context.PermissionLevels.Any(p => p.RoleId == role.Id);
+                    if(!isPermissions)
+                    {
+                        permissions = new PermissionLevel();
+                        permissions.canOrder = order.Checked;
+                        permissions.canTable = table.Checked;
+                        permissions.canProduct = product.Checked;
+                        permissions.canPayment = payment.Checked;
+                        permissions.canStock = stocks.Checked;
+                        permissions.canStatistic = statistic.Checked;
+                        permissions.canUser = admin.Checked;
+                    }
+                    else
+                    {
+                        permissions = context.PermissionLevels.FirstOrDefault(p => p.RoleId == role.Id);
+                        permissions.canOrder = order.Checked;
+                        permissions.canTable = table.Checked;
+                        permissions.canProduct = product.Checked;
+                        permissions.canPayment = payment.Checked;
+                        permissions.canStock = stocks.Checked;
+                        permissions.canStatistic = statistic.Checked;
+                        permissions.canUser = admin.Checked;
+                    }
+                    context.SaveChanges();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Hata: " + ex);
                 }
 
-                if (order.Checked)
-                {
-                    permissions.canOrder = true;
-                }
-                else
-                {
-                    permissions.canOrder = false;
-                }
-                if (table.Checked)
-                {
-                    permissions.canTable = true;
-                }
-                else
-                {
-                    permissions.canTable = false;
-                }
-                if (product.Checked)
-                {
-                    permissions.canProduct = true;
-                }
-                else
-                {
-                    permissions.canProduct = false;
-                }
-                if (payment.Checked)
-                {
-                    permissions.canPayment = true;
-                }
-                else
-                {
-                    permissions.canPayment = false;
-                }
-                if (stocks.Checked)
-                {
-                    permissions.canStock = true;
-                }
-                else
-                {
-                    permissions.canStock = false;
-                }
-                if (statistic.Checked)
-                {
-                    permissions.canStatistic = true;
-                }
-                else
-                {
-                    permissions.canStatistic = false;
-                }
-                if (admin.Checked)
-                {
-                    permissions.canUser = true;
-                }
-                else
-                {
-                    permissions.canUser = false;
-                }
-                context.SaveChanges();
+                MessageBox.Show($"{role.RolAdi} için yetkiler başarıyla güncellendi.");
             }
-            LoadPermissions();
         }
     }
 }
