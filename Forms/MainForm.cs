@@ -824,6 +824,17 @@ namespace project_addition_app.Forms
                         table.Durum = false;
                         foreach (var detail in details)
                         {
+                            var product = context.Products.FirstOrDefault(x => x.Id == detail.ProductId);
+                            var stock = context.Stocks.FirstOrDefault(x => x.ProductId == product.Id);
+                            StockMovement stm = new StockMovement();
+                            stm.Miktar = detail.Adet;
+                            stm.StockId = stock.Id;
+                            stm.HareketTuru = true; // Stok geri alındı
+                            stm.Tarih = DateTime.Now;
+                            stm.Aciklama = $"Sipariş {m_order.Id} için {detail.UrunAdi} silindi.";
+                            stock.Miktar += detail.Adet;
+                            stock.SonGuncellemeTarihi = DateTime.Now;
+                            context.StockMovements.Add(stm);
                             context.OrderDetails.Remove(detail);
                         }
                         context.Orders.Remove(order);

@@ -5,22 +5,22 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="8d2f74c42f6f430a8fd510113784dd79" Name="Diagram1" ZoomLevel="41">
-        <EntityTypeShape EntityType="AdisyonDBModel.Category" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdisyonDBModel.OrderDetail" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdisyonDBModel.Order" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdisyonDBModel.Payment" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdisyonDBModel.PaymentType" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdisyonDBModel.Product" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdisyonDBModel.Role" Width="1.5" PointX="0.75" PointY="15.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdisyonDBModel.StockMovement" Width="1.5" PointX="7.5" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdisyonDBModel.Stock" Width="1.5" PointX="5.25" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdisyonDBModel.sysdiagram" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdisyonDBModel.Table" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdisyonDBModel.User" Width="1.5" PointX="3" PointY="15.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdisyonDBModel.AktifSiparisler_V" Width="4.375" PointX="9.875" PointY="0.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdisyonDBModel.SiparisDetaylari_V" Width="4.25" PointX="9.75" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdisyonDBModel.SiparisListesi" Width="5.75" PointX="9.875" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdisyonDBModel.SiparisListesi_V" Width="3.875" PointX="9.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdisyonDBModel.Category" Width="1.5" PointX="8" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdisyonDBModel.OrderDetail" Width="1.5" PointX="12.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdisyonDBModel.Order" Width="1.5" PointX="10.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdisyonDBModel.Payment" Width="1.5" PointX="12.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdisyonDBModel.PaymentType" Width="1.5" PointX="10.25" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdisyonDBModel.Product" Width="1.5" PointX="10.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdisyonDBModel.Role" Width="1.5" PointX="8" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdisyonDBModel.StockMovement" Width="1.5" PointX="14.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdisyonDBModel.Stock" Width="1.5" PointX="12.5" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdisyonDBModel.sysdiagram" Width="1.5" PointX="8" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdisyonDBModel.Table" Width="1.5" PointX="8" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdisyonDBModel.User" Width="1.5" PointX="10.25" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdisyonDBModel.AktifSiparisler_V" Width="4.375" PointX="17.125" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdisyonDBModel.SiparisDetaylari_V" Width="4.25" PointX="17" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdisyonDBModel.SiparisListesi" Width="5.75" PointX="17.125" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdisyonDBModel.SiparisListesi_V" Width="3.875" PointX="17" PointY="6.25" IsExpanded="true" />
         <AssociationConnector Association="AdisyonDBModel.FK_Products_Categories" ManuallyRouted="false" />
         <AssociationConnector Association="AdisyonDBModel.FK_OrderDetails_Orders" ManuallyRouted="false" />
         <AssociationConnector Association="AdisyonDBModel.FK_OrderDetails_Products" ManuallyRouted="false" />
@@ -31,14 +31,14 @@
         <AssociationConnector Association="AdisyonDBModel.FK_Stocks_Products" ManuallyRouted="false" />
         <AssociationConnector Association="AdisyonDBModel.FK_Users_Roles1" ManuallyRouted="false" />
         <AssociationConnector Association="AdisyonDBModel.FK_StockMovements_Stocks" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="AdisyonDBModel.Users_V" Width="3.875" PointX="14.625" PointY="3" />
-        <EntityTypeShape EntityType="AdisyonDBModel.Payment_V" Width="2.375" PointX="7.25" PointY="0.625" />
-        <EntityTypeShape EntityType="AdisyonDBModel.AktifSiparisler_VV" Width="1.5" PointX="10.375" PointY="11.75" />
-        <EntityTypeShape EntityType="AdisyonDBModel.SiparisDetaylari_VV" Width="1.5" PointX="5.375" PointY="12.75" />
-        <EntityTypeShape EntityType="AdisyonDBModel.ProductsCategory" Width="1.5" PointX="7.375" PointY="12.75" />
-        <EntityTypeShape EntityType="AdisyonDBModel.StockMovements_V" Width="1.5" PointX="12.375" PointY="11.75" />
-        <EntityTypeShape EntityType="AdisyonDBModel.Stocks_V" Width="1.5" PointX="9.375" PointY="14.75" />
-        <EntityTypeShape EntityType="AdisyonDBModel.PermissionLevel" Width="1.5" PointX="3" PointY="19" />
+        <EntityTypeShape EntityType="AdisyonDBModel.Users_V" Width="3.875" PointX="21.875" PointY="3.375" />
+        <EntityTypeShape EntityType="AdisyonDBModel.Payment_V" Width="2.375" PointX="14.5" PointY="1" />
+        <EntityTypeShape EntityType="AdisyonDBModel.AktifSiparisler_VV" Width="1.5" PointX="17.625" PointY="12.125" />
+        <EntityTypeShape EntityType="AdisyonDBModel.SiparisDetaylari_VV" Width="1.5" PointX="12.625" PointY="13.125" />
+        <EntityTypeShape EntityType="AdisyonDBModel.ProductsCategory" Width="1.5" PointX="14.625" PointY="13.125" />
+        <EntityTypeShape EntityType="AdisyonDBModel.StockMovements_V" Width="1.5" PointX="19.625" PointY="12.125" />
+        <EntityTypeShape EntityType="AdisyonDBModel.Stocks_V" Width="1.5" PointX="16.625" PointY="15.125" />
+        <EntityTypeShape EntityType="AdisyonDBModel.PermissionLevel" Width="1.5" PointX="10.25" PointY="19.375" />
         <AssociationConnector Association="AdisyonDBModel.FK_PermissionLevel_Roles" />
       </Diagram>
     </edmx:Diagrams>
