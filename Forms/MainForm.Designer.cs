@@ -28,34 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle79 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle80 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle81 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle82 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle83 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle84 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             this.adminPanel = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
             this.stocks = new System.Windows.Forms.CheckBox();
@@ -172,29 +172,39 @@
             this.statistics = new System.Windows.Forms.TabPage();
             this.statistics_control = new System.Windows.Forms.TabControl();
             this.daily = new System.Windows.Forms.TabPage();
+            this.daily_av_payment = new System.Windows.Forms.Label();
+            this.daily_payment = new System.Windows.Forms.Label();
+            this.daily_label = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.weekly = new System.Windows.Forms.TabPage();
+            this.weekly_av_payment = new System.Windows.Forms.Label();
+            this.weekly_payment = new System.Windows.Forms.Label();
+            this.weekly_label = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.monthly = new System.Windows.Forms.TabPage();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.daily_label = new System.Windows.Forms.Label();
-            this.daily_payment = new System.Windows.Forms.Label();
-            this.daily_av_payment = new System.Windows.Forms.Label();
-            this.weekly_av_payment = new System.Windows.Forms.Label();
-            this.weekly_payment = new System.Windows.Forms.Label();
-            this.weekly_label = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
             this.monthly_av_payment = new System.Windows.Forms.Label();
             this.monthly_payment = new System.Windows.Forms.Label();
             this.monthly_label = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.dmx_product = new System.Windows.Forms.Label();
+            this.wmx_product = new System.Windows.Forms.Label();
+            this.mmx_product = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.m_categoryCMB = new System.Windows.Forms.ComboBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.w_categoryCMB = new System.Windows.Forms.ComboBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.d_categoryCMB = new System.Windows.Forms.ComboBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.productStatisticsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.adminPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pp_pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.users_dataGridView1)).BeginInit();
@@ -536,23 +546,23 @@
             this.users_dataGridView1.AllowUserToDeleteRows = false;
             this.users_dataGridView1.BackgroundColor = System.Drawing.Color.SaddleBrown;
             this.users_dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle57.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle57.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle57.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle57.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle57.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.users_dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle57;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.users_dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.users_dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle58.BackColor = System.Drawing.Color.SaddleBrown;
-            dataGridViewCellStyle58.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle58.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle58.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle58.SelectionForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle58.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.users_dataGridView1.DefaultCellStyle = dataGridViewCellStyle58;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SaddleBrown;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.users_dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.users_dataGridView1.EnableHeadersVisualStyles = false;
             this.users_dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
             this.users_dataGridView1.Location = new System.Drawing.Point(657, 3);
@@ -642,40 +652,40 @@
             this.tables_dataGridView1.AllowUserToDeleteRows = false;
             this.tables_dataGridView1.BackgroundColor = System.Drawing.Color.SaddleBrown;
             this.tables_dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle59.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle59.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle59.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle59.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle59.SelectionForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle59.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tables_dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle59;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tables_dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.tables_dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle60.BackColor = System.Drawing.Color.SaddleBrown;
-            dataGridViewCellStyle60.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle60.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle60.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle60.SelectionForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle60.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tables_dataGridView1.DefaultCellStyle = dataGridViewCellStyle60;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SaddleBrown;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tables_dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.tables_dataGridView1.EnableHeadersVisualStyles = false;
             this.tables_dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
             this.tables_dataGridView1.Location = new System.Drawing.Point(329, 40);
             this.tables_dataGridView1.Name = "tables_dataGridView1";
             this.tables_dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle61.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle61.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle61.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle61.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle61.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle61.SelectionForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle61.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tables_dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle61;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tables_dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.tables_dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle62.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle62.ForeColor = System.Drawing.Color.Gold;
-            this.tables_dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle62;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Gold;
+            this.tables_dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.tables_dataGridView1.Size = new System.Drawing.Size(391, 1000);
             this.tables_dataGridView1.TabIndex = 0;
             this.tables_dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tables_dataGridView1_CellContentClick);
@@ -866,46 +876,46 @@
             this.allOrders_dataGridView1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.allOrders_dataGridView1.AllowUserToAddRows = false;
             this.allOrders_dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle63.BackColor = System.Drawing.Color.SaddleBrown;
-            dataGridViewCellStyle63.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle63.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle63.SelectionForeColor = System.Drawing.Color.Gold;
-            this.allOrders_dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle63;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.SaddleBrown;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Gold;
+            this.allOrders_dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.allOrders_dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.allOrders_dataGridView1.BackgroundColor = System.Drawing.Color.SaddleBrown;
             this.allOrders_dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.allOrders_dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle64.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle64.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle64.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle64.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle64.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle64.SelectionForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle64.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.allOrders_dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle64;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.allOrders_dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.allOrders_dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle65.BackColor = System.Drawing.Color.SaddleBrown;
-            dataGridViewCellStyle65.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle65.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle65.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle65.SelectionForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle65.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.allOrders_dataGridView1.DefaultCellStyle = dataGridViewCellStyle65;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.SaddleBrown;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.allOrders_dataGridView1.DefaultCellStyle = dataGridViewCellStyle9;
             this.allOrders_dataGridView1.EnableHeadersVisualStyles = false;
             this.allOrders_dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
             this.allOrders_dataGridView1.Location = new System.Drawing.Point(550, 185);
             this.allOrders_dataGridView1.Name = "allOrders_dataGridView1";
             this.allOrders_dataGridView1.ReadOnly = true;
             this.allOrders_dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle66.BackColor = System.Drawing.Color.SaddleBrown;
-            dataGridViewCellStyle66.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle66.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle66.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle66.SelectionForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle66.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.allOrders_dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle66;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.SaddleBrown;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.allOrders_dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.allOrders_dataGridView1.RowHeadersVisible = false;
             this.allOrders_dataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.SaddleBrown;
             this.allOrders_dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Gold;
@@ -1046,25 +1056,25 @@
             this.ordersDGW.BackgroundColor = System.Drawing.Color.SaddleBrown;
             this.ordersDGW.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ordersDGW.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle67.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle67.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle67.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle67.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle67.SelectionForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle67.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ordersDGW.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle67;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ordersDGW.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.ordersDGW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ordersDGW.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Delete});
-            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle68.BackColor = System.Drawing.Color.SaddleBrown;
-            dataGridViewCellStyle68.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle68.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle68.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle68.SelectionForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle68.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ordersDGW.DefaultCellStyle = dataGridViewCellStyle68;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.SaddleBrown;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ordersDGW.DefaultCellStyle = dataGridViewCellStyle12;
             this.ordersDGW.EnableHeadersVisualStyles = false;
             this.ordersDGW.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
             this.ordersDGW.Location = new System.Drawing.Point(983, 6);
@@ -1145,36 +1155,36 @@
             this.categoriesDGV.AllowUserToDeleteRows = false;
             this.categoriesDGV.BackgroundColor = System.Drawing.Color.SaddleBrown;
             this.categoriesDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle69.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle69.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle69.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle69.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle69.SelectionForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle69.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.categoriesDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle69;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.categoriesDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.categoriesDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle70.BackColor = System.Drawing.Color.SaddleBrown;
-            dataGridViewCellStyle70.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle70.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle70.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle70.SelectionForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle70.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.categoriesDGV.DefaultCellStyle = dataGridViewCellStyle70;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.SaddleBrown;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.categoriesDGV.DefaultCellStyle = dataGridViewCellStyle14;
             this.categoriesDGV.EnableHeadersVisualStyles = false;
             this.categoriesDGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
             this.categoriesDGV.Location = new System.Drawing.Point(1018, 25);
             this.categoriesDGV.Name = "categoriesDGV";
             this.categoriesDGV.ReadOnly = true;
-            dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle71.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle71.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle71.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle71.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle71.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle71.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.categoriesDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle71;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.categoriesDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.categoriesDGV.RowHeadersVisible = false;
             this.categoriesDGV.Size = new System.Drawing.Size(397, 1000);
             this.categoriesDGV.TabIndex = 11;
@@ -1210,36 +1220,36 @@
             this.productsDGV.AllowUserToDeleteRows = false;
             this.productsDGV.BackgroundColor = System.Drawing.Color.SaddleBrown;
             this.productsDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle72.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle72.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle72.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle72.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle72.SelectionForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle72.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.productsDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle72;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.productsDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.productsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle73.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle73.BackColor = System.Drawing.Color.SaddleBrown;
-            dataGridViewCellStyle73.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle73.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle73.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle73.SelectionForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle73.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.productsDGV.DefaultCellStyle = dataGridViewCellStyle73;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.SaddleBrown;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.productsDGV.DefaultCellStyle = dataGridViewCellStyle17;
             this.productsDGV.EnableHeadersVisualStyles = false;
             this.productsDGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
             this.productsDGV.Location = new System.Drawing.Point(323, 25);
             this.productsDGV.Name = "productsDGV";
             this.productsDGV.ReadOnly = true;
-            dataGridViewCellStyle74.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle74.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle74.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle74.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle74.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle74.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle74.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.productsDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle74;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.productsDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.productsDGV.RowHeadersVisible = false;
             this.productsDGV.Size = new System.Drawing.Size(397, 1000);
             this.productsDGV.TabIndex = 8;
@@ -1385,36 +1395,36 @@
             this.payments_dataGridView1.AllowUserToDeleteRows = false;
             this.payments_dataGridView1.BackgroundColor = System.Drawing.Color.SaddleBrown;
             this.payments_dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle75.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle75.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle75.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle75.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle75.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle75.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle75.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.payments_dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle75;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.payments_dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.payments_dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle76.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle76.BackColor = System.Drawing.Color.SaddleBrown;
-            dataGridViewCellStyle76.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle76.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle76.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle76.SelectionForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle76.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.payments_dataGridView1.DefaultCellStyle = dataGridViewCellStyle76;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.SaddleBrown;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.payments_dataGridView1.DefaultCellStyle = dataGridViewCellStyle20;
             this.payments_dataGridView1.EnableHeadersVisualStyles = false;
             this.payments_dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
             this.payments_dataGridView1.Location = new System.Drawing.Point(862, 6);
             this.payments_dataGridView1.Name = "payments_dataGridView1";
             this.payments_dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle77.BackColor = System.Drawing.Color.SaddleBrown;
-            dataGridViewCellStyle77.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle77.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle77.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle77.SelectionForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle77.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.payments_dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle77;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.SaddleBrown;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.payments_dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.payments_dataGridView1.RowHeadersVisible = false;
             this.payments_dataGridView1.Size = new System.Drawing.Size(724, 1000);
             this.payments_dataGridView1.TabIndex = 8;
@@ -1488,36 +1498,36 @@
             this.payment_dataGridView1.AllowUserToDeleteRows = false;
             this.payment_dataGridView1.BackgroundColor = System.Drawing.Color.SaddleBrown;
             this.payment_dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle78.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle78.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle78.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle78.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle78.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle78.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle78.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.payment_dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle78;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.payment_dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.payment_dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle79.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle79.BackColor = System.Drawing.Color.SaddleBrown;
-            dataGridViewCellStyle79.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle79.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle79.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle79.SelectionForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle79.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.payment_dataGridView1.DefaultCellStyle = dataGridViewCellStyle79;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.SaddleBrown;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.payment_dataGridView1.DefaultCellStyle = dataGridViewCellStyle23;
             this.payment_dataGridView1.EnableHeadersVisualStyles = false;
             this.payment_dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
             this.payment_dataGridView1.Location = new System.Drawing.Point(7, 6);
             this.payment_dataGridView1.Name = "payment_dataGridView1";
             this.payment_dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle80.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle80.BackColor = System.Drawing.Color.SaddleBrown;
-            dataGridViewCellStyle80.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle80.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle80.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle80.SelectionForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle80.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.payment_dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle80;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.SaddleBrown;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.payment_dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.payment_dataGridView1.RowHeadersVisible = false;
             this.payment_dataGridView1.Size = new System.Drawing.Size(556, 1000);
             this.payment_dataGridView1.TabIndex = 0;
@@ -1778,23 +1788,23 @@
             this.stockMovDGV.AllowUserToDeleteRows = false;
             this.stockMovDGV.BackgroundColor = System.Drawing.Color.SaddleBrown;
             this.stockMovDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle81.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle81.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle81.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle81.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle81.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle81.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle81.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.stockMovDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle81;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.stockMovDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.stockMovDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle82.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle82.BackColor = System.Drawing.Color.SaddleBrown;
-            dataGridViewCellStyle82.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle82.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle82.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle82.SelectionForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle82.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.stockMovDGV.DefaultCellStyle = dataGridViewCellStyle82;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.SaddleBrown;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.stockMovDGV.DefaultCellStyle = dataGridViewCellStyle26;
             this.stockMovDGV.EnableHeadersVisualStyles = false;
             this.stockMovDGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
             this.stockMovDGV.Location = new System.Drawing.Point(941, 187);
@@ -1811,23 +1821,23 @@
             this.stocksDGV.AllowUserToDeleteRows = false;
             this.stocksDGV.BackgroundColor = System.Drawing.Color.SaddleBrown;
             this.stocksDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle83.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle83.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle83.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle83.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle83.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle83.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle83.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.stocksDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle83;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.stocksDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.stocksDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle84.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle84.BackColor = System.Drawing.Color.SaddleBrown;
-            dataGridViewCellStyle84.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle84.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle84.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle84.SelectionForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle84.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.stocksDGV.DefaultCellStyle = dataGridViewCellStyle84;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.SaddleBrown;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.stocksDGV.DefaultCellStyle = dataGridViewCellStyle28;
             this.stocksDGV.EnableHeadersVisualStyles = false;
             this.stocksDGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
             this.stocksDGV.Location = new System.Drawing.Point(3, 187);
@@ -1841,6 +1851,7 @@
             // statistics
             // 
             this.statistics.BackColor = System.Drawing.Color.SaddleBrown;
+            this.statistics.Controls.Add(this.productStatisticsPanel);
             this.statistics.Controls.Add(this.statistics_control);
             this.statistics.ForeColor = System.Drawing.Color.Gold;
             this.statistics.Location = new System.Drawing.Point(4, 37);
@@ -1857,7 +1868,7 @@
             this.statistics_control.Location = new System.Drawing.Point(0, -6);
             this.statistics_control.Name = "statistics_control";
             this.statistics_control.SelectedIndex = 0;
-            this.statistics_control.Size = new System.Drawing.Size(445, 223);
+            this.statistics_control.Size = new System.Drawing.Size(950, 223);
             this.statistics_control.TabIndex = 0;
             this.statistics_control.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.statistics_control_Selecting);
             // 
@@ -1865,26 +1876,57 @@
             // 
             this.daily.BackColor = System.Drawing.Color.SaddleBrown;
             this.daily.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.daily.Controls.Add(this.label38);
+            this.daily.Controls.Add(this.d_categoryCMB);
+            this.daily.Controls.Add(this.label43);
+            this.daily.Controls.Add(this.label41);
+            this.daily.Controls.Add(this.dmx_product);
             this.daily.Controls.Add(this.daily_av_payment);
             this.daily.Controls.Add(this.daily_payment);
             this.daily.Controls.Add(this.daily_label);
             this.daily.Controls.Add(this.label31);
             this.daily.Controls.Add(this.label30);
             this.daily.Controls.Add(this.label29);
+            this.daily.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.daily.Location = new System.Drawing.Point(4, 27);
             this.daily.Name = "daily";
             this.daily.Padding = new System.Windows.Forms.Padding(3);
-            this.daily.Size = new System.Drawing.Size(437, 192);
+            this.daily.Size = new System.Drawing.Size(942, 192);
             this.daily.TabIndex = 0;
             this.daily.Text = "Günlük";
+            // 
+            // daily_av_payment
+            // 
+            this.daily_av_payment.AutoSize = true;
+            this.daily_av_payment.Location = new System.Drawing.Point(344, 66);
+            this.daily_av_payment.Name = "daily_av_payment";
+            this.daily_av_payment.Size = new System.Drawing.Size(21, 22);
+            this.daily_av_payment.TabIndex = 5;
+            this.daily_av_payment.Text = "0";
+            // 
+            // daily_payment
+            // 
+            this.daily_payment.AutoSize = true;
+            this.daily_payment.Location = new System.Drawing.Point(344, 36);
+            this.daily_payment.Name = "daily_payment";
+            this.daily_payment.Size = new System.Drawing.Size(21, 22);
+            this.daily_payment.TabIndex = 4;
+            this.daily_payment.Text = "0";
+            // 
+            // daily_label
+            // 
+            this.daily_label.AutoSize = true;
+            this.daily_label.Location = new System.Drawing.Point(344, 7);
+            this.daily_label.Name = "daily_label";
+            this.daily_label.Size = new System.Drawing.Size(21, 22);
+            this.daily_label.TabIndex = 3;
+            this.daily_label.Text = "0";
             // 
             // label31
             // 
             this.label31.AutoSize = true;
             this.label31.Location = new System.Drawing.Point(7, 66);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(268, 18);
+            this.label31.Size = new System.Drawing.Size(331, 22);
             this.label31.TabIndex = 2;
             this.label31.Text = "Sipariş Başına Ortalama Hesap Tutarı:";
             // 
@@ -1893,7 +1935,7 @@
             this.label30.AutoSize = true;
             this.label30.Location = new System.Drawing.Point(7, 36);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(204, 18);
+            this.label30.Size = new System.Drawing.Size(251, 22);
             this.label30.TabIndex = 1;
             this.label30.Text = "Sipariş Toplam Hesap Tutarı:";
             // 
@@ -1902,33 +1944,64 @@
             this.label29.AutoSize = true;
             this.label29.Location = new System.Drawing.Point(7, 7);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(112, 18);
+            this.label29.Size = new System.Drawing.Size(138, 22);
             this.label29.TabIndex = 0;
             this.label29.Text = "Toplam Sipariş:";
             // 
             // weekly
             // 
             this.weekly.BackColor = System.Drawing.Color.SaddleBrown;
+            this.weekly.Controls.Add(this.w_categoryCMB);
+            this.weekly.Controls.Add(this.label42);
             this.weekly.Controls.Add(this.label39);
+            this.weekly.Controls.Add(this.wmx_product);
             this.weekly.Controls.Add(this.weekly_av_payment);
             this.weekly.Controls.Add(this.weekly_payment);
             this.weekly.Controls.Add(this.weekly_label);
             this.weekly.Controls.Add(this.label32);
             this.weekly.Controls.Add(this.label33);
             this.weekly.Controls.Add(this.label34);
+            this.weekly.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.weekly.Location = new System.Drawing.Point(4, 27);
             this.weekly.Name = "weekly";
             this.weekly.Padding = new System.Windows.Forms.Padding(3);
-            this.weekly.Size = new System.Drawing.Size(437, 264);
+            this.weekly.Size = new System.Drawing.Size(942, 192);
             this.weekly.TabIndex = 1;
             this.weekly.Text = "Haftalık";
+            // 
+            // weekly_av_payment
+            // 
+            this.weekly_av_payment.AutoSize = true;
+            this.weekly_av_payment.Location = new System.Drawing.Point(343, 66);
+            this.weekly_av_payment.Name = "weekly_av_payment";
+            this.weekly_av_payment.Size = new System.Drawing.Size(21, 22);
+            this.weekly_av_payment.TabIndex = 8;
+            this.weekly_av_payment.Text = "0";
+            // 
+            // weekly_payment
+            // 
+            this.weekly_payment.AutoSize = true;
+            this.weekly_payment.Location = new System.Drawing.Point(343, 36);
+            this.weekly_payment.Name = "weekly_payment";
+            this.weekly_payment.Size = new System.Drawing.Size(21, 22);
+            this.weekly_payment.TabIndex = 7;
+            this.weekly_payment.Text = "0";
+            // 
+            // weekly_label
+            // 
+            this.weekly_label.AutoSize = true;
+            this.weekly_label.Location = new System.Drawing.Point(343, 7);
+            this.weekly_label.Name = "weekly_label";
+            this.weekly_label.Size = new System.Drawing.Size(21, 22);
+            this.weekly_label.TabIndex = 6;
+            this.weekly_label.Text = "0";
             // 
             // label32
             // 
             this.label32.AutoSize = true;
             this.label32.Location = new System.Drawing.Point(7, 66);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(268, 18);
+            this.label32.Size = new System.Drawing.Size(331, 22);
             this.label32.TabIndex = 5;
             this.label32.Text = "Sipariş Başına Ortalama Hesap Tutarı:";
             // 
@@ -1937,7 +2010,7 @@
             this.label33.AutoSize = true;
             this.label33.Location = new System.Drawing.Point(7, 36);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(204, 18);
+            this.label33.Size = new System.Drawing.Size(251, 22);
             this.label33.TabIndex = 4;
             this.label33.Text = "Sipariş Toplam Hesap Tutarı:";
             // 
@@ -1946,13 +2019,16 @@
             this.label34.AutoSize = true;
             this.label34.Location = new System.Drawing.Point(7, 7);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(112, 18);
+            this.label34.Size = new System.Drawing.Size(138, 22);
             this.label34.TabIndex = 3;
             this.label34.Text = "Toplam Sipariş:";
             // 
             // monthly
             // 
             this.monthly.BackColor = System.Drawing.Color.SaddleBrown;
+            this.monthly.Controls.Add(this.m_categoryCMB);
+            this.monthly.Controls.Add(this.label38);
+            this.monthly.Controls.Add(this.mmx_product);
             this.monthly.Controls.Add(this.label40);
             this.monthly.Controls.Add(this.monthly_av_payment);
             this.monthly.Controls.Add(this.monthly_payment);
@@ -1960,18 +2036,56 @@
             this.monthly.Controls.Add(this.label35);
             this.monthly.Controls.Add(this.label36);
             this.monthly.Controls.Add(this.label37);
+            this.monthly.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.monthly.Location = new System.Drawing.Point(4, 27);
             this.monthly.Name = "monthly";
-            this.monthly.Size = new System.Drawing.Size(437, 264);
+            this.monthly.Size = new System.Drawing.Size(942, 192);
             this.monthly.TabIndex = 2;
             this.monthly.Text = "Aylık";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label40.Location = new System.Drawing.Point(5, 152);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(647, 29);
+            this.label40.TabIndex = 9;
+            this.label40.Text = "Not: Sadece ödemesi yapılan siparişler hesaplanmaktadır.";
+            // 
+            // monthly_av_payment
+            // 
+            this.monthly_av_payment.AutoSize = true;
+            this.monthly_av_payment.Location = new System.Drawing.Point(347, 66);
+            this.monthly_av_payment.Name = "monthly_av_payment";
+            this.monthly_av_payment.Size = new System.Drawing.Size(21, 22);
+            this.monthly_av_payment.TabIndex = 8;
+            this.monthly_av_payment.Text = "0";
+            // 
+            // monthly_payment
+            // 
+            this.monthly_payment.AutoSize = true;
+            this.monthly_payment.Location = new System.Drawing.Point(347, 36);
+            this.monthly_payment.Name = "monthly_payment";
+            this.monthly_payment.Size = new System.Drawing.Size(21, 22);
+            this.monthly_payment.TabIndex = 7;
+            this.monthly_payment.Text = "0";
+            // 
+            // monthly_label
+            // 
+            this.monthly_label.AutoSize = true;
+            this.monthly_label.Location = new System.Drawing.Point(347, 7);
+            this.monthly_label.Name = "monthly_label";
+            this.monthly_label.Size = new System.Drawing.Size(21, 22);
+            this.monthly_label.TabIndex = 6;
+            this.monthly_label.Text = "0";
             // 
             // label35
             // 
             this.label35.AutoSize = true;
             this.label35.Location = new System.Drawing.Point(7, 66);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(268, 18);
+            this.label35.Size = new System.Drawing.Size(331, 22);
             this.label35.TabIndex = 5;
             this.label35.Text = "Sipariş Başına Ortalama Hesap Tutarı:";
             // 
@@ -1980,7 +2094,7 @@
             this.label36.AutoSize = true;
             this.label36.Location = new System.Drawing.Point(7, 36);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(204, 18);
+            this.label36.Size = new System.Drawing.Size(251, 22);
             this.label36.TabIndex = 4;
             this.label36.Text = "Sipariş Toplam Hesap Tutarı:";
             // 
@@ -1989,117 +2103,129 @@
             this.label37.AutoSize = true;
             this.label37.Location = new System.Drawing.Point(7, 7);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(112, 18);
+            this.label37.Size = new System.Drawing.Size(138, 22);
             this.label37.TabIndex = 3;
             this.label37.Text = "Toplam Sipariş:";
             // 
-            // daily_label
+            // dmx_product
             // 
-            this.daily_label.AutoSize = true;
-            this.daily_label.Location = new System.Drawing.Point(290, 7);
-            this.daily_label.Name = "daily_label";
-            this.daily_label.Size = new System.Drawing.Size(17, 18);
-            this.daily_label.TabIndex = 3;
-            this.daily_label.Text = "0";
+            this.dmx_product.AutoSize = true;
+            this.dmx_product.Location = new System.Drawing.Point(461, 66);
+            this.dmx_product.Name = "dmx_product";
+            this.dmx_product.Size = new System.Drawing.Size(261, 22);
+            this.dmx_product.TabIndex = 7;
+            this.dmx_product.Text = "Bugünün en çok satan ürünü:";
             // 
-            // daily_payment
+            // wmx_product
             // 
-            this.daily_payment.AutoSize = true;
-            this.daily_payment.Location = new System.Drawing.Point(290, 36);
-            this.daily_payment.Name = "daily_payment";
-            this.daily_payment.Size = new System.Drawing.Size(17, 18);
-            this.daily_payment.TabIndex = 4;
-            this.daily_payment.Text = "0";
+            this.wmx_product.AutoSize = true;
+            this.wmx_product.Location = new System.Drawing.Point(461, 66);
+            this.wmx_product.Name = "wmx_product";
+            this.wmx_product.Size = new System.Drawing.Size(282, 22);
+            this.wmx_product.TabIndex = 10;
+            this.wmx_product.Text = "Bu haftanın en çok satan ürünü:";
             // 
-            // daily_av_payment
+            // mmx_product
             // 
-            this.daily_av_payment.AutoSize = true;
-            this.daily_av_payment.Location = new System.Drawing.Point(290, 66);
-            this.daily_av_payment.Name = "daily_av_payment";
-            this.daily_av_payment.Size = new System.Drawing.Size(17, 18);
-            this.daily_av_payment.TabIndex = 5;
-            this.daily_av_payment.Text = "0";
-            // 
-            // weekly_av_payment
-            // 
-            this.weekly_av_payment.AutoSize = true;
-            this.weekly_av_payment.Location = new System.Drawing.Point(290, 66);
-            this.weekly_av_payment.Name = "weekly_av_payment";
-            this.weekly_av_payment.Size = new System.Drawing.Size(17, 18);
-            this.weekly_av_payment.TabIndex = 8;
-            this.weekly_av_payment.Text = "0";
-            // 
-            // weekly_payment
-            // 
-            this.weekly_payment.AutoSize = true;
-            this.weekly_payment.Location = new System.Drawing.Point(290, 36);
-            this.weekly_payment.Name = "weekly_payment";
-            this.weekly_payment.Size = new System.Drawing.Size(17, 18);
-            this.weekly_payment.TabIndex = 7;
-            this.weekly_payment.Text = "0";
-            // 
-            // weekly_label
-            // 
-            this.weekly_label.AutoSize = true;
-            this.weekly_label.Location = new System.Drawing.Point(290, 7);
-            this.weekly_label.Name = "weekly_label";
-            this.weekly_label.Size = new System.Drawing.Size(17, 18);
-            this.weekly_label.TabIndex = 6;
-            this.weekly_label.Text = "0";
-            // 
-            // monthly_av_payment
-            // 
-            this.monthly_av_payment.AutoSize = true;
-            this.monthly_av_payment.Location = new System.Drawing.Point(290, 66);
-            this.monthly_av_payment.Name = "monthly_av_payment";
-            this.monthly_av_payment.Size = new System.Drawing.Size(17, 18);
-            this.monthly_av_payment.TabIndex = 8;
-            this.monthly_av_payment.Text = "0";
-            // 
-            // monthly_payment
-            // 
-            this.monthly_payment.AutoSize = true;
-            this.monthly_payment.Location = new System.Drawing.Point(290, 36);
-            this.monthly_payment.Name = "monthly_payment";
-            this.monthly_payment.Size = new System.Drawing.Size(17, 18);
-            this.monthly_payment.TabIndex = 7;
-            this.monthly_payment.Text = "0";
-            // 
-            // monthly_label
-            // 
-            this.monthly_label.AutoSize = true;
-            this.monthly_label.Location = new System.Drawing.Point(290, 7);
-            this.monthly_label.Name = "monthly_label";
-            this.monthly_label.Size = new System.Drawing.Size(17, 18);
-            this.monthly_label.TabIndex = 6;
-            this.monthly_label.Text = "0";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(7, 100);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(407, 18);
-            this.label38.TabIndex = 6;
-            this.label38.Text = "Not: Sadece ödemesi yapılan siparişler hesaplanmaktadır.";
+            this.mmx_product.AutoSize = true;
+            this.mmx_product.Location = new System.Drawing.Point(461, 66);
+            this.mmx_product.Name = "mmx_product";
+            this.mmx_product.Size = new System.Drawing.Size(247, 22);
+            this.mmx_product.TabIndex = 10;
+            this.mmx_product.Text = "Bu ayın en çok satan ürünü:";
             // 
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(7, 101);
+            this.label39.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label39.Location = new System.Drawing.Point(5, 152);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(407, 18);
-            this.label39.TabIndex = 9;
+            this.label39.Size = new System.Drawing.Size(647, 29);
+            this.label39.TabIndex = 11;
             this.label39.Text = "Not: Sadece ödemesi yapılan siparişler hesaplanmaktadır.";
             // 
-            // label40
+            // label41
             // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(7, 97);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(407, 18);
-            this.label40.TabIndex = 9;
-            this.label40.Text = "Not: Sadece ödemesi yapılan siparişler hesaplanmaktadır.";
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label41.Location = new System.Drawing.Point(5, 152);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(647, 29);
+            this.label41.TabIndex = 10;
+            this.label41.Text = "Not: Sadece ödemesi yapılan siparişler hesaplanmaktadır.";
+            // 
+            // m_categoryCMB
+            // 
+            this.m_categoryCMB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            this.m_categoryCMB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.m_categoryCMB.ForeColor = System.Drawing.Color.Gold;
+            this.m_categoryCMB.FormattingEnabled = true;
+            this.m_categoryCMB.Location = new System.Drawing.Point(570, 17);
+            this.m_categoryCMB.Name = "m_categoryCMB";
+            this.m_categoryCMB.Size = new System.Drawing.Size(138, 30);
+            this.m_categoryCMB.TabIndex = 12;
+            this.m_categoryCMB.SelectedIndexChanged += new System.EventHandler(this.m_categoryCMB_SelectedIndexChanged);
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label38.Location = new System.Drawing.Point(461, 20);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(86, 22);
+            this.label38.TabIndex = 11;
+            this.label38.Text = "Kategori:";
+            // 
+            // w_categoryCMB
+            // 
+            this.w_categoryCMB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            this.w_categoryCMB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.w_categoryCMB.ForeColor = System.Drawing.Color.Gold;
+            this.w_categoryCMB.FormattingEnabled = true;
+            this.w_categoryCMB.Location = new System.Drawing.Point(572, 17);
+            this.w_categoryCMB.Name = "w_categoryCMB";
+            this.w_categoryCMB.Size = new System.Drawing.Size(138, 30);
+            this.w_categoryCMB.TabIndex = 14;
+            this.w_categoryCMB.SelectedIndexChanged += new System.EventHandler(this.w_categoryCMB_SelectedIndexChanged);
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label42.Location = new System.Drawing.Point(461, 20);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(86, 22);
+            this.label42.TabIndex = 13;
+            this.label42.Text = "Kategori:";
+            // 
+            // d_categoryCMB
+            // 
+            this.d_categoryCMB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            this.d_categoryCMB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.d_categoryCMB.ForeColor = System.Drawing.Color.Gold;
+            this.d_categoryCMB.FormattingEnabled = true;
+            this.d_categoryCMB.Location = new System.Drawing.Point(571, 17);
+            this.d_categoryCMB.Name = "d_categoryCMB";
+            this.d_categoryCMB.Size = new System.Drawing.Size(138, 30);
+            this.d_categoryCMB.TabIndex = 16;
+            this.d_categoryCMB.SelectedIndexChanged += new System.EventHandler(this.d_categoryCMB_SelectedIndexChanged);
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label43.Location = new System.Drawing.Point(461, 20);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(86, 22);
+            this.label43.TabIndex = 15;
+            this.label43.Text = "Kategori:";
+            // 
+            // productStatisticsPanel
+            // 
+            this.productStatisticsPanel.Location = new System.Drawing.Point(4, 220);
+            this.productStatisticsPanel.Name = "productStatisticsPanel";
+            this.productStatisticsPanel.Size = new System.Drawing.Size(946, 700);
+            this.productStatisticsPanel.TabIndex = 1;
             // 
             // MainForm
             // 
@@ -2292,8 +2418,18 @@
         private System.Windows.Forms.Label monthly_av_payment;
         private System.Windows.Forms.Label monthly_payment;
         private System.Windows.Forms.Label monthly_label;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label dmx_product;
+        private System.Windows.Forms.Label wmx_product;
+        private System.Windows.Forms.Label mmx_product;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.ComboBox m_categoryCMB;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.ComboBox d_categoryCMB;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.ComboBox w_categoryCMB;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.FlowLayoutPanel productStatisticsPanel;
     }
 }

@@ -266,6 +266,7 @@ namespace project_addition_app.Forms
             if (e.TabPage == statistics)
             {
                 MessageBox.Show("İstatistikler henüz eklenmedi.");
+                UpdateAllStatistics();
             }
         }
 
@@ -1684,23 +1685,231 @@ namespace project_addition_app.Forms
         }
         private void statistics_control_Selecting(object sender, TabControlCancelEventArgs e)
         {
-            if(e.TabPage == daily)
+            if (e.TabPage == daily)
             {
+                FillCategoryCMB(d_categoryCMB);
                 UpdateSales(daily);
                 CountOrders(daily);
                 CalcAvgSales(daily);
+                CountMaxSaledProduct(daily);
+                LoadProducts(daily);
             }
             if (e.TabPage == weekly)
             {
+                FillCategoryCMB(w_categoryCMB);
                 UpdateSales(weekly);
                 CountOrders(weekly);
                 CalcAvgSales(weekly);
+                CountMaxSaledProduct(weekly);
+                LoadProducts(weekly);
             }
             if (e.TabPage == monthly)
             {
+                FillCategoryCMB(m_categoryCMB);
                 UpdateSales(monthly);
                 CountOrders(monthly);
                 CalcAvgSales(monthly);
+                CountMaxSaledProduct(monthly);
+                LoadProducts(monthly);
+            }
+        }
+        void CountMaxSaledProduct(TabPage tabPage)
+        {
+            if (tabPage == daily)
+            {
+                var today = DateTime.Today;
+                var tomorrow = today.AddDays(1);
+                var dailySales = context.Payments.Where(p => p.Tarih >= today && p.Tarih < tomorrow).ToList();
+                if (dailySales != null && dailySales.Count > 0)
+                {
+                    List<OrderDetail> orderDetails;
+                    if (d_categoryCMB.SelectedIndex == 0 || d_categoryCMB == null)
+                    {
+                        orderDetails = dailySales.SelectMany(p => p.Order.OrderDetails).ToList();
+                    }
+                    else
+                    {
+                        orderDetails = dailySales.SelectMany(p => p.Order.OrderDetails).Where(od => od.Product.CategoryId == (int)d_categoryCMB.SelectedValue).ToList();
+                    }
+                    var maxSaledProduct = orderDetails.GroupBy(od => od.ProductId).OrderByDescending(g => g.Sum(od => od.Adet)).FirstOrDefault();
+                    if (maxSaledProduct != null)
+                    {
+                        var product = context.Products.Find(maxSaledProduct.Key);
+                        dmx_product.Text = "Bugünün en çok satılan ürünü: " + product?.UrunAdi ?? "Bilinmiyor";
+                    }
+                }
+            }
+            if (tabPage == weekly)
+            {
+                var startOfWeek = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek);
+                var endOfWeek = startOfWeek.AddDays(6);
+                var weeklySales = context.Payments.Where(p => p.Tarih >= startOfWeek && p.Tarih <= endOfWeek).ToList();
+                if (weeklySales != null && weeklySales.Count > 0)
+                {
+
+                    List<OrderDetail> orderDetails;
+                    if (w_categoryCMB.SelectedIndex == 0)
+                    {
+                        orderDetails = weeklySales.SelectMany(p => p.Order.OrderDetails).ToList();
+                    }
+                    else
+                    {
+                        orderDetails = weeklySales.SelectMany(p => p.Order.OrderDetails).Where(od => od.Product.CategoryId == (int)w_categoryCMB.SelectedValue).ToList();
+                    }
+                    var maxSaledProduct = orderDetails.GroupBy(od => od.ProductId).OrderByDescending(g => g.Sum(od => od.Adet)).FirstOrDefault();
+                    if (maxSaledProduct != null)
+                    {
+                        var product = context.Products.Find(maxSaledProduct.Key);
+                        wmx_product.Text = "Bu haftanın en çok satılan ürünü: " + product?.UrunAdi ?? "Bilinmiyor";
+                    }
+                }
+            }
+            if (tabPage == monthly)
+            {
+                var startOfMonth = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+                var endOfMonth = startOfMonth.AddMonths(1).AddDays(-1);
+                var monthlySales = context.Payments.Where(p => p.Tarih >= startOfMonth && p.Tarih <= endOfMonth).ToList();
+                if (monthlySales != null && monthlySales.Count > 0)
+                {
+                    List<OrderDetail> orderDetails;
+                    if (m_categoryCMB.SelectedIndex == 0)
+                    {
+                        orderDetails = monthlySales.SelectMany(p => p.Order.OrderDetails).ToList();
+                    }
+                    else
+                    {
+                        orderDetails = monthlySales.SelectMany(p => p.Order.OrderDetails).Where(od => od.Product.CategoryId == (int)m_categoryCMB.SelectedValue).ToList();
+                    }
+                    var maxSaledProduct = orderDetails.GroupBy(od => od.ProductId).OrderByDescending(g => g.Sum(od => od.Adet)).FirstOrDefault();
+                    if (maxSaledProduct != null)
+                    {
+                        var product = context.Products.Find(maxSaledProduct.Key);
+                        mmx_product.Text = "Bu ayın en çok satılan ürünü: " + product?.UrunAdi ?? "Bilinmiyor";
+                    }
+                }
+            }
+        }
+
+        private void d_categoryCMB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CountMaxSaledProduct(daily);
+            LoadProducts(daily);
+
+        }
+
+        private void w_categoryCMB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CountMaxSaledProduct(weekly);
+            LoadProducts(weekly);
+        }
+
+        private void m_categoryCMB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CountMaxSaledProduct(monthly);
+            LoadProducts(monthly);
+        }
+        void UpdateAllStatistics()
+        {
+            // this is where we use all the methods to update the statistics
+            FillCategoryCMB(d_categoryCMB);
+            FillCategoryCMB(w_categoryCMB);
+            FillCategoryCMB(m_categoryCMB);
+            UpdateSales(daily);
+            UpdateSales(weekly);
+            UpdateSales(monthly);
+            CountOrders(daily);
+            CountOrders(weekly);
+            CountOrders(monthly);
+            CalcAvgSales(daily);
+            CalcAvgSales(weekly);
+            CalcAvgSales(monthly);
+            CountMaxSaledProduct(daily);
+            CountMaxSaledProduct(weekly);
+            CountMaxSaledProduct(monthly);
+            LoadProducts(daily);
+        }
+        void LoadProducts(TabPage tabPage)
+        {
+            // This needs to be change , FOR NOW it shows us true statistics but not the ones we wanted.
+            productStatisticsPanel.Controls.Clear();
+            var products = context.Products.ToList();
+            if (tabPage == daily)
+            {
+                if (d_categoryCMB.SelectedIndex != 0)
+                {
+                    var today = DateTime.Today;
+                    var tomorrow = today.AddDays(1);
+                    var dailySales = context.Payments.Where(p => p.Tarih >= today && p.Tarih < tomorrow).ToList();
+                    if (dailySales != null && dailySales.Count > 0)
+                    {
+                        List<OrderDetail> orderDetails;
+                        if (d_categoryCMB.SelectedIndex == 0 || d_categoryCMB == null)
+                        {
+                            orderDetails = dailySales.SelectMany(p => p.Order.OrderDetails).ToList();
+                        }
+                        else
+                        {
+                            orderDetails = dailySales.SelectMany(p => p.Order.OrderDetails).Where(od => od.Product.CategoryId == (int)d_categoryCMB.SelectedValue).ToList();
+                        }
+                        var saledProduct = orderDetails.GroupBy(od => od.ProductId).OrderByDescending(g => g.Sum(od => od.Adet)).ToList();
+                        products = products.Where(p => saledProduct.Any(sp => sp.Key == p.Id)).ToList();
+                    }
+                }
+                else if (tabPage == weekly)
+                {
+                    if (w_categoryCMB.SelectedIndex != 0)
+                    {
+                        var catId = (int)w_categoryCMB.SelectedValue;
+                        products = products.Where(p => p.CategoryId == catId).ToList();
+                    }
+                }
+                else if (tabPage == monthly)
+                {
+                    if (m_categoryCMB.SelectedIndex != 0)
+                    {
+                        var catId = (int)m_categoryCMB.SelectedValue;
+                        products = products.Where(p => p.CategoryId == catId).ToList();
+                    }
+                }
+                if (tabPage != null)
+                {
+                    foreach (var product in products)
+                    {
+                        var orderDetails = context.OrderDetails.Where(od => od.ProductId == product.Id).ToList();
+                        if (orderDetails.Count > 0)
+                        {
+                            var totalSold = orderDetails.Sum(od => od.Adet);
+                            var totalIncome = orderDetails.Sum(od => od.Adet * od.BirimFiyat);
+                            var productPanel = new Panel
+                            {
+                                Width = 200,
+                                Height = 100,
+                                BorderStyle = BorderStyle.FixedSingle,
+                                BackColor = Color.FromArgb(75, 54, 33),
+                                Margin = new Padding(5)
+                            };
+                            var productNameLabel = new Label
+                            {
+                                Text = product.UrunAdi,
+                                Dock = DockStyle.Top
+                            };
+                            var soldLabel = new Label
+                            {
+                                Text = $"Satılan: {totalSold}",
+                                Dock = DockStyle.Top
+                            };
+                            var incomeLabel = new Label
+                            {
+                                Text = $"Toplam Gelir: {totalIncome:C}",
+                                Dock = DockStyle.Top
+                            };
+                            productPanel.Controls.Add(incomeLabel);
+                            productPanel.Controls.Add(soldLabel);
+                            productPanel.Controls.Add(productNameLabel);
+                            productStatisticsPanel.Controls.Add(productPanel);
+                        }
+                    }
+                }
             }
         }
     }
