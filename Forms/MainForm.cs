@@ -44,6 +44,12 @@ namespace project_addition_app.Forms
             ResizeButtons();
             ListAllOrders();
             ListRoles();
+            UpdateSales(weekly);
+            UpdateSales(monthly);
+            UpdateSales(daily);
+            CountOrders(weekly);
+            CountOrders(monthly);
+            CountOrders(daily);
             //FillRolesList(role_comboBox1);
             //FillRolesList(role_comboBox2);
             tables0 = context.Tables.ToList();
@@ -232,7 +238,7 @@ namespace project_addition_app.Forms
                     e.Cancel = true;
                 }
             }
-            if(e.TabPage == adminPanel)
+            if (e.TabPage == adminPanel)
             {
                 //FillRolesList(role_comboBox1);
                 //FillRolesList(role_comboBox2);
@@ -262,7 +268,7 @@ namespace project_addition_app.Forms
                 MessageBox.Show("İstatistikler henüz eklenmedi.");
             }
         }
-        
+
         void FillCategoryCMB(ComboBox control, string CategoryName = "")
         {
             var categories = context.Categories.ToList();
@@ -512,16 +518,45 @@ namespace project_addition_app.Forms
 
         private void delete_user_Click(object sender, EventArgs e)
         {
-            if (m_user_to_change == m_user)
+
+            var result = MessageBox.Show($"Bu işlem sonucunda {m_user_to_change.AdSoyad} kullanıcısına ait ödeme işlemleri silinecektir.", "Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                context.Users.Remove(m_user_to_change);
-                Exit();
+                if (m_user_to_change == m_user)
+                {
+                    MessageBox.Show("Kendinizi silemezsiniz, lütfen başka bir kullanıcı seçiniz.");
+                    /* 
+                    context.Users.Remove(m_user_to_change);
+                    List<Payment> payments = context.Payments.Where(x => x.UserId == m_user_to_change.Id).ToList();
+                    if (payments.Count > 0) { 
+                        foreach(var payment in payments)
+                        {
+                            context.Payments.Remove(payment);
+                        }       
+                    }
+                     */
+                    Exit();
+                }
+                else
+                {
+                    m_user_to_change.ProfilePicName = "default.png"; // Default profile picture
+                    m_user_to_change.KullaniciAdi = "deleted_user" + m_user_to_change.Id;
+                    m_user_to_change.SifreHash = SecurityHelper.HashPassword("deleted"); // Default password
+                    /*
+                    List<Payment> payments = context.Payments.Where(x => x.UserId == m_user_to_change.Id).ToList();
+                    if (payments.Count > 0)
+                    {
+                        foreach (var payment in payments)
+                        {
+                            context.Payments.Remove(payment);
+                        }
+                    }
+                    context.Users.Remove(m_user_to_change);
+                     */
+                }
+                context.SaveChanges();
+                ListRoles();
             }
-            else
-            {
-                context.Users.Remove(m_user_to_change);
-            }
-            ListRoles();
         }
 
         private void min_textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -890,6 +925,8 @@ namespace project_addition_app.Forms
                     if (!durum)
                     {
                         Product product = new Product();
+                        Stock stock = new Stock();
+
                         product.UrunAdi = productNAME.Text;
                         if (!decimal.TryParse(productPRICE.Text, out decimal price))
                         {
@@ -904,8 +941,14 @@ namespace project_addition_app.Forms
                         product.CategoryId = (int)catergoryCMB.SelectedValue;
 
                         context.Products.Add(product);
+                        stock.ProductId = product.Id;
+                        stock.Birim = "Adet";
+                        stock.Miktar = 0;
+                        stock.MinSeviye = 0;
+                        stock.SonGuncellemeTarihi = DateTime.Now;
+                        context.Stocks.Add(stock);
                         context.SaveChanges();
-                        MessageBox.Show("Ürün başarıyla eklendi.");
+                        MessageBox.Show("Ürün başarıyla eklendi ve Envanter kaydı yapıldı, lütfen envanter kaydının doğru yapıldığından emin olmak için Stok sekmesinden kontrol ediniz.");
                     }
                     else
                     {
@@ -1031,6 +1074,19 @@ namespace project_addition_app.Forms
                     var products = context.Products.Where(p => p.CategoryId == SelectedCategoryId).ToList();
                     foreach (var product in products)
                     {
+                        var stock = context.Stocks.FirstOrDefault(s => s.ProductId == product.Id);
+                        var stocks = context.StockMovements.Where(stm => stm.StockId == stock.Id);
+                        foreach (var stm in stocks)
+                        {
+                            context.StockMovements.Remove(stm);
+                        }
+                        var orderDetails = context.OrderDetails.Where(od => od.ProductId == product.Id).ToList();
+                        foreach (var detail in orderDetails)
+                        {
+                            context.OrderDetails.Remove(detail);
+                        }
+                        context.Stocks.Remove(stock);
+                        context.Products.Remove(product);
                         context.Products.Remove(product);
                     }
                     context.Categories.Remove(category);
@@ -1060,9 +1116,28 @@ namespace project_addition_app.Forms
                 var product = context.Products.Find(SelectedProductId);
                 if (product != null)
                 {
-                    context.Products.Remove(product);
-                    context.SaveChanges();
-                    MessageBox.Show("Ürün başarıyla silindi.");
+                    try
+                    {
+                        var stock = context.Stocks.FirstOrDefault(s => s.ProductId == product.Id);
+                        var stocks = context.StockMovements.Where(stm => stm.StockId == stock.Id);
+                        foreach (var stm in stocks)
+                        {
+                            context.StockMovements.Remove(stm);
+                        }
+                        var orderDetails = context.OrderDetails.Where(od => od.ProductId == product.Id).ToList();
+                        foreach (var detail in orderDetails)
+                        {
+                            context.OrderDetails.Remove(detail);
+                        }
+                        context.Stocks.Remove(stock);
+                        context.Products.Remove(product);
+                        context.SaveChanges();
+                        MessageBox.Show("Ürün başarıyla silindi.");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Hata: " + ex);
+                    }
                     var catId = (int)catergoryCMB.SelectedValue;
                     LoadProductData(catId);
                 }
@@ -1323,8 +1398,8 @@ namespace project_addition_app.Forms
                 SelectedStockMovementId = Convert.ToInt32(stockMovDGV.Rows[e.RowIndex].Cells["Id"].Value);
                 // Güncelleme işlemi
                 var stockMovement = context.StockMovements.Find(SelectedStockMovementId);
-                productCMB1.SelectedValue = stockMovement.Stock.ProductId;
                 categoryCMB2.SelectedValue = stockMovement.Stock.Product.CategoryId;
+                productCMB1.SelectedValue = stockMovement.Stock.ProductId;
                 description.Text = stockMovement.Aciklama;
                 prCount.Text = stockMovement.Miktar.ToString();
                 var stock = context.Stocks.Find(stockMovement.StockId);
@@ -1361,7 +1436,7 @@ namespace project_addition_app.Forms
                 context.Roles.Add(role);
                 context.SaveChanges();
 
-                var  permissions = new PermissionLevel();
+                var permissions = new PermissionLevel();
                 permissions.RoleId = role.Id;
 
                 permissions.canOrder = order.Checked;
@@ -1383,7 +1458,7 @@ namespace project_addition_app.Forms
         private void delete_role_Click(object sender, EventArgs e)
         {
             Role role;
-            if(role_comboBox2.SelectedIndex == 0)
+            if (role_comboBox2.SelectedIndex == 0)
             {
                 MessageBox.Show("Lütfen silmek istediğiniz rolü seçiniz.");
                 return;
@@ -1402,9 +1477,9 @@ namespace project_addition_app.Forms
                 try
                 {
 
-                if (role != null)
-                {
-                    if(role.RolAdi == m_user.Role.RolAdi)
+                    if (role != null)
+                    {
+                        if (role.RolAdi == m_user.Role.RolAdi)
                         {
                             MessageBox.Show("Bu rolü silmek için önce başka bir rol seçmelisiniz.");
                             return;
@@ -1437,13 +1512,13 @@ namespace project_addition_app.Forms
                             FillRolesList(role_comboBox1);
                             FillRolesList(role_comboBox2);
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Rol bulunamadı.");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Rol bulunamadı.");
-                }
-                }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show("Hata: " + ex);
                 }
@@ -1451,12 +1526,12 @@ namespace project_addition_app.Forms
         }
         private void role_comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(role_comboBox2.SelectedIndex != 0)
+            if (role_comboBox2.SelectedIndex != 0)
             {
 
                 var role = context.Roles.FirstOrDefault(r => r.Id == (int)role_comboBox2.SelectedValue);
                 var permissions = context.PermissionLevels.FirstOrDefault(p => p.RoleId == role.Id);
-                if(permissions != null)
+                if (permissions != null)
                 {
                     order.Checked = permissions.canOrder;
                     table.Checked = permissions.canTable;
@@ -1479,7 +1554,7 @@ namespace project_addition_app.Forms
 
                     PermissionLevel permissions;
                     var isPermissions = context.PermissionLevels.Any(p => p.RoleId == role.Id);
-                    if(!isPermissions)
+                    if (!isPermissions)
                     {
                         permissions = new PermissionLevel();
                         permissions.canOrder = order.Checked;
@@ -1503,11 +1578,129 @@ namespace project_addition_app.Forms
                     }
                     context.SaveChanges();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show("Hata: " + ex);
                 }
                 MessageBox.Show($"{role.RolAdi} için yetkiler başarıyla güncellendi.");
+            }
+        }
+        void UpdateSales(TabPage tabPage)
+        {
+            if (tabPage == daily)
+            {
+                var today = DateTime.Today;
+                var tomorrow = today.AddDays(1);
+
+                var dailySales = context.Payments.Where(p => p.Tarih >= today && p.Tarih < tomorrow).ToList();
+                if (dailySales != null)
+                {
+                    var payment = dailySales.Sum(p => p.Tutar);
+                    daily_payment.Text = $"{payment:C}";
+                }
+            }
+            else if (tabPage == weekly)
+            {
+                var startOfWeek = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek);
+                var endOfWeek = startOfWeek.AddDays(6);
+                var weeklySales = context.Payments.Where(p => p.Tarih >= startOfWeek && p.Tarih <= endOfWeek).ToList();
+                if (weeklySales != null)
+                {
+                    var payment = weeklySales.Sum(p => p.Tutar);
+                    weekly_payment.Text = $"{payment:C}";
+                }
+            }
+            else if (tabPage == monthly)
+            {
+                var startOfMonth = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+                var endOfMonth = startOfMonth.AddMonths(1).AddDays(-1);
+                var monthlySales = context.Payments.Where(p => p.Tarih >= startOfMonth && p.Tarih <= endOfMonth).ToList();
+                if (monthlySales != null)
+                {
+                    var payment = monthlySales.Sum(p => p.Tutar);
+                    monthly_payment.Text = $"{payment:C}";
+                }
+            }
+        }
+        void CountOrders(TabPage tabPage)
+        {
+            if (tabPage == daily)
+            {
+                var today = DateTime.Today;
+                var tomorrow = today.AddDays(1);
+                var dailyOrders = context.Payments.Where(p => p.Tarih >= today && p.Tarih < tomorrow).ToList();
+                daily_label.Text = dailyOrders.Count.ToString();
+            }
+            else if (tabPage == weekly)
+            {
+                var startOfWeek = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek);
+                var endOfWeek = startOfWeek.AddDays(6);
+                var weeklyOrders = context.Payments.Where(o => o.Tarih >= startOfWeek && o.Tarih <= endOfWeek).ToList();
+                weekly_label.Text = weeklyOrders.Count.ToString();
+            }
+            else if (tabPage == monthly)
+            {
+                var startOfMonth = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+                var endOfMonth = startOfMonth.AddMonths(1).AddDays(-1);
+                var monthlyOrders = context.Payments.Where(o => o.Tarih >= startOfMonth && o.Tarih <= endOfMonth).ToList();
+                monthly_label.Text = monthlyOrders.Count.ToString();
+            }
+        }
+        void CalcAvgSales(TabPage tabPage)
+        {
+            if (tabPage == daily)
+            {
+                var today = DateTime.Today;
+                var tomorrow = today.AddDays(1);
+                var dailySales = context.Payments.Where(p => p.Tarih >= today && p.Tarih < tomorrow).ToList();
+                if (dailySales != null && dailySales.Count > 0)
+                {
+                    var avgPayment = dailySales.Average(p => p.Tutar);
+                    daily_av_payment.Text = $"{avgPayment:C}";
+                }
+            }
+            else if (tabPage == weekly)
+            {
+                var startOfWeek = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek);
+                var endOfWeek = startOfWeek.AddDays(6);
+                var weeklySales = context.Payments.Where(p => p.Tarih >= startOfWeek && p.Tarih <= endOfWeek).ToList();
+                if (weeklySales != null && weeklySales.Count > 0)
+                {
+                    var avgPayment = weeklySales.Average(p => p.Tutar);
+                    weekly_av_payment.Text = $"{avgPayment:C}";
+                }
+            }
+            else if (tabPage == monthly)
+            {
+                var startOfMonth = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+                var endOfMonth = startOfMonth.AddMonths(1).AddDays(-1);
+                var monthlySales = context.Payments.Where(p => p.Tarih >= startOfMonth && p.Tarih <= endOfMonth).ToList();
+                if (monthlySales != null && monthlySales.Count > 0)
+                {
+                    var avgPayment = monthlySales.Average(p => p.Tutar);
+                    monthly_av_payment.Text = $"{avgPayment:C}";
+                }
+            }
+        }
+        private void statistics_control_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            if(e.TabPage == daily)
+            {
+                UpdateSales(daily);
+                CountOrders(daily);
+                CalcAvgSales(daily);
+            }
+            if (e.TabPage == weekly)
+            {
+                UpdateSales(weekly);
+                CountOrders(weekly);
+                CalcAvgSales(weekly);
+            }
+            if (e.TabPage == monthly)
+            {
+                UpdateSales(monthly);
+                CountOrders(monthly);
+                CalcAvgSales(monthly);
             }
         }
     }
