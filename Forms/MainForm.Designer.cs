@@ -170,8 +170,13 @@
             this.stockMovDGV = new System.Windows.Forms.DataGridView();
             this.stocksDGV = new System.Windows.Forms.DataGridView();
             this.statistics = new System.Windows.Forms.TabPage();
+            this.productStatisticsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.statistics_control = new System.Windows.Forms.TabControl();
             this.daily = new System.Windows.Forms.TabPage();
+            this.d_categoryCMB = new System.Windows.Forms.ComboBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.dmx_product = new System.Windows.Forms.Label();
             this.daily_av_payment = new System.Windows.Forms.Label();
             this.daily_payment = new System.Windows.Forms.Label();
             this.daily_label = new System.Windows.Forms.Label();
@@ -179,6 +184,10 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.weekly = new System.Windows.Forms.TabPage();
+            this.w_categoryCMB = new System.Windows.Forms.ComboBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.wmx_product = new System.Windows.Forms.Label();
             this.weekly_av_payment = new System.Windows.Forms.Label();
             this.weekly_payment = new System.Windows.Forms.Label();
             this.weekly_label = new System.Windows.Forms.Label();
@@ -186,6 +195,9 @@
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.monthly = new System.Windows.Forms.TabPage();
+            this.m_categoryCMB = new System.Windows.Forms.ComboBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.mmx_product = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.monthly_av_payment = new System.Windows.Forms.Label();
             this.monthly_payment = new System.Windows.Forms.Label();
@@ -193,18 +205,6 @@
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
-            this.dmx_product = new System.Windows.Forms.Label();
-            this.wmx_product = new System.Windows.Forms.Label();
-            this.mmx_product = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.m_categoryCMB = new System.Windows.Forms.ComboBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.w_categoryCMB = new System.Windows.Forms.ComboBox();
-            this.label42 = new System.Windows.Forms.Label();
-            this.d_categoryCMB = new System.Windows.Forms.ComboBox();
-            this.label43 = new System.Windows.Forms.Label();
-            this.productStatisticsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.adminPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pp_pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.users_dataGridView1)).BeginInit();
@@ -274,7 +274,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(1140, 152);
+            this.button3.Location = new System.Drawing.Point(349, 437);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(262, 46);
             this.button3.TabIndex = 41;
@@ -286,7 +286,7 @@
             // 
             this.stocks.AutoSize = true;
             this.stocks.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.stocks.Location = new System.Drawing.Point(1523, 87);
+            this.stocks.Location = new System.Drawing.Point(732, 372);
             this.stocks.Name = "stocks";
             this.stocks.Size = new System.Drawing.Size(162, 26);
             this.stocks.TabIndex = 40;
@@ -297,7 +297,7 @@
             // 
             this.statistic.AutoSize = true;
             this.statistic.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.statistic.Location = new System.Drawing.Point(1523, 114);
+            this.statistic.Location = new System.Drawing.Point(732, 399);
             this.statistic.Name = "statistic";
             this.statistic.Size = new System.Drawing.Size(126, 26);
             this.statistic.TabIndex = 39;
@@ -308,7 +308,7 @@
             // 
             this.payment.AutoSize = true;
             this.payment.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.payment.Location = new System.Drawing.Point(1330, 114);
+            this.payment.Location = new System.Drawing.Point(539, 399);
             this.payment.Name = "payment";
             this.payment.Size = new System.Drawing.Size(177, 26);
             this.payment.TabIndex = 38;
@@ -319,7 +319,7 @@
             // 
             this.product.AutoSize = true;
             this.product.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.product.Location = new System.Drawing.Point(1331, 86);
+            this.product.Location = new System.Drawing.Point(540, 371);
             this.product.Name = "product";
             this.product.Size = new System.Drawing.Size(157, 26);
             this.product.TabIndex = 37;
@@ -330,7 +330,7 @@
             // 
             this.admin.AutoSize = true;
             this.admin.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.admin.Location = new System.Drawing.Point(1724, 101);
+            this.admin.Location = new System.Drawing.Point(933, 386);
             this.admin.Name = "admin";
             this.admin.Size = new System.Drawing.Size(143, 26);
             this.admin.TabIndex = 36;
@@ -341,7 +341,7 @@
             // 
             this.table.AutoSize = true;
             this.table.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.table.Location = new System.Drawing.Point(1140, 114);
+            this.table.Location = new System.Drawing.Point(349, 399);
             this.table.Name = "table";
             this.table.Size = new System.Drawing.Size(159, 26);
             this.table.TabIndex = 35;
@@ -352,7 +352,7 @@
             // 
             this.order.AutoSize = true;
             this.order.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.order.Location = new System.Drawing.Point(1140, 86);
+            this.order.Location = new System.Drawing.Point(349, 371);
             this.order.Name = "order";
             this.order.Size = new System.Drawing.Size(172, 26);
             this.order.TabIndex = 34;
@@ -363,7 +363,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label28.Location = new System.Drawing.Point(1139, 42);
+            this.label28.Location = new System.Drawing.Point(348, 327);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(41, 22);
             this.label28.TabIndex = 33;
@@ -375,7 +375,7 @@
             this.role_comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.role_comboBox2.ForeColor = System.Drawing.Color.Gold;
             this.role_comboBox2.FormattingEnabled = true;
-            this.role_comboBox2.Location = new System.Drawing.Point(1223, 43);
+            this.role_comboBox2.Location = new System.Drawing.Point(432, 328);
             this.role_comboBox2.Name = "role_comboBox2";
             this.role_comboBox2.Size = new System.Drawing.Size(161, 26);
             this.role_comboBox2.TabIndex = 32;
@@ -385,7 +385,7 @@
             // 
             this.delete_role.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
             this.delete_role.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.delete_role.Location = new System.Drawing.Point(1605, 152);
+            this.delete_role.Location = new System.Drawing.Point(814, 437);
             this.delete_role.Name = "delete_role";
             this.delete_role.Size = new System.Drawing.Size(262, 46);
             this.delete_role.TabIndex = 31;
@@ -429,7 +429,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label26.Location = new System.Drawing.Point(86, 331);
+            this.label26.Location = new System.Drawing.Point(90, 327);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(123, 22);
             this.label26.TabIndex = 27;
@@ -439,7 +439,7 @@
             // 
             this.upload_picture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
             this.upload_picture.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.upload_picture.Location = new System.Drawing.Point(371, 238);
+            this.upload_picture.Location = new System.Drawing.Point(795, 237);
             this.upload_picture.Name = "upload_picture";
             this.upload_picture.Size = new System.Drawing.Size(169, 53);
             this.upload_picture.TabIndex = 25;
@@ -449,7 +449,7 @@
             // 
             // pp_pictureBox1
             // 
-            this.pp_pictureBox1.Location = new System.Drawing.Point(323, 20);
+            this.pp_pictureBox1.Location = new System.Drawing.Point(747, 19);
             this.pp_pictureBox1.Name = "pp_pictureBox1";
             this.pp_pictureBox1.Size = new System.Drawing.Size(255, 200);
             this.pp_pictureBox1.TabIndex = 24;
@@ -460,7 +460,7 @@
             this.fullname_textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
             this.fullname_textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.fullname_textBox1.ForeColor = System.Drawing.Color.Gold;
-            this.fullname_textBox1.Location = new System.Drawing.Point(121, 64);
+            this.fullname_textBox1.Location = new System.Drawing.Point(545, 63);
             this.fullname_textBox1.Name = "fullname_textBox1";
             this.fullname_textBox1.Size = new System.Drawing.Size(161, 16);
             this.fullname_textBox1.TabIndex = 10;
@@ -470,7 +470,7 @@
             this.user_textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
             this.user_textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.user_textBox1.ForeColor = System.Drawing.Color.Gold;
-            this.user_textBox1.Location = new System.Drawing.Point(121, 19);
+            this.user_textBox1.Location = new System.Drawing.Point(545, 18);
             this.user_textBox1.Name = "user_textBox1";
             this.user_textBox1.Size = new System.Drawing.Size(161, 16);
             this.user_textBox1.TabIndex = 4;
@@ -479,7 +479,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.Location = new System.Drawing.Point(17, 65);
+            this.label10.Location = new System.Drawing.Point(441, 64);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(98, 22);
             this.label10.TabIndex = 9;
@@ -489,7 +489,7 @@
             // 
             this.delete_user.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
             this.delete_user.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.delete_user.Location = new System.Drawing.Point(20, 246);
+            this.delete_user.Location = new System.Drawing.Point(444, 245);
             this.delete_user.Name = "delete_user";
             this.delete_user.Size = new System.Drawing.Size(262, 46);
             this.delete_user.TabIndex = 8;
@@ -501,7 +501,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label9.Location = new System.Drawing.Point(17, 108);
+            this.label9.Location = new System.Drawing.Point(441, 107);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(41, 22);
             this.label9.TabIndex = 7;
@@ -513,7 +513,7 @@
             this.role_comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.role_comboBox1.ForeColor = System.Drawing.Color.Gold;
             this.role_comboBox1.FormattingEnabled = true;
-            this.role_comboBox1.Location = new System.Drawing.Point(121, 108);
+            this.role_comboBox1.Location = new System.Drawing.Point(545, 107);
             this.role_comboBox1.Name = "role_comboBox1";
             this.role_comboBox1.Size = new System.Drawing.Size(161, 26);
             this.role_comboBox1.TabIndex = 6;
@@ -522,7 +522,7 @@
             // 
             this.update_user.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
             this.update_user.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.update_user.Location = new System.Drawing.Point(20, 179);
+            this.update_user.Location = new System.Drawing.Point(444, 178);
             this.update_user.Name = "update_user";
             this.update_user.Size = new System.Drawing.Size(262, 46);
             this.update_user.TabIndex = 5;
@@ -534,7 +534,7 @@
             // 
             this.user_label.AutoSize = true;
             this.user_label.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.user_label.Location = new System.Drawing.Point(17, 20);
+            this.user_label.Location = new System.Drawing.Point(441, 19);
             this.user_label.Name = "user_label";
             this.user_label.Size = new System.Drawing.Size(92, 22);
             this.user_label.TabIndex = 1;
@@ -565,7 +565,7 @@
             this.users_dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.users_dataGridView1.EnableHeadersVisualStyles = false;
             this.users_dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            this.users_dataGridView1.Location = new System.Drawing.Point(657, 3);
+            this.users_dataGridView1.Location = new System.Drawing.Point(6, 6);
             this.users_dataGridView1.Name = "users_dataGridView1";
             this.users_dataGridView1.ReadOnly = true;
             this.users_dataGridView1.RowHeadersVisible = false;
@@ -1860,6 +1860,13 @@
             this.statistics.TabIndex = 7;
             this.statistics.Text = "İstatistikler";
             // 
+            // productStatisticsPanel
+            // 
+            this.productStatisticsPanel.Location = new System.Drawing.Point(4, 220);
+            this.productStatisticsPanel.Name = "productStatisticsPanel";
+            this.productStatisticsPanel.Size = new System.Drawing.Size(946, 700);
+            this.productStatisticsPanel.TabIndex = 1;
+            // 
             // statistics_control
             // 
             this.statistics_control.Controls.Add(this.daily);
@@ -1893,6 +1900,47 @@
             this.daily.Size = new System.Drawing.Size(942, 192);
             this.daily.TabIndex = 0;
             this.daily.Text = "Günlük";
+            // 
+            // d_categoryCMB
+            // 
+            this.d_categoryCMB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            this.d_categoryCMB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.d_categoryCMB.ForeColor = System.Drawing.Color.Gold;
+            this.d_categoryCMB.FormattingEnabled = true;
+            this.d_categoryCMB.Location = new System.Drawing.Point(571, 17);
+            this.d_categoryCMB.Name = "d_categoryCMB";
+            this.d_categoryCMB.Size = new System.Drawing.Size(138, 30);
+            this.d_categoryCMB.TabIndex = 16;
+            this.d_categoryCMB.SelectedIndexChanged += new System.EventHandler(this.d_categoryCMB_SelectedIndexChanged);
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label43.Location = new System.Drawing.Point(461, 20);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(86, 22);
+            this.label43.TabIndex = 15;
+            this.label43.Text = "Kategori:";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label41.Location = new System.Drawing.Point(5, 152);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(647, 29);
+            this.label41.TabIndex = 10;
+            this.label41.Text = "Not: Sadece ödemesi yapılan siparişler hesaplanmaktadır.";
+            // 
+            // dmx_product
+            // 
+            this.dmx_product.AutoSize = true;
+            this.dmx_product.Location = new System.Drawing.Point(461, 66);
+            this.dmx_product.Name = "dmx_product";
+            this.dmx_product.Size = new System.Drawing.Size(261, 22);
+            this.dmx_product.TabIndex = 7;
+            this.dmx_product.Text = "Bugünün en çok satan ürünü:";
             // 
             // daily_av_payment
             // 
@@ -1969,6 +2017,47 @@
             this.weekly.TabIndex = 1;
             this.weekly.Text = "Haftalık";
             // 
+            // w_categoryCMB
+            // 
+            this.w_categoryCMB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            this.w_categoryCMB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.w_categoryCMB.ForeColor = System.Drawing.Color.Gold;
+            this.w_categoryCMB.FormattingEnabled = true;
+            this.w_categoryCMB.Location = new System.Drawing.Point(572, 17);
+            this.w_categoryCMB.Name = "w_categoryCMB";
+            this.w_categoryCMB.Size = new System.Drawing.Size(138, 30);
+            this.w_categoryCMB.TabIndex = 14;
+            this.w_categoryCMB.SelectedIndexChanged += new System.EventHandler(this.w_categoryCMB_SelectedIndexChanged);
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label42.Location = new System.Drawing.Point(461, 20);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(86, 22);
+            this.label42.TabIndex = 13;
+            this.label42.Text = "Kategori:";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label39.Location = new System.Drawing.Point(5, 152);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(647, 29);
+            this.label39.TabIndex = 11;
+            this.label39.Text = "Not: Sadece ödemesi yapılan siparişler hesaplanmaktadır.";
+            // 
+            // wmx_product
+            // 
+            this.wmx_product.AutoSize = true;
+            this.wmx_product.Location = new System.Drawing.Point(461, 66);
+            this.wmx_product.Name = "wmx_product";
+            this.wmx_product.Size = new System.Drawing.Size(282, 22);
+            this.wmx_product.TabIndex = 10;
+            this.wmx_product.Text = "Bu haftanın en çok satan ürünü:";
+            // 
             // weekly_av_payment
             // 
             this.weekly_av_payment.AutoSize = true;
@@ -2043,6 +2132,37 @@
             this.monthly.TabIndex = 2;
             this.monthly.Text = "Aylık";
             // 
+            // m_categoryCMB
+            // 
+            this.m_categoryCMB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            this.m_categoryCMB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.m_categoryCMB.ForeColor = System.Drawing.Color.Gold;
+            this.m_categoryCMB.FormattingEnabled = true;
+            this.m_categoryCMB.Location = new System.Drawing.Point(570, 17);
+            this.m_categoryCMB.Name = "m_categoryCMB";
+            this.m_categoryCMB.Size = new System.Drawing.Size(138, 30);
+            this.m_categoryCMB.TabIndex = 12;
+            this.m_categoryCMB.SelectedIndexChanged += new System.EventHandler(this.m_categoryCMB_SelectedIndexChanged);
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label38.Location = new System.Drawing.Point(461, 20);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(86, 22);
+            this.label38.TabIndex = 11;
+            this.label38.Text = "Kategori:";
+            // 
+            // mmx_product
+            // 
+            this.mmx_product.AutoSize = true;
+            this.mmx_product.Location = new System.Drawing.Point(461, 66);
+            this.mmx_product.Name = "mmx_product";
+            this.mmx_product.Size = new System.Drawing.Size(247, 22);
+            this.mmx_product.TabIndex = 10;
+            this.mmx_product.Text = "Bu ayın en çok satan ürünü:";
+            // 
             // label40
             // 
             this.label40.AutoSize = true;
@@ -2106,126 +2226,6 @@
             this.label37.Size = new System.Drawing.Size(138, 22);
             this.label37.TabIndex = 3;
             this.label37.Text = "Toplam Sipariş:";
-            // 
-            // dmx_product
-            // 
-            this.dmx_product.AutoSize = true;
-            this.dmx_product.Location = new System.Drawing.Point(461, 66);
-            this.dmx_product.Name = "dmx_product";
-            this.dmx_product.Size = new System.Drawing.Size(261, 22);
-            this.dmx_product.TabIndex = 7;
-            this.dmx_product.Text = "Bugünün en çok satan ürünü:";
-            // 
-            // wmx_product
-            // 
-            this.wmx_product.AutoSize = true;
-            this.wmx_product.Location = new System.Drawing.Point(461, 66);
-            this.wmx_product.Name = "wmx_product";
-            this.wmx_product.Size = new System.Drawing.Size(282, 22);
-            this.wmx_product.TabIndex = 10;
-            this.wmx_product.Text = "Bu haftanın en çok satan ürünü:";
-            // 
-            // mmx_product
-            // 
-            this.mmx_product.AutoSize = true;
-            this.mmx_product.Location = new System.Drawing.Point(461, 66);
-            this.mmx_product.Name = "mmx_product";
-            this.mmx_product.Size = new System.Drawing.Size(247, 22);
-            this.mmx_product.TabIndex = 10;
-            this.mmx_product.Text = "Bu ayın en çok satan ürünü:";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label39.Location = new System.Drawing.Point(5, 152);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(647, 29);
-            this.label39.TabIndex = 11;
-            this.label39.Text = "Not: Sadece ödemesi yapılan siparişler hesaplanmaktadır.";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label41.Location = new System.Drawing.Point(5, 152);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(647, 29);
-            this.label41.TabIndex = 10;
-            this.label41.Text = "Not: Sadece ödemesi yapılan siparişler hesaplanmaktadır.";
-            // 
-            // m_categoryCMB
-            // 
-            this.m_categoryCMB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            this.m_categoryCMB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.m_categoryCMB.ForeColor = System.Drawing.Color.Gold;
-            this.m_categoryCMB.FormattingEnabled = true;
-            this.m_categoryCMB.Location = new System.Drawing.Point(570, 17);
-            this.m_categoryCMB.Name = "m_categoryCMB";
-            this.m_categoryCMB.Size = new System.Drawing.Size(138, 30);
-            this.m_categoryCMB.TabIndex = 12;
-            this.m_categoryCMB.SelectedIndexChanged += new System.EventHandler(this.m_categoryCMB_SelectedIndexChanged);
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label38.Location = new System.Drawing.Point(461, 20);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(86, 22);
-            this.label38.TabIndex = 11;
-            this.label38.Text = "Kategori:";
-            // 
-            // w_categoryCMB
-            // 
-            this.w_categoryCMB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            this.w_categoryCMB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.w_categoryCMB.ForeColor = System.Drawing.Color.Gold;
-            this.w_categoryCMB.FormattingEnabled = true;
-            this.w_categoryCMB.Location = new System.Drawing.Point(572, 17);
-            this.w_categoryCMB.Name = "w_categoryCMB";
-            this.w_categoryCMB.Size = new System.Drawing.Size(138, 30);
-            this.w_categoryCMB.TabIndex = 14;
-            this.w_categoryCMB.SelectedIndexChanged += new System.EventHandler(this.w_categoryCMB_SelectedIndexChanged);
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label42.Location = new System.Drawing.Point(461, 20);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(86, 22);
-            this.label42.TabIndex = 13;
-            this.label42.Text = "Kategori:";
-            // 
-            // d_categoryCMB
-            // 
-            this.d_categoryCMB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
-            this.d_categoryCMB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.d_categoryCMB.ForeColor = System.Drawing.Color.Gold;
-            this.d_categoryCMB.FormattingEnabled = true;
-            this.d_categoryCMB.Location = new System.Drawing.Point(571, 17);
-            this.d_categoryCMB.Name = "d_categoryCMB";
-            this.d_categoryCMB.Size = new System.Drawing.Size(138, 30);
-            this.d_categoryCMB.TabIndex = 16;
-            this.d_categoryCMB.SelectedIndexChanged += new System.EventHandler(this.d_categoryCMB_SelectedIndexChanged);
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label43.Location = new System.Drawing.Point(461, 20);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(86, 22);
-            this.label43.TabIndex = 15;
-            this.label43.Text = "Kategori:";
-            // 
-            // productStatisticsPanel
-            // 
-            this.productStatisticsPanel.Location = new System.Drawing.Point(4, 220);
-            this.productStatisticsPanel.Name = "productStatisticsPanel";
-            this.productStatisticsPanel.Size = new System.Drawing.Size(946, 700);
-            this.productStatisticsPanel.TabIndex = 1;
             // 
             // MainForm
             // 
