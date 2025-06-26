@@ -1837,23 +1837,9 @@ namespace project_addition_app.Forms
             {
                 if (d_categoryCMB.SelectedIndex != 0)
                 {
-                    var today = DateTime.Today;
-                    var tomorrow = today.AddDays(1);
-                    var dailySales = context.Payments.Where(p => p.Tarih >= today && p.Tarih < tomorrow).ToList();
-                    if (dailySales != null && dailySales.Count > 0)
-                    {
-                        List<OrderDetail> orderDetails;
-                        if (d_categoryCMB.SelectedIndex == 0 || d_categoryCMB == null)
-                        {
-                            orderDetails = dailySales.SelectMany(p => p.Order.OrderDetails).ToList();
-                        }
-                        else
-                        {
-                            orderDetails = dailySales.SelectMany(p => p.Order.OrderDetails).Where(od => od.Product.CategoryId == (int)d_categoryCMB.SelectedValue).ToList();
-                        }
-                        var saledProduct = orderDetails.GroupBy(od => od.ProductId).OrderByDescending(g => g.Sum(od => od.Adet)).ToList();
-                        products = products.Where(p => saledProduct.Any(sp => sp.Key == p.Id)).ToList();
-                    }
+                    var catId = (int)d_categoryCMB.SelectedValue;
+                    products = products.Where(p => p.CategoryId == catId).ToList();
+                }
                 }
                 else if (tabPage == weekly)
                 {
@@ -1875,8 +1861,32 @@ namespace project_addition_app.Forms
                 {
                     foreach (var product in products)
                     {
-                        var orderDetails = context.OrderDetails.Where(od => od.ProductId == product.Id).ToList();
-                        if (orderDetails.Count > 0)
+                        var orderDetails = context.OrderDetails.Where(od => od.ProductId == product.Id).Include(od => od.Order.Payments).ToList();
+                        if (tabPage == daily) {
+                        var today = DateTime.Today;
+                        var tomorrow = today.AddDays(1);
+                        var dailySales = context.Payments.Where(p => p.Tarih >= today && p.Tarih < tomorrow).ToList();
+                        orderDetails = dailySales.SelectMany(p => p.Order.OrderDetails)
+                            .Where(od => od.ProductId == product.Id).ToList();
+                        //orderDetails = orderDetails.Where(od => od.Order.Payments.Tarih >= today && od.Order.Payments.Tarih < tomorrow).ToList();
+                    }
+                    else if (tabPage == weekly)
+                    {
+                        var startOfWeek = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek);
+                        var endOfWeek = startOfWeek.AddDays(6);
+                        var weeklySales = context.Payments.Where(p => p.Tarih >= startOfWeek && p.Tarih <= endOfWeek);
+                        orderDetails = weeklySales.SelectMany(p => p.Order.OrderDetails).Where(od => od.ProductId == product.Id).ToList();
+                        //orderDetails = orderDetails.Where(od => od.Order.Payments.Tarih >= startOfWeek && od.Order.Payment.Tarih <= endOfWeek).ToList();
+                    }
+                    else if (tabPage == monthly)
+                    {
+                        var startOfMonth = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+                        var endOfMonth = startOfMonth.AddMonths(1).AddDays(-1);
+                        var monthlySales = context.Payments.Where(p => p.Tarih >= startOfMonth && p.Tarih <= endOfMonth);
+                        orderDetails = monthlySales.SelectMany(p => p.Order.OrderDetails).Where(od => od.ProductId == product.Id).ToList();
+                        //orderDetails = orderDetails.Where(od => od.Order.Payments.Tarih >= startOfMonth && od.Order.Payment.Tarih <= endOfMonth).ToList();
+                    }
+                    if (orderDetails.Count > 0)
                         {
                             var totalSold = orderDetails.Sum(od => od.Adet);
                             var totalIncome = orderDetails.Sum(od => od.Adet * od.BirimFiyat);
@@ -1913,4 +1923,3 @@ namespace project_addition_app.Forms
             }
         }
     }
-}
