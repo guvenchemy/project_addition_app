@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace project_addition_app.Forms
 {
@@ -1711,6 +1712,7 @@ namespace project_addition_app.Forms
                 CalcAvgSales(monthly);
                 CountMaxSaledProduct(monthly);
                 LoadProducts(monthly);
+                FillBarChart(monthly);
             }
         }
         void CountMaxSaledProduct(TabPage tabPage)
@@ -1827,6 +1829,7 @@ namespace project_addition_app.Forms
             CountMaxSaledProduct(weekly);
             CountMaxSaledProduct(monthly);
             LoadProducts(daily);
+            FillBarChart(daily);
         }
         void LoadProducts(TabPage tabPage)
         {
@@ -1921,5 +1924,125 @@ namespace project_addition_app.Forms
                     }
                 }
             }
+        void FillBarChart(TabPage tabPage)
+        {
+            chart1.Series.Clear();
+            chart1.ChartAreas.Clear();
+            var data = new Dictionary<string, int>();
+            ChartArea area = new ChartArea("Deneme");
+            area.BackColor = Color.SaddleBrown;
+            area.BackSecondaryColor = Color.Gold;
+            area.G
+            chart1.ChartAreas.Add(area);
+
+
+            Series series = new Series("Siparişler");
+            series.ChartType = SeriesChartType.Column;
+            series.Color = Color.Gold;
+            if (tabPage == daily)
+            {
+                data = getDailyOrderCount();
+            }
+            else if (tabPage == weekly)
+            {
+                // Implement weekly order count logic here
+            }
+            else if (tabPage == monthly)
+            {
+                data = getMonthlyOrderCount();
+                // Implement monthly order count logic here
+            }
+
+            foreach (var item in data)
+            {
+                series.Points.AddXY(item.Key, item.Value);
+            }
+
+            chart1.Series.Add(series);
+
+            chart1.ChartAreas[0].AxisX.Title = "Zaman/Tarih";
+            chart1.ChartAreas[0].AxisY.Title = "Sipariş Sayısı";
+
         }
+
+        Dictionary<string,int> getDailyOrderCount()
+        {
+            var data = new Dictionary<string, int>();
+            for(int i = 0; i < 24; i++)
+            {
+                data[$"{i:00}:00"] = 0; // Saat dilimlerini başlatıyoruz
+            }
+            DateTime today = DateTime.Today;
+            DateTime tomorrow = today.AddDays(1);
+            var dailyOrders = context.Payments.Where(p => p.Tarih >= today && p.Tarih < tomorrow).ToList();
+
+            foreach(var order in dailyOrders)
+            {
+                var orderTime = order.Tarih.ToString("HH:00");
+                if (data.ContainsKey(orderTime))
+                {
+                    data[orderTime]++;
+                }
+            }
+            return data;
+        }
+
+        Dictionary<string, int> getWeeklyOrderCount()
+        {
+            var data = new Dictionary<string, int>();
+
+
+
+            return data;
+
+        }
+        Dictionary<string, int> getMonthlyOrderCount()
+        {
+            var data = new Dictionary<string, int>();
+            DateTime now = DateTime.Now;
+            DateTime monthStart = new DateTime(now.Year, now.Month, 1);
+            DateTime nextMonthStart = monthStart.AddMonths(1);
+            int totalDays = (nextMonthStart - monthStart).Days;
+
+            // Günleri başlat (01, 02, ..., 30)
+            for (int i = 1; i <= totalDays; i++)
+            {
+                data[$"{i:00}"] = 0;
+            }
+
+            var monthlyOrders = context.Payments
+                .Where(p => p.Tarih >= monthStart && p.Tarih < nextMonthStart)
+                .ToList();
+
+            foreach (var order in monthlyOrders)
+            {
+                string day = order.Tarih.Day.ToString("00");
+                if (data.ContainsKey(day))
+                {
+                    data[day]++;
+                }
+            }
+            return data;
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
     }

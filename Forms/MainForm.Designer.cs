@@ -56,6 +56,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.adminPanel = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
             this.stocks = new System.Windows.Forms.CheckBox();
@@ -205,6 +208,7 @@
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.adminPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pp_pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.users_dataGridView1)).BeginInit();
@@ -231,6 +235,7 @@
             this.daily.SuspendLayout();
             this.weekly.SuspendLayout();
             this.monthly.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // adminPanel
@@ -1851,6 +1856,7 @@
             // statistics
             // 
             this.statistics.BackColor = System.Drawing.Color.SaddleBrown;
+            this.statistics.Controls.Add(this.chart1);
             this.statistics.Controls.Add(this.productStatisticsPanel);
             this.statistics.Controls.Add(this.statistics_control);
             this.statistics.ForeColor = System.Drawing.Color.Gold;
@@ -2227,6 +2233,41 @@
             this.label37.TabIndex = 3;
             this.label37.Text = "Toplam Sipariş:";
             // 
+            // chart1
+            // 
+            this.chart1.BackColor = System.Drawing.Color.SaddleBrown;
+            this.chart1.BackSecondaryColor = System.Drawing.Color.White;
+            this.chart1.BorderlineColor = System.Drawing.Color.SaddleBrown;
+            this.chart1.BorderSkin.BorderColor = System.Drawing.Color.Gold;
+            this.chart1.BorderSkin.PageColor = System.Drawing.Color.SaddleBrown;
+            chartArea1.BackColor = System.Drawing.Color.SaddleBrown;
+            chartArea1.BorderColor = System.Drawing.Color.Gold;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.Color.SaddleBrown;
+            legend1.BackImageTransparentColor = System.Drawing.Color.SaddleBrown;
+            legend1.BackSecondaryColor = System.Drawing.Color.SaddleBrown;
+            legend1.BorderColor = System.Drawing.Color.SaddleBrown;
+            legend1.ForeColor = System.Drawing.Color.Gold;
+            legend1.HeaderSeparatorColor = System.Drawing.Color.Gold;
+            legend1.ItemColumnSeparatorColor = System.Drawing.Color.Gold;
+            legend1.Name = "Legend1";
+            legend1.TitleBackColor = System.Drawing.Color.SaddleBrown;
+            legend1.TitleForeColor = System.Drawing.Color.Gold;
+            legend1.TitleSeparatorColor = System.Drawing.Color.Gold;
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(966, 21);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
+            series1.ChartArea = "ChartArea1";
+            series1.LabelForeColor = System.Drawing.Color.Gold;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(687, 405);
+            this.chart1.TabIndex = 2;
+            this.chart1.Text = "chart1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2276,6 +2317,7 @@
             this.weekly.PerformLayout();
             this.monthly.ResumeLayout(false);
             this.monthly.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2431,5 +2473,6 @@
         private System.Windows.Forms.ComboBox w_categoryCMB;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.FlowLayoutPanel productStatisticsPanel;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
